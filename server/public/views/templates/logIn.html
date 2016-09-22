@@ -1,13 +1,10 @@
-<form class = "signInForm" ng-submit = "login()">
-    <div>
-      <label for="username">Username:</label>
-            <input type="text" ng-model="admin.username" />
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" ng-model="admin.password" />
-    </div>
-    <div>
-      <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-    </div>
-  </form>
+<div class="container">
+  <div class="row">
+    <h1 class="text-center login-title">Sign in</h1>
+    <form class="form-signin" ng-submit="submitAdmin(admin)">
+      <input type="text" ng-model="admin.username" name="email" class="form-control" placeholder="Username" required autofocus>
+      <input type="password" ng-model="admin.password" name="password" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block">Sign in</button>
+    </form>
+  </div>
+</div>

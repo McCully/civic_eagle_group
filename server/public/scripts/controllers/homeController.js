@@ -1,5 +1,5 @@
-eagleApp.controller('homeController', '$scope' , function($scope){
+eagleApp.controller('homeController', ['$scope' , function($scope){
 
 
 
-})
+}]);
