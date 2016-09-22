@@ -12,6 +12,18 @@ var eagleApp = angular.module('eagleApp', ['ngRoute']);
       templateUrl: '/views/templates/home.html',
       controller: 'homeController'
     })
+    .when('/candidates',{
+      templateUrl: '/views/templates/candidates.html'
+    })
+    .when('/debateTopics',{
+      templateUrl: '/views/templates/debateTopics.html'
+    })
+    .when('/issues',{
+      templateUrl: '/views/templates/issues.html'
+    })
+    .when('/newsTopics',{
+      templateUrl: '/views/templates/newsTopics.html'
+    })
 
     .otherwise({
       redirectTo: 'logIn'
