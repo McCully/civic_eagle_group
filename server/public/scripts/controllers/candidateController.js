@@ -5,7 +5,8 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
       method: 'GET',
       url: "https://reps-staging.api.civiceagle.com/candidates",
       headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI='
-    , 'accept' : 'application/json'}
+    , 'accept' : 'application/json',
+  'Access-Control-Allow-Origin' : '*'}
     }).then(function(response){
       $scope.candidateResults = response.data;
       console.log($scope.candidateResults);
