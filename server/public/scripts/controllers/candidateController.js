@@ -30,6 +30,13 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
       }
     }
 
+    $scope.resetCandidateModal = function() {
+      var screenCounter = 0;
+      $scope.showFirst = true;
+      $scope.showSecond = false;
+      $scope.showThird = false;
+    }
+
     $scope.nextCandidateView = function() {
       if(screenCounter > 2) {
         return;
