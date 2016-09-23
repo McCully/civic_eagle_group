@@ -1,1 +1,13 @@
 <div ng-include = "'views/templates/sideNav.html'"></div>
+<div class = "container">
+  <div class="row">
+    <div class = "col-md-9">
+      <div class = "candidate-container">
+        <div ng-repeat = "candidate in candidateResults">
+          <h2>candidate.firstName</h2>
+          <h2>candidate.lastName</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

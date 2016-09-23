@@ -13,7 +13,8 @@ var eagleApp = angular.module('eagleApp', ['ngRoute']);
       controller: 'homeController'
     })
     .when('/candidates',{
-      templateUrl: '/views/templates/candidates.html'
+      templateUrl: '/views/templates/candidates.html',
+      controller: 'candidateController'
     })
     .when('/debateTopics',{
       templateUrl: '/views/templates/debateTopics.html'
