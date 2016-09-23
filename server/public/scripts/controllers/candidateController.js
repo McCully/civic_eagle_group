@@ -1,6 +1,10 @@
 eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function($scope, $http, Admin){
   var header = 'Basic ' + Admin.getCred();
-  console.log(header);
+  var screenCounter = 0;
+  $scope.showFirst = true;
+  $scope.showSecond = false;
+  $scope.showThird = false;
+  console.log("header: ", header);
     $http({
       method: 'GET',
       url: "https://reps-staging.api.civiceagle.com/candidates",
@@ -11,5 +15,33 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
       console.log($scope.candidateResults);
     });
 
+    function switchView() {
+      if(screenCounter == 0) {
+        $scope.showFirst = true;
+        $scope.showSecond = false;
+      }
+      if(screenCounter == 1) {
+        $scope.showFirst = false;
+        $scope.showSecond = true;
+      }
+      if(screenCounter == 2) {
+        $scope.showSecond = false;
+        $scope.showThird = true;
+      }
+    }
 
+    $scope.nextCandidateView = function() {
+      if(screenCounter > 2) {
+        return;
+      }
+      screenCounter++;
+      switchView();
+    }
+    $scope.prevCandidateView = function() {
+      if(screenCounter == 0) {
+        return;
+      }
+      screenCounter--;
+      switchView();
+    }
 }]);
