@@ -19,10 +19,12 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
       if(screenCounter == 0) {
         $scope.showFirst = true;
         $scope.showSecond = false;
+        $scope.showThird = false;
       }
       if(screenCounter == 1) {
         $scope.showFirst = false;
         $scope.showSecond = true;
+        $scope.showThird = false;
       }
       if(screenCounter == 2) {
         $scope.showSecond = false;
