@@ -40,11 +40,12 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
     }
 
     $scope.nextCandidateView = function() {
-      if(screenCounter > 2) {
-        return;
-      }
       screenCounter++;
+      if(screenCounter > 2) {
+        screenCounter = 2;
+      }
       switchView();
+      console.log("counter: ", screenCounter);
     }
     $scope.prevCandidateView = function() {
       if(screenCounter == 0) {
@@ -52,5 +53,6 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
       }
       screenCounter--;
       switchView();
+      console.log("counter: ", screenCounter);
     }
 }]);
