@@ -14,18 +14,21 @@
             <input type="text" id="slug" ng-model="topic.slug" class="form-control" placeholder="Slug" required autofocus>
             <!-- Insert WYSIWYG here? -->
             <label for="#summary">Summary</label>
-            <input type="text" id="summary" ng-model="topic.summary" class="form-control" placeholder="Summary" required autofocus>
+            <!-- <input type="text" id="summary" ng-model="topic.summary" class="form-control" placeholder="Summary" required autofocus> -->
+            <div ng-include="'views/templates/editor.html'"></div>
           </div>
           <div ng-show="showSecond">
             <label for="#image">Image</label>
             <input type="text" id="image" ng-model="topic.image" class="form-control" placeholder="Image URL" required autofocus>
+            <label for="#issues">Issues</label>
+            <select type="select" id="issues" ng-model="topic.issues" class="form-control" placeholder="Issues" required autofocus></select>
             <label for="#active">Active</label>
             <input type="checkbox" id="active" ng-model="topic.active">
           </div>
         </form>
       <div class="modal-footer">
-        <button ng-click="nextTopicView()" type="button" class="btn btn-success">Next</button>
-        <button ng-click="prevTopicView()" type="button" class="btn btn-warning">Previous</button>
+        <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-success">Next</button>
+        <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-warning">Previous</button>
         <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
