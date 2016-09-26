@@ -3,16 +3,16 @@ function ($scope, $http, Admin, textAngularManager) {
 
   var header = 'Basic ' + Admin.getCred();
 
-  $http({
-    method: 'GET',
-    url: "https://reps-staging.api.civiceagle.com/issues",
-    headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=',
-    'accept': 'application/json',
-    'Access-Control-Allow-Origin': '*'}
-  }).then(function (response) {
-    $scope.issueResults = response.data;
-    console.log($scope.issueResults);
-  });
+  // $http({
+  //   method: 'GET',
+  //   url: "https://reps-staging.api.civiceagle.com/issues",
+  //   headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=',
+  //   'accept': 'application/json',
+  //   'Access-Control-Allow-Origin': '*'}
+  // }).then(function (response) {
+  //   $scope.issueResults = response.data;
+  //   console.log($scope.issueResults);
+  // });
 
   //---------* WYSIWYG *----------//
   $scope.version = textAngularManager.getVersion();
@@ -26,21 +26,30 @@ function ($scope, $http, Admin, textAngularManager) {
   $scope.showFirst = true;
   $scope.showSecond = false;
   $scope.showThird = false;
+  $scope.showNext = false;
+  $scope.showPrevious = true;
 
   function switchView() {
     if(screenCounter == 0) {
       $scope.showFirst = true;
       $scope.showSecond = false;
       $scope.showThird = false;
+      $scope.showNext = false;
+      $scope.showPrevious = true;
     }
     if(screenCounter == 1) {
       $scope.showFirst = false;
       $scope.showSecond = true;
       $scope.showThird = false;
+      $scope.showPrevious = false;
+      $scope.showNext = false;
     }
     if(screenCounter == 2) {
       $scope.showSecond = false;
       $scope.showThird = true;
+      $scope.showPrevious = false;
+      $scope.showNext = true;
+
     }
   }
 

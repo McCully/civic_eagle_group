@@ -1,5 +1,6 @@
-eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function($scope, $http, Admin){
+eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'CandidateService', function($scope, $http, Admin, CandidateService){
   var header = 'Basic ' + Admin.getCred();
+  CandidateService.GetCandidates();
 
   /* This counter tracks the modal form
    view we are on. Zero is the first view, one
@@ -11,6 +12,8 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
   $scope.showFirst = true;
   $scope.showSecond = false;
   $scope.showThird = false;
+  $scope.showNext = false;
+  $scope.showPrevious = true;
 
   /*
     $http({
@@ -26,20 +29,30 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', function
 
   */
 
+
+
+
+
   function switchView() {
     if(screenCounter == 0) {
       $scope.showFirst = true;
       $scope.showSecond = false;
       $scope.showThird = false;
+      $scope.showNext = false;
+      $scope.showPrevious = true;
     }
     if(screenCounter == 1) {
       $scope.showFirst = false;
       $scope.showSecond = true;
       $scope.showThird = false;
+      $scope.showNext = false;
+      $scope.showPrevious = false;
     }
     if(screenCounter == 2) {
       $scope.showSecond = false;
       $scope.showThird = true;
+      $scope.showNext = true;
+      $scope.showPrevious = false;
     }
   }
 
