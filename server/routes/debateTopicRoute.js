@@ -22,8 +22,8 @@ router.post('/' , function(req , res){
    });
 });
 
-router.put('/' , function(req , res){
-   unirest.get("https://debate-staging.api.civiceagle.com/topics/?????")
+router.put('/:id' , function(req , res){
+   unirest.get("https://debate-staging.api.civiceagle.com/topics/" + req.params.id)
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
    .end(function(res){

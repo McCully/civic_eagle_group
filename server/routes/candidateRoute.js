@@ -22,8 +22,8 @@ router.post('/' , function(req , res){
    });
 });
 
-router.put('/' , function(req , res){
-   unirest.get("https://reps-staging.api.civiceagle.com/candidates/?????")
+router.put('/:id' , function(req , res){
+   unirest.get("https://reps-staging.api.civiceagle.com/candidates/" + req.params.id)
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
    .end(function(res){
@@ -32,8 +32,8 @@ router.put('/' , function(req , res){
    });
 });
 
-router.get('/' , function(req , res){
-   unirest.get("https://reps-staging.api.civiceagle.com/candidates/?????")
+router.get('/:id' , function(req , res){
+   unirest.get("https://reps-staging.api.civiceagle.com/candidates/" + req.params.id)
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
    .end(function(res){
