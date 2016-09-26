@@ -32,8 +32,8 @@
           </div>
         </form>
         <div class="modal-footer">
-          <button ng-click="nextCandidateView()" type="button" class="btn btn-success">Next</button>
-          <button ng-click="prevCandidateView()" type="button" class="btn btn-warning">Previous</button>
+          <button ng-click="nextCandidateView()"  type="button" ng-hide = "showNext" class="btn btn-success">Next</button>
+          <button ng-click="prevCandidateView()" type="button" ng-hide = "showPrevious" class="btn btn-warning">Previous</button>
           <button type="button" ng-click="resetCandidateModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
