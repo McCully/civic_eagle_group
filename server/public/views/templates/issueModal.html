@@ -1,0 +1,42 @@
+<div id="issueModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Issue</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-signin" ng-submit="">
+          <div ng-show="showFirst">
+            <label for="#title">Title</label>
+            <input type="text" id="title" ng-model="issue.title" class="form-control" placeholder="Title" required autofocus>
+            <label for="#slug">Slug</label>
+            <input type="text" id="slug" ng-model="issue.slug" class="form-control" placeholder="Slug" required autofocus>
+            <label for="#image">Issue URL</label>
+            <input type="text" id="image" ng-model="issue.image" class="form-control" placeholder="Issue URL" required autofocus>
+          </div>
+          <div ng-show="showSecond">
+            <label for="#twitter">Twitter ID</label>
+            <input type="text" id="twitter" ng-model="issue.twitter" class="form-control" placeholder="Twitter ID" required autofocus>
+            <label for="#facebook">Facebook</label>
+            <input type="text" id="facebook" ng-model="issue.facebook" class="form-control" placeholder="Facebook" required autofocus>
+            <label for="#website">Website</label>
+            <input type="text" id="Website" ng-model="issue.website" class="form-control" placeholder="Website" required autofocus>
+            <label for="#image">Image</label>
+            <input type="text" id="image" ng-model="issue.image" class="form-control" placeholder="Website" required autofocus>
+          </div>
+          <div ng-show="showThird">
+            <label for="#issue">Issue</label>
+            <input type="text" id="issue" ng-model="issue" class="form-control" placeholder="Issue" required autofocus>
+            <label for="issueSummary"></label>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button ng-click="nextCandidateView()" type="button" class="btn btn-success">Next</button>
+          <button ng-click="prevCandidateView()" type="button" class="btn btn-warning">Previous</button>
+          <button type="button" ng-click="resetCandidateModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
