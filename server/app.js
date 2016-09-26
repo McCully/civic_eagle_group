@@ -3,20 +3,20 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var unirest = require('unirest');
-
-
-unirest.get("https://reps-staging.api.civiceagle.com/candidates")
-.header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
-.header("Accept", "application/json")
-.end(function(res){
-   var result = res.body;
-   console.log(result);
-});
+var candidates = require("./routes/candidateRoute");
+var debateTopics = require("./routes/debateTopicRoute");
+var issues = require("./routes/issuesRoute");
+var newsTopics = require("./routes/newsTopicRoute");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, './public')));
+
+app.use('/candidateRoute' , candidates);
+app.use('/debateTopicRoute' , debateTopics);
+app.use('/issuesRoute' , issues);
+app.use('/newsTopicRoute', newsTopics);
 
 app.set('port', (process.env.PORT || 5000));
 
