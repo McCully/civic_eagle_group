@@ -2,7 +2,6 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
 function ($scope, $http, Admin, textAngularManager) {
 
   var header = 'Basic ' + Admin.getCred();
-
   // $http({
   //   method: 'GET',
   //   url: "https://reps-staging.api.civiceagle.com/issues",
@@ -14,7 +13,7 @@ function ($scope, $http, Admin, textAngularManager) {
   //   console.log($scope.issueResults);
   // });
 
-  //---------* WYSIWYG *----------//
+  //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
   $scope.orightml = '<h1>CIVIC EAGLE API INFO!!!!!!!!</h1>';
@@ -37,6 +36,7 @@ function ($scope, $http, Admin, textAngularManager) {
       $scope.showNext = false;
       $scope.showPrevious = true;
     }
+
     if(screenCounter == 1) {
       $scope.showFirst = false;
       $scope.showSecond = true;
@@ -44,12 +44,12 @@ function ($scope, $http, Admin, textAngularManager) {
       $scope.showPrevious = false;
       $scope.showNext = false;
     }
+
     if(screenCounter == 2) {
       $scope.showSecond = false;
       $scope.showThird = true;
       $scope.showPrevious = false;
       $scope.showNext = true;
-
     }
   }
 
@@ -58,7 +58,7 @@ function ($scope, $http, Admin, textAngularManager) {
     $scope.showFirst = true;
     $scope.showSecond = false;
     $scope.showThird = false;
-  }
+  };
 
   $scope.nextCandidateView = function() {
     screenCounter++;
@@ -67,11 +67,13 @@ function ($scope, $http, Admin, textAngularManager) {
     }
     switchView();
     console.log("counter: ", screenCounter);
-  }
+  };
+
   $scope.prevCandidateView = function() {
     if(screenCounter == 0) {
       return;
     }
+
     screenCounter--;
     switchView();
     console.log("counter: ", screenCounter);

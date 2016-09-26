@@ -22,19 +22,13 @@
             <input type="text" id="federalCriteria" ng-model="issue.federalCriteria" class="form-control" placeholder="Federal Criteria" required autofocus>
           </div>
             <div ng-show="showThird">
-              <div ng-include="'views/templates/editor.html'"></div>
-              <!-- <div class="editorContainer">
-                <h1>Editor</h1>
-                <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled="disabled"></div>
-                <div ng-bind-html="htmlcontent"></div>
-              </div> -->
+                <label for="#summary">Summary</label>
+                <div ng-include="'views/templates/editor.html'"></div>
             </div>
         </form>
         <div class="modal-footer">
-          <button ng-click="prevCandidateView()" type="button" class="btn btn-warning">Previous</button>
-          <button ng-click="nextCandidateView()" type="button" class="btn btn-success">Next</button>
-          <button ng-click="nextCandidateView()"  type="button" ng-hide = "showNext" class="btn btn-success">Next</button>
           <button ng-click="prevCandidateView()" type="button" ng-hide = "showPrevious" class="btn btn-warning">Previous</button>
+          <button ng-click="nextCandidateView()"  type="button" ng-hide = "showNext" class="btn btn-success">Next</button>
           <button type="button" ng-click="resetCandidateModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
