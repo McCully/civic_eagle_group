@@ -1,4 +1,4 @@
-var eagleApp = angular.module('eagleApp', ['ngRoute']);
+var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular']);
 
   eagleApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
@@ -12,16 +12,19 @@ var eagleApp = angular.module('eagleApp', ['ngRoute']);
       templateUrl: '/views/templates/home.html',
       controller: 'homeController'
     })
-    .when('/candidates',{
+    .when('/candidates', {
       templateUrl: '/views/templates/candidates.html',
       controller: 'candidateController'
     })
+
     .when('/debateTopics',{
       templateUrl: '/views/templates/debateTopics.html',
       controller: 'topicsController'
+
     })
-    .when('/issues',{
-      templateUrl: '/views/templates/issues.html'
+    .when('/issues', {
+      templateUrl: '/views/templates/issues.html',
+      controller: 'issueController'
     })
     .when('/newsTopics',{
       templateUrl: '/views/templates/newsTopics.html'
