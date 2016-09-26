@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use('/candidateRoute' , candidates);
 app.use('/debateTopicRoute' , debateTopics);
 app.use('/issuesRoute' , issues);
-app.use('/newsTopicRoute', newsTopicRoute);
+app.use('/newsTopicRoute', newsTopics);
 
 app.set('port', (process.env.PORT || 5000));
 
