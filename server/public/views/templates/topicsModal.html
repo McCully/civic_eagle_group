@@ -1,0 +1,34 @@
+<div id="topicsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Topic</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-signin" ng-submit="">
+          <div ng-show="showFirst">
+            <label for="#title">Title</label>
+            <input type="text" id="title" ng-model="topic.title" class="form-control" placeholder="Title" required autofocus>
+            <label for="#slug">Slug</label>
+            <input type="text" id="slug" ng-model="topic.slug" class="form-control" placeholder="Slug" required autofocus>
+            <!-- Insert WYSIWYG here? -->
+            <label for="#summary">Summary</label>
+            <input type="text" id="summary" ng-model="topic.summary" class="form-control" placeholder="Summary" required autofocus>
+          </div>
+          <div ng-show="showSecond">
+            <label for="#image">Image</label>
+            <input type="text" id="image" ng-model="topic.image" class="form-control" placeholder="Image URL" required autofocus>
+            <label for="#active">Active</label>
+            <input type="checkbox" id="active" ng-model="topic.active">
+          </div>
+        </form>
+      <div class="modal-footer">
+        <button ng-click="nextTopicView()" type="button" class="btn btn-success">Next</button>
+        <button ng-click="prevTopicView()" type="button" class="btn btn-warning">Previous</button>
+        <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
