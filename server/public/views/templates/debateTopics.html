@@ -1,1 +1,14 @@
 <div ng-include="'views/templates/sideNav.html'"></div>
+<div ng-include = "'views/templates/topicsModal.html'"></div>
+<div class = "container">
+  <div class="row">
+    <div class = "col-md-9">
+      <div class = "topics-container">
+        <div ng-repeat = "topic in topicResults">
+          <h2>topic.title</h2>  
+        </div>
+      </div>
+      <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#topicsModal">Add Debate Topic</button>
+    </div>
+  </div>
+</div>
