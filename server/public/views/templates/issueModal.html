@@ -1,5 +1,5 @@
 <div id="issueModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -16,26 +16,23 @@
             <input type="text" id="image" ng-model="issue.image" class="form-control" placeholder="Issue URL" required autofocus>
           </div>
           <div ng-show="showSecond">
-            <label for="#twitter">Twitter ID</label>
-            <input type="text" id="twitter" ng-model="issue.twitter" class="form-control" placeholder="Twitter ID" required autofocus>
-            <label for="#facebook">Facebook</label>
-            <input type="text" id="facebook" ng-model="issue.facebook" class="form-control" placeholder="Facebook" required autofocus>
-            <label for="#website">Website</label>
-            <input type="text" id="Website" ng-model="issue.website" class="form-control" placeholder="Website" required autofocus>
-            <label for="#image">Image</label>
-            <input type="text" id="image" ng-model="issue.image" class="form-control" placeholder="Website" required autofocus>
+            <label for="#stateCriteria">State Criteria</label>
+            <input type="text" id="stateCriteria" ng-model="issue.stateCriteria" class="form-control" placeholder="State Criteria" required autofocus>
+            <label for="#federalCriteria">Federal Criteria</label>
+            <input type="text" id="federalCriteria" ng-model="issue.federalCriteria" class="form-control" placeholder="Federal Criteria" required autofocus>
           </div>
             <div ng-show="showThird">
-              <div class="container app">
+              <div ng-include="'views/templates/editor.html'"></div>
+              <!-- <div class="editorContainer">
                 <h1>Editor</h1>
                 <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled="disabled"></div>
                 <div ng-bind-html="htmlcontent"></div>
-              </div>
+              </div> -->
             </div>
         </form>
         <div class="modal-footer">
-          <button ng-click="nextCandidateView()" type="button" class="btn btn-success">Next</button>
           <button ng-click="prevCandidateView()" type="button" class="btn btn-warning">Previous</button>
+          <button ng-click="nextCandidateView()" type="button" class="btn btn-success">Next</button>
           <button type="button" ng-click="resetCandidateModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>

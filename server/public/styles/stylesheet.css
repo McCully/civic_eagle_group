@@ -383,3 +383,8 @@ navbar-fixed-top {
     margin: 0;
   }
 }
+
+/*---------------textAngular---------------*/
+.editorContainer {
+  text-align: left;
+}
