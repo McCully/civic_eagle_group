@@ -7,7 +7,7 @@ router.get('/' , function(req , res){
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
    .end(function(result){
-      var result = result.body;
+      res.send(result.body);
    });
 });
 
@@ -16,7 +16,7 @@ router.post('/' , function(req , res){
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
    .end(function(result){
-      var result = result.body;
+      res.send(result.body);
    });
 });
 
@@ -25,7 +25,7 @@ router.put('/:id' , function(req, res){
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
    .end(function(result){
-      var result = result.body;
+      res.send(result.body);
 
    });
 });
