@@ -1,7 +1,11 @@
 eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'IssuesService', function ($scope, $http, Admin, textAngularManager, IssuesService) {
 
   var header = 'Basic ' + Admin.getCred();
-  IssuesService.getIssues();
+
+
+  IssueService.getIssues().then(function(response) {
+
+  });
 
   // $http({
   //   method: 'GET',
