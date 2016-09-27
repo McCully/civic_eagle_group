@@ -1,6 +1,9 @@
 eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'IssuesService', function ($scope, $http, Admin, textAngularManager, IssuesService) {
   var header = 'Basic ' + Admin.getCred();
+<<<<<<< HEAD
   IssuesService.getIssues();
+=======
+>>>>>>> 994c25ea128c388a8ca12f255793c46fad3e74e6
   // $http({
   //   method: 'GET',
   //   url: "https://reps-staging.api.civiceagle.com/issues",
@@ -12,7 +15,7 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   //   console.log($scope.issueResults);
   // });
 
-  //---------* WYSIWYG *----------//
+  //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
   $scope.orightml = '<h1>CIVIC EAGLE API INFO!!!!!!!!</h1>';
@@ -35,6 +38,7 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
       $scope.showNext = false;
       $scope.showPrevious = true;
     }
+
     if(screenCounter == 1) {
       $scope.showFirst = false;
       $scope.showSecond = true;
@@ -42,12 +46,12 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
       $scope.showPrevious = false;
       $scope.showNext = false;
     }
+
     if(screenCounter == 2) {
       $scope.showSecond = false;
       $scope.showThird = true;
       $scope.showPrevious = false;
       $scope.showNext = true;
-
     }
   }
 
@@ -56,7 +60,7 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
     $scope.showFirst = true;
     $scope.showSecond = false;
     $scope.showThird = false;
-  }
+  };
 
   $scope.nextCandidateView = function() {
     screenCounter++;
@@ -65,11 +69,13 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
     }
     switchView();
     console.log("counter: ", screenCounter);
-  }
+  };
+
   $scope.prevCandidateView = function() {
     if(screenCounter == 0) {
       return;
     }
+
     screenCounter--;
     switchView();
     console.log("counter: ", screenCounter);
