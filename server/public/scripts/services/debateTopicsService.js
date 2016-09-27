@@ -1,9 +1,9 @@
-eagleApp.factory('DebateIssueService' , ['$http' , function($http){
+eagleApp.factory('DebateTopicsService' , ['$http' , function($http){
 
 
-  function getIssues(){
-    $http.get('/issuesRoute').then(function(response){
-      console.log("getting issues " , response);
+  function getDebateTopics(){
+    $http.get('/debateTopicsRoute').then(function(response){
+      console.log("getting topics " , response);
       console.log("data retrieved: " , response.data);
     });
   };
