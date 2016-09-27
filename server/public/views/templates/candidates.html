@@ -1,13 +1,12 @@
 <div ng-include = "'views/templates/sideNav.html'"></div>
 <div ng-include = "'views/templates/candidateModal.html'"></div>
+<button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#candidateModal">Add Candidate</button>
 <div class = "container">
   <div class="row">
-    <div class = "col-md-9">
-      <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#candidateModal">Add Candidate</button>
+    <div class = "col-md-12">
       <div class = "candidate-container">
         <div ng-repeat = "candidate in candidates">
-          <h2 class="candidates">{{candidate.firstName}}</h2>
-          <h2 class="candidates">{{candidate.lastName}}</h2>
+          <h2 class="candidates">{{candidate.firstName}} {{candidate.lastName}}</h2>
         </div>
       </div>
     </div>
