@@ -6,8 +6,8 @@
   <div class="row">
     <div class = "col-md-12">
       <div class = "candidate-container">
-        <div ng-repeat = "candidate in candidates">
-          <h2 class="candidates" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}</h2>
+        <div class="candidates" ng-repeat = "candidate in candidates">
+          <h2 data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}</h2>
         </div>
       </div>
     </div>
