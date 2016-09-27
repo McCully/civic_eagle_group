@@ -4,8 +4,7 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
     console.log(response.data);
   });
   var screenCounter = 0;
-  debatetService.getCandidate().then(function(response){
-  };
+
   switchView();
 
 
