@@ -16,7 +16,7 @@ var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular']);
     })
     .when('/debateTopics',{
       templateUrl: '/views/templates/debateTopics.html',
-      controller: 'topicsController'
+      controller: 'debateTopicsController'
     })
     .when('/issues', {
       templateUrl: '/views/templates/issues.html',
