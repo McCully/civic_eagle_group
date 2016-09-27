@@ -11,6 +11,14 @@ label {
   margin-bottom: 15px;
 }
 
+.sources{
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .form-signin
 {
    max-width: 330px;

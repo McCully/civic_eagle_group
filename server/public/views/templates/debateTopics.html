@@ -4,8 +4,8 @@
   <div class="row">
     <div class = "col-md-9">
       <div class = "topics-container">
-        <div ng-repeat = "topic in topicResults">
-          <h2>topic.title</h2>
+        <div ng-repeat = "topic in topics">
+          <h2 editable-text="topic.title">{{topic.title}}</h2>
         </div>
       </div>
       <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#debateTopicsModal">Add Debate Topic</button>
