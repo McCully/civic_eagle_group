@@ -1,6 +1,8 @@
 eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', function($scope, $http, Admin){
   var header = 'Basic' + Admin.getCred();
   var screenCounter = 0;
+  debatetService.getCandidate().then(function(response){
+  };
   switchView();
 
 
