@@ -1,9 +1,7 @@
 eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'CandidateService', function($scope, $http, Admin, CandidateService){
   var header = 'Basic ' + Admin.getCred();
   CandidateService.getCandidates().then(function(response){
-    console.log(response.data)
-  }
-);
+  };
 
   /* This counter tracks the modal form
    view we are on. Zero is the first view, one
