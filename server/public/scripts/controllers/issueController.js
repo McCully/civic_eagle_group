@@ -1,6 +1,8 @@
 eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'IssuesService', function ($scope, $http, Admin, textAngularManager, IssuesService) {
   var header = 'Basic ' + Admin.getCred();
-  IssuesService.getIssues();
+
+  IssueService.getIssues().then(function(response){
+  };
   // $http({
   //   method: 'GET',
   //   url: "https://reps-staging.api.civiceagle.com/issues",
@@ -12,15 +14,13 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   //   console.log($scope.issueResults);
   // });
 
-  //---------*WYSIWYG EDITOR*----------//
-
+  //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
   $scope.orightml = '<h1>CIVIC EAGLE API INFO!!!!!!!!</h1>';
   $scope.htmlcontent = $scope.orightml;
   $scope.disabled = false;
 
-  //---------*MODAL BUTTONS*----------//
 
   var screenCounter = 0;
   $scope.showFirst = true;
