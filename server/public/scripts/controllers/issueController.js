@@ -2,6 +2,8 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   var header = 'Basic ' + Admin.getCred();
   IssuesService.getIssues();
 
+
+
   // $http({
   //   method: 'GET',
   //   url: "https://reps-staging.api.civiceagle.com/issues",
