@@ -1,5 +1,5 @@
-eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'newsSourcesService', function ($scope, $http, Admin, textAngularManager, newsSourcesService) {
+eagleApp.controller('newsSourcesController', ['$scope', '$http', 'Admin', 'textAngularManager', 'newsSourcesService', function ($scope, $http, Admin, textAngularManager, newsSourcesService) {
   var header = 'Basic ' + Admin.getCred();
-  newsSourcesService.getSource().then(function(response){
-  };
+  // newsSourcesService.getSource().then(function(response){
+  // };
 }]);
