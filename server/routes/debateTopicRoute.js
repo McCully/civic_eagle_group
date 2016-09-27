@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/' , function(req , res){
-   unirest.get("https://debate-staging.api.civiceagle.com/topics")
+    unirest.get("https://debate-staging.api.civiceagle.com/topics")
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
    .end(function(result){
