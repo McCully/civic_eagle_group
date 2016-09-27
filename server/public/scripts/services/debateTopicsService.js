@@ -10,8 +10,6 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
     });
     return promise;
   };
-
-<<<<<<< HEAD
 /*
   function getIssues(){
     $http.get('/issuesRoute').then(function(response){
