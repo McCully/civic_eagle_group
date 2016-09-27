@@ -2,7 +2,7 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   var header = 'Basic ' + Admin.getCred();
 
   IssueService.getIssues().then(function(response){
-  };
+  });
   // $http({
   //   method: 'GET',
   //   url: "https://reps-staging.api.civiceagle.com/issues",
