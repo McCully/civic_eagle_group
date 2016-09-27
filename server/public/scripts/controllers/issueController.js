@@ -1,9 +1,11 @@
 eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'IssuesService', function ($scope, $http, Admin, textAngularManager, IssuesService) {
   var header = 'Basic ' + Admin.getCred();
 
-  // IssueService.getIssues().then(function(response) {
-  //
-  // });
+  IssuesService.getIssues().then(function(response) {
+    $scope.issues = response;
+    console.log($scope.issues);
+  });
+
   // $http({
   //   method: 'GET',
   //   url: "https://reps-staging.api.civiceagle.com/issues",
