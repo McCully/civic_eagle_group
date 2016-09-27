@@ -3,20 +3,20 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var unirest = require('unirest');
-var candidates = require("./routes/candidateRoute");
-var debateTopics = require("./routes/debateTopicRoute");
-var issues = require("./routes/issuesRoute");
-var newsTopics = require("./routes/newsTopicRoute");
+var candidateRoute = require("./routes/candidateRoute");
+var debateTopicRoute = require("./routes/debateTopicRoute");
+var issuesRoute = require("./routes/issuesRoute");
+var newsSourcesRoute = require("./routes/newsSourcesRoute");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, './public')));
 
-app.use('/candidateRoute' , candidates);
-app.use('/debateTopicRoute' , debateTopics);
-app.use('/issuesRoute' , issues);
-app.use('/newsTopicRoute', newsTopics);
+app.use('/candidateRoute' , candidateRoute);
+app.use('/debateTopicRoute' , debateTopicRoute);
+app.use('/issuesRoute' , issuesRoute);
+app.use('/newsSourcesRoute', newsSourcesRoute);
 
 app.set('port', (process.env.PORT || 5000));
 
