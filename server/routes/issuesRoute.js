@@ -6,9 +6,8 @@ router.get('/' , function(req , res){
    unirest.get("https://users-staging.api.civiceagle.com/issues")
    .header("Authorization", "Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=")
    .header("Accept", "application/json")
-   .end(function(res){
-      var result = res.body;
-      console.log(result);
+   .end(function(result){
+      var result = result.body;
    });
 });
 

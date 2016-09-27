@@ -1,5 +1,9 @@
-eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin',  function($scope, $http, Admin){
+eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'CandidateService', function($scope, $http, Admin, CandidateService){
   var header = 'Basic ' + Admin.getCred();
+  CandidateService.getCandidates().then(function(response){
+    console.log(response.data)
+  }
+);
 
   /* This counter tracks the modal form
    view we are on. Zero is the first view, one
@@ -14,18 +18,19 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin',  functio
   $scope.showNext = false;
   $scope.showPrevious = true;
 
-
+  /*
     $http({
       method: 'GET',
       url: "https://reps-staging.api.civiceagle.com/candidates",
       headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI='
-    , 'accept' : 'application/json'}
+    , 'accept' : 'application/json',
+  'Access-Control-Allow-Origin' : '*'}
     }).then(function(response){
       $scope.candidateResults = response.data;
       console.log($scope.candidateResults);
     });
 
-
+  */
 
 
 
