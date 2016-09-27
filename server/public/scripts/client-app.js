@@ -22,8 +22,9 @@ var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular']);
       templateUrl: '/views/templates/issues.html',
       controller: 'issueController'
     })
-    .when('/newsTopics',{
-      templateUrl: '/views/templates/newsTopics.html'
+    .when('/newsSource',{
+      templateUrl: '/views/templates/newsSources.html',
+      controller: 'newsSourcesController'
     })
 
     .otherwise({
