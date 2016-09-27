@@ -4,6 +4,19 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'Candida
     $scope.candidates = response;
   }
 );
+
+$scope.showCandidate = function(index) {
+  var candidate = $scope.candidates[index];
+  console.log("candidate: ", candidate);
+  // $scope.candidateName =
+  // $scope.candidateParty =
+  // $scope.candidateTwitter =
+  // $scope.candidateFacebook
+  // $scope.candidateSite =
+  // $scope.candidateImage =
+  // $scope.candidateIssue =
+  // $scope.candidateSummary =
+}
   /* This counter tracks the modal form
    view we are on. Zero is the first view, one
    is the second view and 2 is the third, etc. */
