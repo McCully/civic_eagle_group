@@ -3,12 +3,33 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Candidate</h4>
+        <h4 class="modal-title">Edit {{selectedCandidate.firstName}} {{selectedCandidate.lastName}}</h4>
       </div>
       <div class="modal-body">
-        <form class="form-signin" ng-submit="">
-
-
+        <form editable-form name="editCandidateForm" class="form-signin">
+          <div ng-show="showFirst">
+            <label for="#editFirstName">First Name</label>
+            <input id="editFirstName" class="form-control" value="{{selectedCandidate.firstName}}">
+            <label for="#editLastName">Last Name</label>
+            <input id="editFirstName" class="form-control" value="{{selectedCandidate.lastName}}">
+            <label for="#editParty">Political Party</label>
+            <input id="editFirstName" class="form-control" value="{{selectedCandidate.party}}">
+          </div>
+          <div ng-show="showSecond">
+            <label for="#editTwitter">Twitter ID</label>
+            <input id="editTwitter" value="{{selectedCandidate.twitterId}}" class="form-control" required autofocus>
+            <label for="#editFacebook">Facebook</label>
+            <input type="text" id="editFacebook" value="{{selectedCandidate.facebookId}}" class="form-control" required autofocus>
+            <label for="#editWebsite">Website</label>
+            <input type="text" id="editWebsite" value="{{selectedCandidate.website}}" class="form-control" required autofocus>
+            <label for="#editImage">Image</label>
+            <input type="text" id="editImage" value="{{selectedCandidate.image}}" class="form-control" required autofocus>
+          </div>
+          <div ng-show="showThird">
+            <label for="#issue">Issue</label>
+            <input type="text" id="issue" ng-model="candidate" class="form-control" placeholder="Issue" required autofocus>
+            <label for="issueSummary"></label>
+          </div>
         </form>
       <div class="modal-footer">
         <button ng-click="nextCandidateView()" type="button" ng-hide = "showNext" class="btn btn-success">Next</button>
