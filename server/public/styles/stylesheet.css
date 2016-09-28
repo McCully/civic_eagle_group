@@ -8,6 +8,19 @@ label {
   color: black;
 }
 
+.issues {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-width: 75%;
+}
+
+.issues:hover {
+  color: orange;
+}
+
 .topics {
   text-align: center;
   margin: 0 auto;
