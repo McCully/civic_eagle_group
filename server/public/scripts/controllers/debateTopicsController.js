@@ -4,7 +4,7 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
     $scope.topics = response;
   });
   var screenCounter = 0;
-  switchView();
+  $scope.switchView();
 
 
 //  $http({
@@ -22,40 +22,19 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
 
 
 */
-  function switchView() {
-  if(screenCounter == 0) {
-    $scope.showFirst = true;
-    $scope.showSecond = false;
-    $scope.showNext = false;
-    $scope.showPrev = true;
-  }
-  if(screenCounter == 1) {
-    $scope.showFirst = false;
-    $scope.showSecond = true;
-    $scope.showNext = true;
-    $scope.showPrev = false;
-  }
-}
+//   function switchView() {
+//   if(screenCounter == 0) {
+//     $scope.showFirst = true;
+//     $scope.showSecond = false;
+//     $scope.showNext = false;
+//     $scope.showPrev = true;
+//   }
+//   if(screenCounter == 1) {
+//     $scope.showFirst = false;
+//     $scope.showSecond = true;
+//     $scope.showNext = true;
+//     $scope.showPrev = false;
+//   }
+// }
 
-$scope.resetTopicModal = function() {
-  var screenCounter = 0;
-  $scope.showFirst = true;
-  $scope.showSecond = false;
-}
-
-$scope.nextTopicView = function() {
-  screenCounter++;
-  if(screenCounter > 1) {
-    screenCounter = 1;
-    return;
-  }
-  switchView();
-}
-$scope.prevTopicView = function() {
-  if(screenCounter == 0) {
-    return;
-  }
-  screenCounter--;
-  switchView();
-}
 }]);

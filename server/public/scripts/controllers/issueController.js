@@ -25,62 +25,37 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   $scope.disabled = false;
 
 
-  var screenCounter = 0;
-  $scope.showFirst = true;
-  $scope.showSecond = false;
-  $scope.showThird = false;
-  $scope.showNext = false;
-  $scope.showPrevious = true;
-
-  function switchView() {
-    if(screenCounter == 0) {
-      $scope.showFirst = true;
-      $scope.showSecond = false;
-      $scope.showThird = false;
-      $scope.showNext = false;
-      $scope.showPrevious = true;
-    }
-
-    if(screenCounter == 1) {
-      $scope.showFirst = false;
-      $scope.showSecond = true;
-      $scope.showThird = false;
-      $scope.showPrevious = false;
-      $scope.showNext = false;
-    }
-
-    if(screenCounter == 2) {
-      $scope.showSecond = false;
-      $scope.showThird = true;
-      $scope.showPrevious = false;
-      $scope.showNext = true;
-    }
-  }
-
-  $scope.resetCandidateModal = function() {
-    var screenCounter = 0;
-    $scope.showFirst = true;
-    $scope.showSecond = false;
-    $scope.showThird = false;
-  };
-
-  $scope.nextCandidateView = function() {
-    screenCounter++;
-    if(screenCounter > 2) {
-      screenCounter = 2;
-    }
-    switchView();
-    console.log("counter: ", screenCounter);
-  };
-
-  $scope.prevCandidateView = function() {
-    if(screenCounter == 0) {
-      return;
-    }
-
-    screenCounter--;
-    switchView();
-    console.log("counter: ", screenCounter);
-  };
+  // var screenCounter = 0;
+  // $scope.showFirst = true;
+  // $scope.showSecond = false;
+  // $scope.showThird = false;
+  // $scope.showNext = false;
+  // $scope.showPrevious = true;
+  //
+  // function switchView() {
+  //   if(screenCounter == 0) {
+  //     $scope.showFirst = true;
+  //     $scope.showSecond = false;
+  //     $scope.showThird = false;
+  //     $scope.showNext = false;
+  //     $scope.showPrevious = true;
+  //   }
+  //
+  //   if(screenCounter == 1) {
+  //     $scope.showFirst = false;
+  //     $scope.showSecond = true;
+  //     $scope.showThird = false;
+  //     $scope.showPrevious = false;
+  //     $scope.showNext = false;
+  //   }
+  //
+  //   if(screenCounter == 2) {
+  //     $scope.showSecond = false;
+  //     $scope.showThird = true;
+  //     $scope.showPrevious = false;
+  //     $scope.showNext = true;
+  //   }
+  // }
+  //
 
 }]);
