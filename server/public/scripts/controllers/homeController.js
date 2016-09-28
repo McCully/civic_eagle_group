@@ -53,7 +53,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
         screenCounter = 2;
       }
       $scope.switchView();
-      console.log("counter: ", screenCounter);
+
     }
     $scope.prevCandidateView = function() {
       if(screenCounter == 0) {
@@ -61,7 +61,6 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       }
       screenCounter--;
       $scope.switchView();
-      console.log("counter: ", screenCounter);
     }
 
     $scope.resetCandidateModal = function() {
@@ -77,17 +76,14 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
         screenCounter = 2;
       }
       $scope.switchView();
-      console.log("counter: ", screenCounter);
     };
 
     $scope.prevCandidateView = function() {
       if(screenCounter == 0) {
         return;
       }
-
       screenCounter--;
       $scope.switchView();
-      console.log("counter: ", screenCounter);
     };
 
     $scope.resetTopicModal = function() {
@@ -133,8 +129,4 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       screenCounter--;
       $scope.switchView();
     }
-
-
-
-
 }]);
