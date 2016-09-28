@@ -6,17 +6,6 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
     console.log($scope.issues);
   });
 
-  // $http({
-  //   method: 'GET',
-  //   url: "https://reps-staging.api.civiceagle.com/issues",
-  //   headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI=',
-  //   'accept': 'application/json',
-  //   'Access-Control-Allow-Origin': '*'}
-  // }).then(function (response) {
-  //   $scope.issueResults = response.data;
-  //   console.log($scope.issueResults);
-  // });
-
   //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
@@ -24,38 +13,5 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   $scope.htmlcontent = $scope.orightml;
   $scope.disabled = false;
 
-
-  // var screenCounter = 0;
-  // $scope.showFirst = true;
-  // $scope.showSecond = false;
-  // $scope.showThird = false;
-  // $scope.showNext = false;
-  // $scope.showPrevious = true;
-  //
-  // function switchView() {
-  //   if(screenCounter == 0) {
-  //     $scope.showFirst = true;
-  //     $scope.showSecond = false;
-  //     $scope.showThird = false;
-  //     $scope.showNext = false;
-  //     $scope.showPrevious = true;
-  //   }
-  //
-  //   if(screenCounter == 1) {
-  //     $scope.showFirst = false;
-  //     $scope.showSecond = true;
-  //     $scope.showThird = false;
-  //     $scope.showPrevious = false;
-  //     $scope.showNext = false;
-  //   }
-  //
-  //   if(screenCounter == 2) {
-  //     $scope.showSecond = false;
-  //     $scope.showThird = true;
-  //     $scope.showPrevious = false;
-  //     $scope.showNext = true;
-  //   }
-  // }
-  //
 
 }]);
