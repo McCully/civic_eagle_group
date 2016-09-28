@@ -11,6 +11,19 @@ label {
   margin-bottom: 15px;
 }
 
+.container {
+  margin-left: auto;
+  max-width: 500px;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+}
+
+.topics-container h2:hover {
+ color: rgba(246,140,36,.9);
+ text-shadow: 1px 1px lightgray;
+}
+
 .form-signin
 {
    max-width: 330px;

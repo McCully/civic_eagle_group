@@ -1,14 +1,15 @@
 <div ng-include="'views/templates/sideNav.html'"></div>
-<div ng-include = "'views/templates/debateTopicsModal.html'"></div>
+<div ng-include="'views/templates/debateTopicsModal.html'"></div>
+<div ng-include="'views/templates/debateTopicsModalUpdate.html'"></div>
+<button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#debateTopicsModal">Add Debate Topic</button>
 <div class = "container">
   <div class="row">
-    <div class = "col-md-9">
+    <div class = "col-md-12">
       <div class = "topics-container">
-        <div ng-repeat = "topic in topics">
-          <h2 editable-text="topic.title">{{topic.title}}</h2>
-        </div>
+        <div ng-repeat="topic in topics">
+          <h2 class="topics" data-toggle="modal" data-target="#debateTopicsModalUpdate" ng-click="showTopic(topic)" ng-hover>{{topic.title}}</h2>
       </div>
-      <button type="button" class="btn btn-info btn-lg" style="float: right;" data-toggle="modal" data-target="#debateTopicsModal">Add Debate Topic</button>
+      </div>
     </div>
   </div>
 </div>

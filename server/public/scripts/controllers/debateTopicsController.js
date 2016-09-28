@@ -22,6 +22,13 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
 
 
 */
+
+$scope.showTopic = function(topic){
+  console.log(topic);
+  $scope.topic = topic;
+  $scope.htmlcontent = topic.summary;
+};
+
   function switchView() {
   if(screenCounter == 0) {
     $scope.showFirst = true;

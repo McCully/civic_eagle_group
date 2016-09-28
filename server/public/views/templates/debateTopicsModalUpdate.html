@@ -1,0 +1,30 @@
+<div id="debateTopicsModalUpdate" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{topic.title}}</h4>
+      </div>
+      <div class="modal-body">
+          <div ng-show="showFirst">
+          <h2 editable-text="topic.title">Title: {{topic.title}}</h2>
+          <p>Slug: {{topic.slug}}</p>
+          <p>Summary</p>
+            <div ng-include="'views/templates/editor.html'"></div>
+          </div>
+          <div ng-show="showSecond">
+            <p>Image: {{topic.image}}</p>
+            <label for="#issues">Issues</label>
+            <select type="select" id="issues" ng-model="topic.issues" class="form-control" placeholder="Issues" required autofocus></select>
+            <label for="#active">Active</label>
+            <input type="checkbox" id="active" ng-model="topic.active">
+          </div>
+      <div class="modal-footer">
+        <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-success">Next</button>
+        <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-warning">Previous</button>
+        <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
