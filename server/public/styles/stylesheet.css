@@ -8,12 +8,26 @@ label {
   color: black;
 }
 
+.topics {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-width: 75%;
+}
+
+.topics:hover {
+  color: orange;
+}
+
 .candidates {
   text-align: center;
   margin: 0 auto;
   display: block;
   margin-top: 15px;
   margin-bottom: 15px;
+  max-width: 75%;
 }
 
 .candidates:hover {
