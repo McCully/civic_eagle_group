@@ -3,6 +3,10 @@ label {
   margin-top: 10px;
 }
 
+.button {
+  color: orange;
+}
+
 .candidates {
   text-align: center;
   margin: 0 auto;
