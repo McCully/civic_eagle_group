@@ -2,9 +2,11 @@
 
 eagleApp.controller('homeController', ['$scope' , function($scope) {
 
-  $scope.changeColor = function() {
-    console.log("Click");
-  }
+  $scope.highlighted = false;
+  $scope.changeColor = function () {
+    $scope.highlighted = true;
+    console.log('click works');
+  };
 
   /* This counter tracks the modal form
    view we are on. Zero is the first view, one

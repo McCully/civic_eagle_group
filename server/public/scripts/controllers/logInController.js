@@ -15,7 +15,6 @@ eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$ht
         cred: cred,
       },
     }).then(function(response){
-      console.log(response);
     });
      $location.path('/home');
   };

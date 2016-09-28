@@ -7,7 +7,6 @@ var credentials;
 
 router.post('/', function (req, res) {
   credentials = req.body.cred;
-  console.log(credentials);
   res.sendStatus(200);
 });
 
@@ -17,7 +16,6 @@ return credentials;
 
 function setCred(cred){
   credentials = cred;
-  console.log(credentials);
 }
 
 

@@ -415,7 +415,10 @@ navbar-fixed-top {
   #dropdown .panel-body .navbar-nav {
     margin: 0;
   }
-}
+
+  .highlighted {
+    background-color: orange;
+  }
 
 /*---------------textAngular---------------*/
 .editorContainer {
