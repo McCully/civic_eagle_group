@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$http', function($scope, $location, Admin, $http){
 
   $scope.submitAdmin = function(){

@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.factory('newsSourcesService' , ['$http' , function($http){
 
   function getSources(){

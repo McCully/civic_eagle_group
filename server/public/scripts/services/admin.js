@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.factory('Admin' , ['$http' ,function($http) {
   var credentials;
 

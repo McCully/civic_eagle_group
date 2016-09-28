@@ -1,3 +1,5 @@
+"use strict";
+
 var unirest = require('unirest');
 var express = require('express');
 var router = express.Router();

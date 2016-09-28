@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'IssuesService', function ($scope, $http, Admin, textAngularManager, IssuesService) {
   var header = 'Basic ' + Admin.getCred();
 

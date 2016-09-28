@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'CandidateService', function($scope, $http, Admin, CandidateService){
   var header = 'Basic ' + Admin.getCred();
   CandidateService.getCandidates().then(function(response){

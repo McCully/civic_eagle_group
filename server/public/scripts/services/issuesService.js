@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.factory('IssuesService' , ['$http' , function($http){
 
   function getIssues(){

@@ -1,3 +1,4 @@
+"use strict";
 
 eagleApp.factory('DebateTopicsService', ['$http', function($http){
 

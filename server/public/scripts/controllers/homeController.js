@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.controller('homeController', ['$scope' , function($scope) {
 
   $scope.changeColor = function() {
