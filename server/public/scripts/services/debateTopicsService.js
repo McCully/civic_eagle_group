@@ -2,11 +2,8 @@
 
 eagleApp.factory('DebateTopicsService', ['$http', function($http){
 
-
-  function getDebateTopics(){
+  function getDebateTopics() {
       var promise = $http.get('/debateTopicRoute').then(function(response){
-      console.log("Topics Data", response);
-      console.log("Data", response.data);
       return response.data;
     });
     return promise;
@@ -44,6 +41,6 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
   return {
     getDebateTopics: getDebateTopics,
     updateTopic: updateTopic
-  }
+  };
 
-}])
+}]);

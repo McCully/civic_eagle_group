@@ -1,8 +1,9 @@
+"use strict";
+
 var unirest = require('unirest');
 var express = require('express');
 var router = express.Router();
 var credentials = require('./cred');
-
 
 router.post('/cred', function(req, res){
   var cred = req.body;

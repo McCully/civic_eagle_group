@@ -3,12 +3,17 @@
 eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$http', function($scope, $location, Admin, $http){
 
   $scope.submitAdmin = function(){
-    console.log($scope.admin);
+    /* Generate the credentials from the username and password
+      so we can access the backends REST api. */
     var cred = window.btoa($scope.admin.username + ':' + $scope.admin.password);
+
+    /* Clear username and password. */
     $scope.admin.username = '';
     $scope.admin.password = '';
+
+    /* Store the credentials for later use by other
+       controllers and services.  */
     Admin.setCred(cred);
-     console.log(cred);
 
      $http({
       method: 'POST',
@@ -17,7 +22,6 @@ eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$ht
         cred: cred,
       },
     }).then(function(response){
-      console.log(response);
     });
      $location.path('/home');
   };

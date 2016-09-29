@@ -1,6 +1,6 @@
 "use strict";
 
-var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable']);
+var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable', 'angular-loading-bar']);
 
   eagleApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
@@ -28,8 +28,7 @@ var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable'
       templateUrl: '/views/templates/newsSources.html',
       controller: 'newsSourcesController'
     })
-
     .otherwise({
       redirectTo: 'logIn'
-    })
+    });
   }]);
