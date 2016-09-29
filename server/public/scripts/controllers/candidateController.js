@@ -16,6 +16,6 @@ eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'Candida
 $scope.showCandidate = function(index) {
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
-}
+};
 
 }]);

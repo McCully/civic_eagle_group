@@ -22,7 +22,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
   $scope.showPrevious = true;
 
   $scope.switchView = function () {
-    if(screenCounter == 0) {
+    if(screenCounter === 0) {
       $scope.showFirst = true;
       $scope.showSecond = false;
       $scope.showThird = false;
@@ -42,30 +42,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       $scope.showNext = true;
       $scope.showPrevious = false;
     }
-  }
-
-    $scope.resetCandidateModal = function() {
-      var screenCounter = 0;
-      $scope.showFirst = true;
-      $scope.showSecond = false;
-      $scope.showThird = false;
-    }
-
-    $scope.nextCandidateView = function() {
-      screenCounter++;
-      if(screenCounter > 2) {
-        screenCounter = 2;
-      }
-      $scope.switchView();
-
-    }
-    $scope.prevCandidateView = function() {
-      if(screenCounter == 0) {
-        return;
-      }
-      screenCounter--;
-      $scope.switchView();
-    }
+  };
 
     $scope.resetCandidateModal = function() {
       var screenCounter = 0;
@@ -83,7 +60,30 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
     };
 
     $scope.prevCandidateView = function() {
-      if(screenCounter == 0) {
+      if(screenCounter === 0) {
+        return;
+      }
+      screenCounter--;
+      $scope.switchView();
+    };
+
+    $scope.resetCandidateModal = function() {
+      var screenCounter = 0;
+      $scope.showFirst = true;
+      $scope.showSecond = false;
+      $scope.showThird = false;
+    };
+
+    $scope.nextCandidateView = function() {
+      screenCounter++;
+      if(screenCounter > 2) {
+        screenCounter = 2;
+      }
+      $scope.switchView();
+    };
+
+    $scope.prevCandidateView = function() {
+      if(screenCounter === 0) {
         return;
       }
       screenCounter--;
@@ -94,7 +94,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       var screenCounter = 0;
       $scope.showFirst = true;
       $scope.showSecond = false;
-    }
+    };
 
     $scope.nextTopicView = function() {
       screenCounter++;
@@ -103,20 +103,21 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
         return;
       }
       $scope.switchView();
-    }
+    };
+
     $scope.prevTopicView = function() {
-      if(screenCounter == 0) {
+      if(screenCounter === 0) {
         return;
       }
       screenCounter--;
       $scope.switchView();
-    }
+    };
 
     $scope.resetTopicModal = function() {
       var screenCounter = 0;
       $scope.showFirst = true;
       $scope.showSecond = false;
-    }
+    };
 
     $scope.nextTopicView = function() {
       screenCounter++;
@@ -125,12 +126,13 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
         return;
       }
       $scope.switchView();
-    }
+    };
+
     $scope.prevTopicView = function() {
-      if(screenCounter == 0) {
+      if(screenCounter === 0) {
         return;
       }
       screenCounter--;
       $scope.switchView();
-    }
+    };
 }]);

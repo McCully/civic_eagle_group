@@ -18,10 +18,6 @@ function setCred(cred){
   credentials = cred;
 }
 
-
-
-
-
 module.exports = {
   router: router,
   getCred: getCred,

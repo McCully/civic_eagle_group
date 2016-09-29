@@ -5,7 +5,6 @@ var express = require('express');
 var router = express.Router();
 var credentials = require('./cred');
 
-
 router.get('/' , function(req , res){
     unirest.get("https://debate-staging.api.civiceagle.com/topics")
     .header("Authorization", "Basic " + credentials.getCred())

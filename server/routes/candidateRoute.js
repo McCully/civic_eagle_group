@@ -5,7 +5,6 @@ var express = require('express');
 var router = express.Router();
 var credentials = require('./cred');
 
-
 router.post('/cred', function(req, res){
   var cred = req.body;
   credentials.setCred(cred);

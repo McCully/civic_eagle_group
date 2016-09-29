@@ -10,7 +10,7 @@ eagleApp.factory('Admin' , ['$http' ,function($http) {
 
   function getCred(){
     return credentials;
-  };
+  }
 
 
 return{
