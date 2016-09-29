@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -7,6 +9,8 @@ var candidateRoute = require("./routes/candidateRoute");
 var debateTopicRoute = require("./routes/debateTopicRoute");
 var issuesRoute = require("./routes/issuesRoute");
 var newsSourcesRoute = require("./routes/newsSourcesRoute");
+var credentials = require('./routes/cred');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,6 +21,7 @@ app.use('/candidateRoute' , candidateRoute);
 app.use('/debateTopicRoute' , debateTopicRoute);
 app.use('/issuesRoute' , issuesRoute);
 app.use('/newsSourcesRoute', newsSourcesRoute);
+app.use('/cred', credentials.router);
 
 app.set('port', (process.env.PORT || 5000));
 

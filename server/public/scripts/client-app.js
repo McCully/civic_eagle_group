@@ -1,3 +1,5 @@
+"use strict";
+
 var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable']);
 
   eagleApp.config(['$routeProvider', function($routeProvider){
@@ -22,7 +24,7 @@ var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable'
       templateUrl: '/views/templates/issues.html',
       controller: 'issueController'
     })
-    .when('/newsSource',{
+    .when('/newsSources',{
       templateUrl: '/views/templates/newsSources.html',
       controller: 'newsSourcesController'
     })

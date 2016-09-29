@@ -1,5 +1,6 @@
-eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , function($scope, $location, Admin){
+"use strict";
 
+eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$http', function($scope, $location, Admin, $http){
 
   $scope.submitAdmin = function(){
     console.log($scope.admin);
@@ -8,6 +9,16 @@ eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , func
     $scope.admin.password = '';
     Admin.setCred(cred);
      console.log(cred);
-    $location.path('/home')
-  }
+
+     $http({
+      method: 'POST',
+      url: "/cred",
+      data: {
+        cred: cred,
+      },
+    }).then(function(response){
+      console.log(response);
+    });
+     $location.path('/home');
+  };
 }]);

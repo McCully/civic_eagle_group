@@ -1,10 +1,12 @@
+"use strict";
+
 eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'DebateTopicsService', function($scope, $http, Admin, DebateTopicsService) {
   var header = 'Basic' + Admin.getCred();
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
   });
-  var screenCounter = 0;
-  switchView();
+
+
 
 
 //  $http({
@@ -17,11 +19,14 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
 //   console.log($scope.topicsResults);
 // });
 //
+$scope.updateTopic = function(topic){
+DebateTopicsService.updateTopic(topic).then(function(response){
+  console.log(response);
+});
+}
 
-/*
 
 
-*/
 
 $scope.showTopic = function(topic){
   console.log(topic);
@@ -50,19 +55,7 @@ $scope.resetTopicModal = function() {
   $scope.showSecond = false;
 }
 
-$scope.nextTopicView = function() {
-  screenCounter++;
-  if(screenCounter > 1) {
-    screenCounter = 1;
-    return;
-  }
-  switchView();
-}
-$scope.prevTopicView = function() {
-  if(screenCounter == 0) {
-    return;
-  }
-  screenCounter--;
-  switchView();
-}
+  $scope.switchView();
+
+
 }]);

@@ -1,3 +1,4 @@
+"use strict";
 
 eagleApp.factory('DebateTopicsService', ['$http', function($http){
 
@@ -9,6 +10,21 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
       return response.data;
     });
     return promise;
+  };
+
+  function updateTopic(topic) {
+    var id = topic._id;
+    console.log(id);
+    var promise = $http.put('/debateTopicRoute/' + id, topic).then(function(response){
+    console.log(response);
+    })
+    console.log(topic);
+    /*
+      var promise = $http.put('/debateTopicRoute').then(function(response){
+      return response.data;
+    });
+    return promise;
+    */
   };
 /*
   function getIssues(){
@@ -26,7 +42,8 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
 */
 
   return {
-    getDebateTopics: getDebateTopics
+    getDebateTopics: getDebateTopics,
+    updateTopic: updateTopic
   }
 
 }])

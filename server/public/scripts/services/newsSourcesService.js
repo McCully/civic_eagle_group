@@ -1,15 +1,18 @@
+"use strict";
+
 eagleApp.factory('newsSourcesService' , ['$http' , function($http){
 
-  function getNews(){
-    var promise = $http.get('/newsSourceRoute').then(function(response){
+  function getSources(){
+    var promise = $http.get('/newsSourcesRoute').then(function(response){
       console.log("getting sources " , response);
       console.log("data retrieved: " , response.data);
+      return response.data;
     });
     return promise;
   };
 
 
   return {
-    getNews: getNews
+    getSources: getSources,
   }
 }]);

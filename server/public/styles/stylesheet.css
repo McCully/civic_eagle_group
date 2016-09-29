@@ -3,6 +3,11 @@ label {
   margin-top: 10px;
 }
 
+.button {
+  background-color: orange;
+  color: black;
+}
+
 .candidates {
   text-align: center;
   margin: 0 auto;
@@ -10,6 +15,7 @@ label {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 
 .container {
   margin-left: auto;
@@ -22,6 +28,28 @@ label {
 .topics-container h2:hover {
  color: rgba(246,140,36,.9);
  text-shadow: 1px 1px lightgray;
+
+}
+
+.candidates:hover {
+  color: orange;
+}
+
+.sources{
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.issues{
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+>>>>>>> 69f5286cdcaedd62acde5bacddad132a923c2272
 }
 
 .form-signin

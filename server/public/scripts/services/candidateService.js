@@ -1,3 +1,5 @@
+"use strict";
+
 eagleApp.factory('CandidateService' , ['$http' , function($http){
 
 
