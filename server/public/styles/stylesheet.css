@@ -17,14 +17,12 @@ label {
   max-width: 75%;
 }
 
-
 .topics-container h2:hover {
  color: rgba(246,140,36,.9);
  text-shadow: 1px 1px lightgray;
 
 }
 
-.candidates:hover {
 .issues:hover {
   color: orange;
 }
@@ -48,11 +46,7 @@ label {
   display: block;
   margin-top: 15px;
   margin-bottom: 15px;
-<<<<<<< HEAD
->>>>>>> 69f5286cdcaedd62acde5bacddad132a923c2272
-=======
   max-width: 75%;
->>>>>>> cd24bcd18c8b295d08d874c98cace024bf484a02
 }
 
 .candidates:hover {
@@ -81,4 +75,18 @@ label {
 
   margin-right: auto;
   margin-left: auto;
+}
+
+/*--------------xeditable-----------------*/
+
+.editable-wrap  {
+}
+
+.editable-has-buttons {
+  border: none;
+  width: 100%;
+}
+.editable-buttons {
+  border: 5px solid blue;
+  padding: 5px;
 }
