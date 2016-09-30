@@ -1,6 +1,6 @@
 "use strict";
 
-var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable', 'angular-loading-bar']);
+var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable', 'angular-loading-bar', 'ui.select', 'ngSanitize']);
 
   eagleApp.config(['$routeProvider', function($routeProvider){
     $routeProvider

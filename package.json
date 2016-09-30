@@ -21,6 +21,7 @@
     "path": "^0.12.7",
     "select2": "^4.0.3",
     "textangular": "^1.5.10",
+    "ui-select": "^0.19.4",
     "unirest": "^0.5.1"
   }
 }
