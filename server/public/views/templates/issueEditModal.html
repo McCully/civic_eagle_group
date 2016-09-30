@@ -1,0 +1,33 @@
+<div id="issueEditModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit {{selectedCandidate.firstName}} {{selectedCandidate.lastName}}</h4>
+      </div>
+      <div class="modal-body">
+        <form editable-form name="editCandidateForm" class="form-signin">
+          <div ng-show="showFirst">
+            <label for="#title">Title</label>
+            <input type="text" id="title" class="form-control" value="{{selectedIssue.title}}" required autofocus>
+            <label for="#slug">Slug</label>
+            <input type="text" id="slug" class="form-control" value="{{selectedIssue.slug}}" required autofocus>
+          </div>
+          <div ng-show="showSecond">
+            <label for="#stateCriteria">State Criteria</label>
+            <input type="text" id="stateCriteria" class="form-control" value="{{selectedIssue.stateCriteria}}" required autofocus>
+            <label for="#federalCriteria">Federal Criteria</label>
+            <input type="text" id="federalCriteria" class="form-control" value="{{selectedIssue.federalCriteria}}" required autofocus>
+          </div>
+          <div ng-show="showThird">
+            <label for="#summary">Summary</label>
+          </div>
+        </form>
+      <div class="modal-footer">
+        <button ng-click="nextCandidateView()" type="button" ng-hide = "showNext" class="btn btn-success">More</button>
+        <button ng-click="prevCandidateView()" type="button" ng-hide = "showPrevious" class="btn btn-warning">Previous</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,13 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
     console.log($scope.issues);
   });
 
+  $scope.showIssue = function(index) {
+    $scope.resetCounter();
+    var issue = $scope.issues[index];
+    console.log("issue: ", issue);
+    $scope.selectedIssue = issue;
+  }
+
   //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
