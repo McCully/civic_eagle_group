@@ -14,13 +14,19 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   })
 
 
-  //---------* WYSIWYG EDITOR*----------//
+  //---------* UPDATE DEBATE TOPIC EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
   $scope.debateOrigHtml = '<h1>Debate Topics</h1>';
   $scope.debateContent = $scope.debateOrigHtml;
   $scope.disabled = false;
 
+  //---------* NEW DEBATE TOPIC EDITOR*----------//
+  $scope.version = textAngularManager.getVersion();
+  $scope.versionNumber = $scope.version.substring(1);
+  $scope.newDebateOrigHtml = '<h1>New Debate Topics</h1>';
+  $scope.newDebateContent = $scope.newDebateOrigHtml;
+  $scope.disabled = false;
 
 
 //  $http({
