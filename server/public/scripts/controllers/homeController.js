@@ -12,13 +12,18 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
    is the second view and 2 is the third, etc. */
   var screenCounter = 0;
 
+  $scope.resetCounter = function() {
+    screenCounter = 0;
+    $scope.showFirst = true;
+    $scope.showSecond = false;
+    $scope.showThird = false;
+    $scope.showNext = false;
+    $scope.showPrevious = true;
+  }
+
   /* Show the first form and hide the other two forms by default.
    Setting the $scope.show* variables will show their respective forms. */
-  $scope.showFirst = true;
-  $scope.showSecond = false;
-  $scope.showThird = false;
-  $scope.showNext = false;
-  $scope.showPrevious = true;
+  $scope.resetCounter();
 
   $scope.switchView = function() {
     if(screenCounter === 0) {
@@ -43,13 +48,6 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
     }
   };
 
-  $scope.resetCandidateModal = function() {
-    var screenCounter = 0;
-    $scope.showFirst = true;
-    $scope.showSecond = false;
-    $scope.showThird = false;
-  };
-
   $scope.nextCandidateView = function() {
     screenCounter++;
     if(screenCounter > 2) {
@@ -64,12 +62,6 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
     }
     screenCounter--;
     $scope.switchView();
-  };
-
-  $scope.resetTopicModal = function() {
-    var screenCounter = 0;
-    $scope.showFirst = true;
-    $scope.showSecond = false;
   };
 
   $scope.nextTopicView = function() {
