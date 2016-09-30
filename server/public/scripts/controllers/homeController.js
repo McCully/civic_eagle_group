@@ -19,7 +19,6 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
     $scope.showThird = false;
     $scope.showNext = false;
     $scope.showPrevious = true;
-    console.log("Reset: ", screenCounter);
   }
 
   /* Show the first form and hide the other two forms by default.
@@ -31,7 +30,6 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
   $scope.showPrevious = true;
 
   $scope.switchView = function() {
-    console.log("counter: ", screenCounter);
     if(screenCounter === 0) {
       $scope.showFirst = true;
       $scope.showSecond = false;
