@@ -46,4 +46,14 @@ DebateTopicsService.updateTopic(topic).then(function(response){
 });
 }
 
+
+
+
+
+$scope.showTopic = function(topic){
+  console.log(topic);
+  $scope.topic = topic;
+  $scope.htmlcontent = topic.summary;
+};
+
 }]);

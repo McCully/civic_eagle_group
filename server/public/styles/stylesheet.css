@@ -53,6 +53,13 @@ label {
   color: black;
 }
 
+.add {
+  position: fixed;
+  float: right !important;
+  right: 0px;
+
+}
+
 .issues {
   text-align: center;
   margin: 0 auto;
