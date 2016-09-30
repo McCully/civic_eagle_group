@@ -45,7 +45,7 @@
 }
 
 .side-menu a:hover  {
-  background-color: rgba(246,140,36,.9);
+  background-color: #f68c24;
 }
 
 .side-menu {
@@ -177,7 +177,7 @@ navbar-fixed-top {
     height: 100%;
     border-right: 1px solid #e7e7e7;
     /*background-color: #f8f8f8;*/
-    background-color: rgba(246,140,36,.9);
+    background-color: #f68c24;
     -moz-animation: slideout 300ms forwards;
     -o-animation: slideout 300ms forwards;
     -webkit-animation: slideout 300ms forwards;

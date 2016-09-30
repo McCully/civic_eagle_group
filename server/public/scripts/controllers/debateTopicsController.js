@@ -11,7 +11,7 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   IssuesService.getIssues().then(function(response){
     console.log(response);
     $scope.issues = response;
-  })
+  });
 
 
   //---------* UPDATE DEBATE TOPIC EDITOR*----------//

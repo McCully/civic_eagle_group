@@ -4,7 +4,7 @@ label {
 }
 
 .button {
-  background-color: orange;
+  background-color: #f68c24;
   color: black;
 }
 
@@ -18,13 +18,13 @@ label {
 }
 
 .topics-container h2:hover {
- color: rgba(246,140,36,.9);
+ color: #f68c24;
  text-shadow: 1px 1px lightgray;
 
 }
 
 .issues:hover {
-  color: orange;
+  color: #f68c24;
 }
 
 .topics {
@@ -37,7 +37,7 @@ label {
 }
 
 .topics:hover {
-  color: orange;
+  color: #f68c24;
 }
 
 .candidates {
@@ -50,7 +50,7 @@ label {
 }
 
 .candidates:hover {
-  color: orange;
+  color: #f68c24;
 }
 
 .sources {
