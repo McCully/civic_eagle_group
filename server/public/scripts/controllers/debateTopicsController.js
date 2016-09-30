@@ -14,12 +14,31 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   })
 
 
-  //---------* WYSIWYG EDITOR*----------//
+  //---------* UPDATE DEBATE TOPIC EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
   $scope.debateOrigHtml = '<h1>Debate Topics</h1>';
   $scope.debateContent = $scope.debateOrigHtml;
   $scope.disabled = false;
+
+  //---------* NEW DEBATE TOPIC EDITOR*----------//
+  $scope.version = textAngularManager.getVersion();
+  $scope.versionNumber = $scope.version.substring(1);
+  $scope.newDebateOrigHtml = '<h1>New Debate Topics</h1>';
+  $scope.newDebateContent = $scope.newDebateOrigHtml;
+  $scope.disabled = false;
+
+
+//  $http({
+//   method: 'GET',
+//   url: "https://debate-staging.api.civiceagle.com/topics",
+//   headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI='
+// , 'accept' : 'application/json'}
+// }).then(function(response){
+//   $scope.topicsResults = response.data;
+//   console.log($scope.topicsResults);
+// });
+//
 
 $scope.updateTopic = function(topic){
 DebateTopicsService.updateTopic(topic).then(function(response){
