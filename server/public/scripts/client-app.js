@@ -28,8 +28,7 @@ var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'xeditable'
       templateUrl: '/views/templates/newsSources.html',
       controller: 'newsSourcesController'
     })
-
     .otherwise({
       redirectTo: 'logIn'
-    })
+    });
   }]);

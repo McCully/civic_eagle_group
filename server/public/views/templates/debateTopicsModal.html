@@ -21,7 +21,9 @@
             <label for="#image">Image</label>
             <input type="text" id="image" ng-model="topic.image" class="form-control" placeholder="Image URL" required autofocus>
             <label for="#issues">Issues</label>
-            <select type="select" id="issues" ng-model="topic.issues" class="form-control" placeholder="Issues" required autofocus></select>
+            <select id="issues" class="form-control" placeholder="Issues" multiple="multiple" required autofocus>
+              <option ng-model="topic.issues" ng-repeat="issue.title in issues" ng-selected="issue.selected">{{topic.issues}}</option>
+            </select>
             <label for="#active">Active</label>
             <input type="checkbox" id="active" ng-model="topic.active">
           </div>

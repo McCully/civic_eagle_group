@@ -1,9 +1,8 @@
 "use strict";
 
 eagleApp.controller('homeController', ['$scope' , function($scope) {
-
   $scope.highlighted = false;
-  $scope.changeColor = function () {
+  $scope.changeColor = function() {
     $scope.highlighted = true;
     console.log('click works');
   };
@@ -21,8 +20,8 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
   $scope.showNext = false;
   $scope.showPrevious = true;
 
-  $scope.switchView = function () {
-    if(screenCounter == 0) {
+  $scope.switchView = function() {
+    if(screenCounter === 0) {
       $scope.showFirst = true;
       $scope.showSecond = false;
       $scope.showThird = false;
@@ -42,95 +41,52 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       $scope.showNext = true;
       $scope.showPrevious = false;
     }
-  }
+  };
 
-    $scope.resetCandidateModal = function() {
-      var screenCounter = 0;
-      $scope.showFirst = true;
-      $scope.showSecond = false;
-      $scope.showThird = false;
+  $scope.resetCandidateModal = function() {
+    var screenCounter = 0;
+    $scope.showFirst = true;
+    $scope.showSecond = false;
+    $scope.showThird = false;
+  };
+
+  $scope.nextCandidateView = function() {
+    screenCounter++;
+    if(screenCounter > 2) {
+      screenCounter = 2;
     }
+    $scope.switchView();
+  };
 
-    $scope.nextCandidateView = function() {
-      screenCounter++;
-      if(screenCounter > 2) {
-        screenCounter = 2;
-      }
+  $scope.prevCandidateView = function() {
+    if(screenCounter === 0) {
+      return;
+    }
+    screenCounter--;
+    $scope.switchView();
+  };
+
+  $scope.resetTopicModal = function() {
+    var screenCounter = 0;
+    $scope.showFirst = true;
+    $scope.showSecond = false;
+  };
+
+  $scope.nextTopicView = function() {
+    screenCounter++;
+    if(screenCounter > 1) {
+      screenCounter = 1;
+      return;
+    }
+    $scope.switchView();
+  };
+
+  $scope.prevTopicView = function() {
+    if(screenCounter === 0) {
+      return;
+    }
+    screenCounter--;
       $scope.switchView();
+  };
 
-    }
-    $scope.prevCandidateView = function() {
-      if(screenCounter == 0) {
-        return;
-      }
-      screenCounter--;
-      $scope.switchView();
-    }
-
-    $scope.resetCandidateModal = function() {
-      var screenCounter = 0;
-      $scope.showFirst = true;
-      $scope.showSecond = false;
-      $scope.showThird = false;
-    };
-
-    $scope.nextCandidateView = function() {
-      screenCounter++;
-      if(screenCounter > 2) {
-        screenCounter = 2;
-      }
-      $scope.switchView();
-    };
-
-    $scope.prevCandidateView = function() {
-      if(screenCounter == 0) {
-        return;
-      }
-      screenCounter--;
-      $scope.switchView();
-    };
-
-    $scope.resetTopicModal = function() {
-      var screenCounter = 0;
-      $scope.showFirst = true;
-      $scope.showSecond = false;
-    }
-
-    $scope.nextTopicView = function() {
-      screenCounter++;
-      if(screenCounter > 1) {
-        screenCounter = 1;
-        return;
-      }
-      $scope.switchView();
-    }
-    $scope.prevTopicView = function() {
-      if(screenCounter == 0) {
-        return;
-      }
-      screenCounter--;
-      $scope.switchView();
-    }
-
-    $scope.resetTopicModal = function() {
-      var screenCounter = 0;
-      $scope.showFirst = true;
-      $scope.showSecond = false;
-    }
-
-    $scope.nextTopicView = function() {
-      screenCounter++;
-      if(screenCounter > 1) {
-        screenCounter = 1;
-        return;
-      }
-      $scope.switchView();
-    }
-    $scope.prevTopicView = function() {
-      if(screenCounter == 0) {
-        return;
-      }
-      screenCounter--;
-      $scope.switchView();
-    }
 }]);

@@ -2,14 +2,26 @@
 
 eagleApp.factory('DebateTopicsService', ['$http', function($http){
 
-
-  function getDebateTopics(){
+  function getDebateTopics() {
       var promise = $http.get('/debateTopicRoute').then(function(response){
-      console.log("Topics Data", response);
-      console.log("Data", response.data);
       return response.data;
     });
     return promise;
+  };
+
+  function updateTopic(topic) {
+    var id = topic._id;
+    console.log(id);
+    var promise = $http.put('/debateTopicRoute/' + id, topic).then(function(response){
+    console.log(response);
+    })
+    console.log(topic);
+    /*
+      var promise = $http.put('/debateTopicRoute').then(function(response){
+      return response.data;
+    });
+    return promise;
+    */
   };
 /*
   function getIssues(){
@@ -27,7 +39,8 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
 */
 
   return {
-    getDebateTopics: getDebateTopics
-  }
+    getDebateTopics: getDebateTopics,
+    updateTopic: updateTopic
+  };
 
-}])
+}]);

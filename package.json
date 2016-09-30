@@ -19,6 +19,7 @@
     "font-awesome": "^4.6.3",
     "mongoose": "^4.6.1",
     "path": "^0.12.7",
+    "select2": "^4.0.3",
     "textangular": "^1.5.10",
     "unirest": "^0.5.1"
   }
