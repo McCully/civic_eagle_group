@@ -7,9 +7,12 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
     $scope.topics = response;
   });
 
-  // IssuesService.getIssues().then(function(response){
-  //   console.log(response);
-  // });
+
+  IssuesService.getIssues().then(function(response){
+    console.log(response);
+    $scope.issues = response;
+  })
+
 
   //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
