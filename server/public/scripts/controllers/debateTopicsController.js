@@ -1,10 +1,12 @@
 "use strict";
 
-eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'DebateTopicsService', 'IssuesService', function($scope, $http, Admin, DebateTopicsService, IssuesService) {
+eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'DebateTopicsService', 'IssuesService', 'textAngularManager',
+function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularManager) {
   var header = 'Basic' + Admin.getCred();
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
   });
+
 
   IssuesService.getIssues().then(function(response){
     console.log(response);
@@ -12,6 +14,19 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
   })
 
 
+  //---------* UPDATE DEBATE TOPIC EDITOR*----------//
+  $scope.version = textAngularManager.getVersion();
+  $scope.versionNumber = $scope.version.substring(1);
+  $scope.debateOrigHtml = '<h1>Debate Topics</h1>';
+  $scope.debateContent = $scope.debateOrigHtml;
+  $scope.disabled = false;
+
+  //---------* NEW DEBATE TOPIC EDITOR*----------//
+  $scope.version = textAngularManager.getVersion();
+  $scope.versionNumber = $scope.version.substring(1);
+  $scope.newDebateOrigHtml = '<h1>New Debate Topics</h1>';
+  $scope.newDebateContent = $scope.newDebateOrigHtml;
+  $scope.disabled = false;
 
 
 //  $http({
@@ -24,6 +39,7 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
 //   console.log($scope.topicsResults);
 // });
 //
+
 $scope.updateTopic = function(topic){
 DebateTopicsService.updateTopic(topic).then(function(response){
   console.log(response);
@@ -33,34 +49,11 @@ DebateTopicsService.updateTopic(topic).then(function(response){
 
 
 
+
 $scope.showTopic = function(topic){
   console.log(topic);
   $scope.topic = topic;
   $scope.htmlcontent = topic.summary;
 };
-
-//   function switchView() {
-//   if(screenCounter == 0) {
-//     $scope.showFirst = true;
-//     $scope.showSecond = false;
-//     $scope.showNext = false;
-//     $scope.showPrev = true;
-//   }
-//   if(screenCounter == 1) {
-//     $scope.showFirst = false;
-//     $scope.showSecond = true;
-//     $scope.showNext = true;
-//     $scope.showPrev = false;
-//   }
-// }
-//
-// $scope.resetTopicModal = function() {
-//   var screenCounter = 0;
-//   $scope.showFirst = true;
-//   $scope.showSecond = false;
-// }
-//
-//   $scope.switchView();
-
 
 }]);

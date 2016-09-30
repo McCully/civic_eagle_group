@@ -10,7 +10,9 @@
           <h2 editable-text="topic.title">Title: {{topic.title}}</h2>
           <p>Slug: {{topic.slug}}</p>
           <p>Summary</p>
-            <div ng-include="'views/templates/editor.html'"></div>
+            <div class="editorContainer">
+              <div text-angular="text-angular" name="debateContent" ng-model="debateContent" ta-disabled="disabled"></div>
+            </div>
           </div>
           <div ng-show="showSecond">
             <p>Image: {{topic.image}}</p>

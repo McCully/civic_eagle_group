@@ -28,8 +28,10 @@
           <div ng-show="showThird">
             <label for="#issue">Issue</label>
             <input type="text" id="issue" ng-model="candidate" class="form-control" placeholder="Issue" required autofocus>
-            <label for="issueSummary"></label>
-            <div ng-include="'views/templates/editor.html'"></div>
+            <label for="issueSummary">Issue Summary</label>
+            <div class="editorContainer">
+              <div text-angular="text-angular" name="newCandidateContent" ng-model="newCandidateContent" ta-disabled="disabled"></div>
+            </div>
           </div>
         </form>
       <div class="modal-footer">

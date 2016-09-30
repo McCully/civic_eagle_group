@@ -1,13 +1,13 @@
 <div ng-include = "'views/templates/sideNav.html'"></div>
 <div ng-include = "'views/templates/issueModal.html'"></div>
-
+<div ng-include = "'views/templates/issueEditModal.html'"></div>
 <button type="button" class="btn button btn-lg" style="float: right;" data-toggle="modal" data-target="#issueModal">Add Issue</button>
   <div class = "container">
     <div class="row">
       <div class = "col-md-12">
         <div class = "issue-container">
           <div ng-repeat = "issue in issues">
-            <h2 class="issues">{{issue.title}}</h2>
+            <h2 class="issues" ng-click="showIssue($index)" data-toggle="modal" data-target="#issueEditModal">{{issue.title}}</h2>
           </div>
         </div>
       </div>
