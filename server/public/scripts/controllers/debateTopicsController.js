@@ -21,57 +21,10 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   $scope.debateContent = $scope.debateOrigHtml;
   $scope.disabled = false;
 
-
-
-//  $http({
-//   method: 'GET',
-//   url: "https://debate-staging.api.civiceagle.com/topics",
-//   headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI='
-// , 'accept' : 'application/json'}
-// }).then(function(response){
-//   $scope.topicsResults = response.data;
-//   console.log($scope.topicsResults);
-// });
-//
 $scope.updateTopic = function(topic){
 DebateTopicsService.updateTopic(topic).then(function(response){
   console.log(response);
 });
 }
-
-
-
-
-$scope.showTopic = function(topic){
-  console.log(topic);
-  $scope.topic = topic;
-  $scope.htmlcontent = topic.summary;
-};
-
-  function switchView() {
-  if(screenCounter == 0) {
-    $scope.showFirst = true;
-    $scope.showSecond = false;
-    $scope.showNext = false;
-    $scope.showPrev = true;
-  }
-  if(screenCounter == 1) {
-    $scope.showFirst = false;
-    $scope.showSecond = true;
-    $scope.showNext = true;
-    $scope.showPrev = false;
-  }
-}
-
-$scope.resetTopicModal = function() {
-  var screenCounter = 0;
-  $scope.showFirst = true;
-  $scope.showSecond = false;
-}
-
-  $scope.switchView();
-
-
-
 
 }]);

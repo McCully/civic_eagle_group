@@ -15,6 +15,7 @@ function($scope, $http, Admin, CandidateService, textAngularManager) {
  set it to a scope variable, so it can be displayed
  on the DOM.  */
 $scope.showCandidate = function(index) {
+  $scope.resetCounter();
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
 };

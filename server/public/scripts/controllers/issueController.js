@@ -9,6 +9,7 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   });
 
   $scope.showIssue = function(index) {
+    $scope.resetCounter();
     var issue = $scope.issues[index];
     console.log("issue: ", issue);
     $scope.selectedIssue = issue;
