@@ -8,6 +8,7 @@ eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'Deba
 
   IssuesService.getIssues().then(function(response){
     console.log(response);
+    $scope.issues = response;
   })
 
 
