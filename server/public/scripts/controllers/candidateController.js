@@ -1,6 +1,7 @@
 "use strict";
 
-eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'CandidateService', function($scope, $http, Admin, CandidateService) {
+eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'CandidateService', 'textAngularManager',
+function($scope, $http, Admin, CandidateService, textAngularManager) {
   /* Create basic authorization header. */
   var header = 'Basic ' + Admin.getCred();
 
@@ -17,5 +18,21 @@ $scope.showCandidate = function(index) {
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
 };
+
+//---------* NEW CANDIDATE EDITOR*----------//
+$scope.version = textAngularManager.getVersion();
+$scope.versionNumber = $scope.version.substring(1);
+$scope.newCandidateOrigHtml = '<h1>New Candidates</h1>';
+$scope.newCandidateContent = $scope.newCandidateOrigHtml;
+$scope.disabled = false;
+
+
+//---------* UPDATE CANDIDATE EDITOR*----------//
+$scope.version = textAngularManager.getVersion();
+$scope.versionNumber = $scope.version.substring(1);
+$scope.candidateOrigHtml = '<h1>Candidates</h1>';
+$scope.candidateContent = $scope.candidateOrigHtml;
+$scope.disabled = false;
+
 
 }]);
