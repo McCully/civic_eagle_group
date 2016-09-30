@@ -39,28 +39,28 @@ $scope.showTopic = function(topic){
   $scope.htmlcontent = topic.summary;
 };
 
-  function switchView() {
-  if(screenCounter == 0) {
-    $scope.showFirst = true;
-    $scope.showSecond = false;
-    $scope.showNext = false;
-    $scope.showPrev = true;
-  }
-  if(screenCounter == 1) {
-    $scope.showFirst = false;
-    $scope.showSecond = true;
-    $scope.showNext = true;
-    $scope.showPrev = false;
-  }
-}
-
-$scope.resetTopicModal = function() {
-  var screenCounter = 0;
-  $scope.showFirst = true;
-  $scope.showSecond = false;
-}
-
-  $scope.switchView();
+//   function switchView() {
+//   if(screenCounter == 0) {
+//     $scope.showFirst = true;
+//     $scope.showSecond = false;
+//     $scope.showNext = false;
+//     $scope.showPrev = true;
+//   }
+//   if(screenCounter == 1) {
+//     $scope.showFirst = false;
+//     $scope.showSecond = true;
+//     $scope.showNext = true;
+//     $scope.showPrev = false;
+//   }
+// }
+//
+// $scope.resetTopicModal = function() {
+//   var screenCounter = 0;
+//   $scope.showFirst = true;
+//   $scope.showSecond = false;
+// }
+//
+//   $scope.switchView();
 
 
 }]);
