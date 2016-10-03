@@ -7,12 +7,10 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
     $scope.topics = response;
   });
 
-
   IssuesService.getIssues().then(function(response){
     console.log(response);
     $scope.issues = response;
   });
-
 
 
   //---------* UPDATE DEBATE TOPIC EDITOR*----------//
@@ -28,7 +26,6 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   $scope.newDebateOrigHtml = '<h1>New Debate Topics</h1>';
   $scope.newDebateContent = $scope.newDebateOrigHtml;
   $scope.disabled = false;
-
 
 //  $http({
 //   method: 'GET',
@@ -46,10 +43,6 @@ DebateTopicsService.updateTopic(topic).then(function(response){
   console.log(response);
 });
 }
-
-
-
-
 
 $scope.showTopic = function(topic){
   console.log(topic);

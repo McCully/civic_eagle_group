@@ -22,10 +22,10 @@
             <input type="text" id="image" ng-model="topic.image" class="form-control" placeholder="Image URL" required autofocus>
             <label for="#issues">Issues</label>
 
-            <ui-select multiple sortable="true" theme="bootstrap" ng-model="issue.title.selected" class="form-control" title="Choose an issue">
-             <ui-select-match placeholder="Select or search an issue...">{{$issue.title}}</ui-select-match>
-             <ui-select-choices repeat="issue in issues | filter: $select.search">
-               <div ng-bind-html="issue.title | highlight: $select.search"></div>
+            <ui-select multiple sortable="true" theme="bootstrap" ng-model="this.issue.selected" class="form-control" title="Choose an issue">
+             <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
+             <ui-select-choices repeat="item in issues | filter: $select.search">
+               <div ng-bind-html="item.title | highlight: $select.search"></div>
              </ui-select-choices>
            </ui-select>
 
