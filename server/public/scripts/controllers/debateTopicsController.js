@@ -37,6 +37,10 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
 //   console.log($scope.topicsResults);
 // });
 //
+$scope.addTopic = function(topic) {
+  console.log("Test");
+  console.log(topic);
+};
 
 $scope.updateTopic = function(topic){
 DebateTopicsService.updateTopic(topic).then(function(response){
