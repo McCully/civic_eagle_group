@@ -2,14 +2,12 @@
 <div ng-include = "'views/templates/issueModal.html'"></div>
 <div ng-include = "'views/templates/issueEditModal.html'"></div>
 <button type="button" class="btn button btn-lg add"  data-toggle="modal" data-target="#issueModal">Add Issue</button>
-  <div class = "container">
+  <div class = "container-fluid issueView">
     <div class="row">
-      <div class = "col-md-12">
-        <div class = "issue-container">
+      <div class = "col-md-9 col-center issues-container">
           <div ng-repeat = "issue in issues" class = "outline-container">
             <h2 class="issues" ng-click="showIssue($index)" data-toggle="modal" data-target="#issueEditModal">{{issue.title}}</h2>
           </div>
         </div>
-      </div>
     </div>
   </div>

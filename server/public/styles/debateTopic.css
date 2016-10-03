@@ -1,0 +1,23 @@
+.topics-container{
+
+}
+.debateView{
+  background: url(https://static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/t/56bf834459827eb455984e46/1455391564121/civic-eagle-24.jpg?format=2500w) no-repeat center fixed;
+  background-size: 100% auto;
+  -webkit-background-size: cover;
+  /*width: 100%;
+  min-height: 100%;*/
+  /*height: 100%;*/
+  /*padding-top: 10px;*/
+}
+
+.topics-container h2:hover {
+ color: rgba(246,140,36,.9);
+ text-shadow: 1px 1px lightgray;
+
+}
+
+.topics:hover {
+  color: orange;
+  cursor: pointer;
+}
