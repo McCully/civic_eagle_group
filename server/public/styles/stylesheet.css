@@ -66,6 +66,13 @@
 label {
   margin-top: 10px;
 }
+.col-center{
+ float: none;
+ margin-right: 130px;
+ margin-left: 190px;
+ margin-top: 50px;
+
+}
 
 .button {
   background-color: orange;
@@ -78,6 +85,11 @@ label {
   right: 0px;
 
 }
+.container-fluid{
+  padding-right: 0;
+  padding-left: 0;
+
+}
 
 .issues {
   text-align: center;
@@ -88,27 +100,50 @@ label {
   max-width: 75%;
 }
 
+.topics-container{
+
+}
+
 .topics-container h2:hover {
  color: rgba(246,140,36,.9);
  text-shadow: 1px 1px lightgray;
 
 }
 
+
+
 .issues:hover {
   color: orange;
 }
+.outline-container{
+  padding: 16px 10px;
+  width: 60%;
+  margin-top: 15px;
+  margin-bottom: 25px !important;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  background-color: rgba(246, 140, 36, 0.9);
 
-.topics {
+
+}
+.outline-container h2 {
+
+}
+
+/*.topics {
   text-align: center;
   margin: 0 auto;
   display: block;
   margin-top: 15px;
   margin-bottom: 15px;
   max-width: 75%;
-}
+}*/
 
 .topics:hover {
   color: orange;
+  cursor: pointer;
 }
 
 .candidates {
