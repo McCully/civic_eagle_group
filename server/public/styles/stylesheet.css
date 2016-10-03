@@ -33,18 +33,30 @@ label {
 .issues:hover {
   color: orange;
 }
+.outline-container{
+  padding: 16px 10px;
+  max-width: 60%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 
-.topics {
+
+}
+
+/*.topics {
   text-align: center;
   margin: 0 auto;
   display: block;
   margin-top: 15px;
   margin-bottom: 15px;
   max-width: 75%;
-}
+}*/
 
 .topics:hover {
   color: orange;
+  cursor: pointer;
 }
 
 .candidates {

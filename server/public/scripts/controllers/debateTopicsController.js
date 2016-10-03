@@ -5,6 +5,7 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   var header = 'Basic' + Admin.getCred();
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
+    console.log($scope.topics);
   });
 
 
@@ -55,5 +56,6 @@ $scope.showTopic = function(topic){
   $scope.topic = topic;
   $scope.htmlcontent = topic.summary;
 };
+
 
 }]);
