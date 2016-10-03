@@ -1,8 +1,27 @@
+
+.ui-select-match-item {
+  background-color: #F0F8FF !important;
+}
+
+.ui-select-match-text > span {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+}
+
+.login {
+   padding: 15px;
+   max-width: 330px;
+   margin: 0 auto;
+}
+
 .form-signin
 {
-   max-width: 330px;
    padding: 15px;
    margin: 0 auto;
+   margin-left: 0;
+   margin-right: 0;
 }
 
 .form-signin .form-signin-heading, .form-signin .checkbox
@@ -123,8 +142,6 @@ label {
 
 /*---------------textAngular---------------*/
 .editorContainer {
-  width: 400px;
-
   margin-right: auto;
   margin-left: auto;
 }
