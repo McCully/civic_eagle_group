@@ -1,4 +1,16 @@
 /*---------------GlobalStyles---------------*/
+
+.ui-select-match-item {
+  background-color: #F0F8FF !important;
+}
+
+.ui-select-match-text > span {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+}
+
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -46,8 +58,6 @@ label {
 
 /*---------------textAngular---------------*/
 .editorContainer {
-  width: 400px;
-
   margin-right: auto;
   margin-left: auto;
 }
