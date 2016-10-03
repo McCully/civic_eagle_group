@@ -15,17 +15,30 @@
             <!-- Insert WYSIWYG here? -->
             <label for="#summary">Summary</label>
             <!-- <input type="text" id="summary" ng-model="topic.summary" class="form-control" placeholder="Summary" required autofocus> -->
-            <div class="editorContainer">
-              <div text-angular="text-angular" name="newDebateContent" ng-model="newDebateContent" ta-disabled="disabled"></div>
-            </div>
+            <div ng-include="'views/templates/editor.html'"></div>
           </div>
           <div ng-show="showSecond">
             <label for="#image">Image</label>
             <input type="text" id="image" ng-model="topic.image" class="form-control" placeholder="Image URL" required autofocus>
             <label for="#issues">Issues</label>
+
+
             <select id="issues" class="form-control" placeholder="Issues" multiple="multiple" required autofocus>
-              <option ng-model="topic.issues" ng-repeat="issue.title in issues" ng-selected="issue.selected">{{topic.issues}}</option>
+              <option ng-model="topic.issues" ng-repeat="issue in issues" ng-selected="issue.selected">{{issues.title}}</option>
             </select>
+
+
+            <ui-select multiple sortable="true" theme="bootstrap" ng-model="this.issue.selected" class="form-control" title="Choose an issue">
+
+            <ui-select multiple sortable="true" theme="bootstrap" ng-model="topic.issues" class="form-control" title="Choose an issue">
+
+             <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
+             <ui-select-choices repeat="item in issues | filter: $select.search">
+               <div ng-bind-html="item.title | highlight: $select.search"></div>
+             </ui-select-choices>
+           </ui-select>
+
+
             <label for="#active">Active</label>
             <input type="checkbox" id="active" ng-model="topic.active">
           </div>
@@ -33,7 +46,8 @@
       <div class="modal-footer">
         <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-success">Next</button>
         <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-warning">Previous</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" ng-click="addTopic(topic)" class="btn btn-primary">Submit</button>
+        <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

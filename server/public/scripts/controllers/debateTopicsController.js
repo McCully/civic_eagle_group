@@ -5,8 +5,8 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   var header = 'Basic' + Admin.getCred();
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
+    console.log($scope.topics);
   });
-
 
   IssuesService.getIssues().then(function(response){
     console.log(response);
@@ -28,7 +28,6 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
   $scope.newDebateContent = $scope.newDebateOrigHtml;
   $scope.disabled = false;
 
-
 //  $http({
 //   method: 'GET',
 //   url: "https://debate-staging.api.civiceagle.com/topics",
@@ -39,6 +38,10 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
 //   console.log($scope.topicsResults);
 // });
 //
+$scope.addTopic = function(topic) {
+  console.log("Test");
+  console.log(topic);
+};
 
 $scope.updateTopic = function(topic){
 DebateTopicsService.updateTopic(topic).then(function(response){
@@ -46,14 +49,11 @@ DebateTopicsService.updateTopic(topic).then(function(response){
 });
 }
 
-
-
-
-
 $scope.showTopic = function(topic){
   console.log(topic);
   $scope.topic = topic;
   $scope.htmlcontent = topic.summary;
 };
+
 
 }]);

@@ -1,8 +1,27 @@
+
+.ui-select-match-item {
+  background-color: #F0F8FF !important;
+}
+
+.ui-select-match-text > span {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+}
+
+.login {
+   padding: 15px;
+   max-width: 330px;
+   margin: 0 auto;
+}
+
 .form-signin
 {
-   max-width: 330px;
    padding: 15px;
    margin: 0 auto;
+   margin-left: 0;
+   margin-right: 0;
 }
 
 .form-signin .form-signin-heading, .form-signin .checkbox
@@ -47,6 +66,13 @@
 label {
   margin-top: 10px;
 }
+.col-center{
+ float: none;
+ margin-right: 130px;
+ margin-left: 190px;
+ margin-top: 50px;
+
+}
 
 .button {
   background-color: #f68c24;
@@ -59,6 +85,11 @@ label {
   right: 0px;
 
 }
+.container-fluid{
+  padding-right: 0;
+  padding-left: 0;
+
+}
 
 .issues {
   text-align: center;
@@ -69,27 +100,49 @@ label {
   max-width: 75%;
 }
 
+.topics-container{
+
+}
+
 .topics-container h2:hover {
  color: #f68c24;
  text-shadow: 1px 1px lightgray;
 
 }
 
+
+
 .issues:hover {
   color: #f68c24;
 }
+.outline-container{
+  padding: 16px 10px;
+  width: 60%;
+  margin-top: 15px;
+  margin-bottom: 25px !important;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  background-color: rgba(246, 140, 36, 0.9);
 
-.topics {
+
+}
+.outline-container h2 {
+
+}
+
+/*.topics {
   text-align: center;
   margin: 0 auto;
   display: block;
   margin-top: 15px;
   margin-bottom: 15px;
   max-width: 75%;
-}
+}*/
 
 .topics:hover {
-  color: #f68c24;
+
 }
 
 .candidates {
@@ -123,8 +176,6 @@ label {
 
 /*---------------textAngular---------------*/
 .editorContainer {
-  width: 400px;
-
   margin-right: auto;
   margin-left: auto;
 }
