@@ -18,8 +18,8 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
   //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
-  $scope.orightml = '<h1>CIVIC EAGLE API INFO!!!!!!!!</h1>';
-  $scope.htmlcontent = $scope.orightml;
+  $scope.origIssueHtml = '<h1>Issues</h1>';
+  $scope.issuesContent = $scope.origIssueHtml;
   $scope.disabled = false;
 
 

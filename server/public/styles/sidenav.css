@@ -1,4 +1,3 @@
-
 .side-menu {
   position: fixed;
   width: 18%;
@@ -11,4 +10,12 @@
   display: block;
   width: 100%;
   border-bottom: 1px solid #e7e7e7;
+}
+
+.side-menu .navbar-nav li:hover {
+  background-color: #f68c24;
+}
+
+.panel.isTabSelected() {
+  background-color: #f68c24;
 }
