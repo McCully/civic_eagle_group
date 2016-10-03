@@ -18,10 +18,13 @@
 
 .panel.isTabSelected() {
   background-color: #f68c24;
+}
+
 .navbar-collapse{
   padding-left: 0;
-  padding-right: 0;
+  padding-right: 0;*/
 }
+
 .side-menu .brand-name-wrapper img{
   height: 100px;
   width: 200px;

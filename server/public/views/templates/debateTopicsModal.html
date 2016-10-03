@@ -15,7 +15,9 @@
             <!-- Insert WYSIWYG here? -->
             <label for="#summary">Summary</label>
             <!-- <input type="text" id="summary" ng-model="topic.summary" class="form-control" placeholder="Summary" required autofocus> -->
-            <div ng-include="'views/templates/editor.html'"></div>
+            <div class="editorContainer">
+              <div text-angular="text-angular" name="debateContent" ng-model="debateContent" ta-disabled="disabled"></div>
+            </div>
           </div>
           <div ng-show="showSecond">
             <label for="#image">Image</label>
