@@ -16,8 +16,13 @@
           </div>
           <div ng-show="showSecond">
             <p>Image: {{topic.image}}</p>
-            <label for="#issues">Issues</label>
-            <select type="select" id="issues" ng-model="topic.issues" class="form-control" placeholder="Issues" required autofocus></select>
+            <ui-select multiple sortable="true" theme="bootstrap" ng-model="topic.issues" class="form-control" title="Choose an issue">
+             <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
+             <ui-select-choices repeat="item in issues | filter: $select.search">
+               <div ng-bind-html="item.title | highlight: $select.search"></div>
+             </ui-select-choices>
+           </ui-select>
+
             <label for="#active">Active</label>
             <input type="checkbox" id="active" ng-model="topic.active">
           </div>

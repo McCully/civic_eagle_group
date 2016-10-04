@@ -1,19 +1,30 @@
 "use strict";
 
-eagleApp.controller('candidateController', ['$scope', '$http' ,'Admin', 'CandidateService', 'textAngularManager', 'IssuesService',
-function($scope, $http, Admin, CandidateService, textAngularManager, IssuesService) {
+eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'CandidateService', 'textAngularManager', 'issues',
+function($scope, $location, $http, Admin, CandidateService, textAngularManager, issues) {
+
   /* Create basic authorization header. */
   var header = 'Basic ' + Admin.getCred();
 
+  if(Admin.getCred() === undefined){
+   $location.path('/logIn');
+ };
   /* Load all the candidates information so we can display it. */
   CandidateService.getCandidates().then(function(response){
     $scope.candidates = response;
+    console.log("Candidates: ", response);
   }
 );
 
-IssuesService.getIssues().then(function(response){
+$scope.issues = [];
+
+issues.getAll().then(function(response){
   console.log(response);
-  $scope.issues = response;
+  for(var i = 0; i < response.length; i++) {
+    issues.getById().then(function(response) {
+      $scope.issues.push(response);
+    });
+  }
 });
 
 /* Grab the selected candidate's information and
@@ -24,6 +35,10 @@ $scope.showCandidate = function(index) {
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
 };
+
+$scope.clearCandidateForm = function(){
+  $scope.candidate = {};
+}
 
 //---------* NEW CANDIDATE EDITOR*----------//
 $scope.version = textAngularManager.getVersion();
