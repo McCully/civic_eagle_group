@@ -2,7 +2,7 @@
   position: fixed;
   width: 15%;
   height: 100%;
-  background-color: #f8f8f8
+  background-color: #f8f8f8;
   border-right: 1px solid #e7e7e7;
 }
 
@@ -16,13 +16,13 @@
   background-color: #f68c24;
 }
 
-.panel.isTabSelected() {
+.active {
   background-color: #f68c24;
 }
 
 .navbar-collapse{
   padding-left: 0;
-  padding-right: 0;*/
+  padding-right: 0;
 }
 
 .side-menu .brand-name-wrapper img{

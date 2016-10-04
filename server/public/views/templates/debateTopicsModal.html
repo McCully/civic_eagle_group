@@ -32,7 +32,6 @@
 
             <ui-select multiple sortable="true" theme="bootstrap" ng-model="this.issue.selected" class="form-control" title="Choose an issue">
 
-            <ui-select multiple sortable="true" theme="bootstrap" ng-model="topic.issues" class="form-control" title="Choose an issue">
 
              <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
              <ui-select-choices repeat="item in issues | filter: $select.search">
@@ -46,10 +45,10 @@
           </div>
         </form>
       <div class="modal-footer">
-        <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-success">Next</button>
-        <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-warning">Previous</button>
+        <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left"></span></button>
         <button type="button" ng-click="addTopic(topic)" class="btn btn-primary">Submit</button>
         <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-success"><span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
     </div>
   </div>
