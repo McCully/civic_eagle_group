@@ -81,4 +81,29 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       $scope.switchView();
   };
 
+  //---------------**SET TAB**---------------//
+  // this.selectedTab = 'debateTopics';
+  // this.setTab = function(setActive){
+  //     console.log('tab is set to:', setActive);
+  //     this.selectedTab = setActive;
+  //   };
+  //
+  // this.isActive = function(tab){
+  //     console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
+  //     return this.selectedTab === tab;
+  //   };
+
+}]);
+
+eagleApp.controller('PanelController', ['$scope', '$location', function($scope, $location){
+  this.selectedTab = '';
+  this.setTab = function(setTab){
+      console.log('tab is set to:', setTab);
+      this.selectedTab = setTab;
+      $location.path(setTab);
+    };
+    this.isTabSelected = function(tab){
+      // console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
+      return this.selectedTab === tab;
+    };
 }]);

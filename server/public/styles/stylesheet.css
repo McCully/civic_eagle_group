@@ -28,7 +28,7 @@ label {
 }
 
 .button {
-  background-color: orange;
+  background-color: #f68c24;
   color: black;
 }
 
@@ -44,6 +44,7 @@ label {
 
 }
 
+
 .outline-container{
   padding: 16px 10px;
   width: 60%;
@@ -54,7 +55,7 @@ label {
   display: block;
   overflow: hidden;
   background-color: rgba(246, 140, 36, 0.9);
-}
+
 
 /*---------------textAngular---------------*/
 .editorContainer {
