@@ -1,5 +1,10 @@
 /*---------------GlobalStyles---------------*/
 
+.pagination {
+    display: inline;
+
+}
+
 .ui-select-match-item {
   background-color: #F0F8FF !important;
 }

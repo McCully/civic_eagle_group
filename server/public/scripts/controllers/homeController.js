@@ -11,6 +11,9 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
    view we are on. Zero is the first view, one
    is the second view and 2 is the third, etc. */
   var screenCounter = 0;
+  $scope.topicsTotal = 2;
+  $scope.candidatesTotal = 3;
+  $scope.pageNumber = 1;
 
   $scope.resetCounter = function() {
     screenCounter = 0;
@@ -115,8 +118,9 @@ eagleApp.controller('PanelController', ['$scope', '$location', function($scope, 
       $location.path(setTab);
     };
     this.isTabSelected = function(tab){
+      if(this.selectedTab !== ''){
       console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
       return this.selectedTab === tab;
-
-    };
+    }
+  };
 }]);
