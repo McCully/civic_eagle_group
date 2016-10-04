@@ -1,8 +1,13 @@
 "use strict";
 
-eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'DebateTopicsService', 'IssuesService', 'textAngularManager',
-function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularManager) {
+eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'IssuesService', 'textAngularManager',
+function($scope, $location, $http, Admin, DebateTopicsService, IssuesService, textAngularManager) {
   var header = 'Basic' + Admin.getCred();
+
+  if(Admin.getCred() === undefined){
+   $location.path('/logIn');
+ };
+
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
   });
@@ -40,9 +45,12 @@ function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularMa
 $scope.addTopic = function(topic) {
   console.log("Test");
   console.log(topic);
-};
+  DebateTopicsService.addTopic(topic).then(function(response){
+  console.log("Test 10:38AM", response);
+  });
+}
 
-$scope.updateTopic = function(topic){
+$scope.updateTopic = function(topic) {
 DebateTopicsService.updateTopic(topic).then(function(response){
   console.log(response);
 });
@@ -53,5 +61,9 @@ $scope.showTopic = function(topic){
   $scope.topic = topic;
   $scope.htmlcontent = topic.summary;
 };
+
+$scope.clearForm = function(){
+  $scope.topic = {};
+}
 
 }]);
