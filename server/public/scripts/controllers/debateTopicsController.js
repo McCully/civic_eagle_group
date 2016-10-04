@@ -1,14 +1,14 @@
 "use strict";
 
-eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'DebateTopicsService', 'IssuesService', 'textAngularManager',
-function($scope, $http, Admin, DebateTopicsService, IssuesService, textAngularManager) {
+eagleApp.controller('debateTopicsController', ['$scope', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager',
+function($scope, $http, Admin, DebateTopicsService, issues, textAngularManager) {
   var header = 'Basic' + Admin.getCred();
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
     console.log($scope.topics);
   });
 
-  IssuesService.getIssues().then(function(response){
+  issues.getAll().then(function(response){
     console.log(response);
     $scope.issues = response;
   });

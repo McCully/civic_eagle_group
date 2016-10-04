@@ -1,9 +1,9 @@
 "use strict";
 
-eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'IssuesService', function ($scope, $http, Admin, textAngularManager, IssuesService) {
+eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'issues', function ($scope, $http, Admin, textAngularManager, issues) {
   var header = 'Basic ' + Admin.getCred();
 
-  IssuesService.getIssues().then(function(response) {
+  issues.getAll().then(function(response) {
     $scope.issues = response;
     console.log($scope.issues);
   });
