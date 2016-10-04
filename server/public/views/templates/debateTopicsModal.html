@@ -12,9 +12,8 @@
             <input type="text" id="title" ng-model="topic.title" class="form-control" placeholder="Title" required autofocus>
             <label for="#slug">Slug</label>
             <input type="text" id="slug" ng-model="topic.slug" class="form-control" placeholder="Slug" required autofocus>
-            <!-- Insert WYSIWYG here? -->
+
             <label for="#summary">Summary</label>
-            <!-- <input type="text" id="summary" ng-model="topic.summary" class="form-control" placeholder="Summary" required autofocus> -->
             <div class="editorContainer">
               <div text-angular="text-angular" name="debateContent" ng-model="debateContent" ta-disabled="disabled"></div>
             </div>
@@ -24,11 +23,9 @@
             <input type="text" id="image" ng-model="topic.image" class="form-control" placeholder="Image URL" required autofocus>
             <label for="#issues">Issues</label>
 
-
             <select id="issues" class="form-control" placeholder="Issues" multiple="multiple" required autofocus>
               <option ng-model="topic.issues" ng-repeat="issue in issues" ng-selected="issue.selected">{{issues.title}}</option>
             </select>
-
 
             <ui-select multiple sortable="true" theme="bootstrap" ng-model="this.issue.selected" class="form-control" title="Choose an issue">
 
@@ -39,7 +36,6 @@
                <div ng-bind-html="item.title | highlight: $select.search"></div>
              </ui-select-choices>
            </ui-select>
-
 
             <label for="#active">Active</label>
             <input type="checkbox" id="active" ng-model="topic.active">
