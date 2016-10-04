@@ -1,7 +1,8 @@
 "use strict";
 
-eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'CandidateService', 'textAngularManager',
-function($scope, $location, $http, Admin, CandidateService, textAngularManager) {
+eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'CandidateService', 'textAngularManager', 'issues',
+function($scope, $location, $http, Admin, CandidateService, textAngularManager, issues) {
+
   /* Create basic authorization header. */
   var header = 'Basic ' + Admin.getCred();
 
@@ -11,8 +12,20 @@ function($scope, $location, $http, Admin, CandidateService, textAngularManager) 
   /* Load all the candidates information so we can display it. */
   CandidateService.getCandidates().then(function(response){
     $scope.candidates = response;
+    console.log("Candidates: ", response);
   }
 );
+
+$scope.issues = [];
+
+issues.getAll().then(function(response){
+  console.log(response);
+  for(var i = 0; i < response.length; i++) {
+    issues.getById().then(function(response) {
+      $scope.issues.push(response);
+    });
+  }
+});
 
 /* Grab the selected candidate's information and
  set it to a scope variable, so it can be displayed

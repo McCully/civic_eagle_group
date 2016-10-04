@@ -1,13 +1,14 @@
 "use strict";
 
-eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 'textAngularManager', 'IssuesService', function ($scope, $location, $http, Admin, textAngularManager, IssuesService) {
+eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 'textAngularManager', 'issues', function ($scope, $location, $http, Admin, textAngularManager, issues) {
   var header = 'Basic ' + Admin.getCred();
 
   if(Admin.getCred() === undefined){
    $location.path('/logIn');
  };
 
-  IssuesService.getIssues().then(function(response) {
+
+  issues.getAll().then(function(response) {
     $scope.issues = response;
     console.log($scope.issues);
   });
@@ -26,8 +27,8 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
   //---------* WYSIWYG EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
   $scope.versionNumber = $scope.version.substring(1);
-  $scope.orightml = '<h1>CIVIC EAGLE API INFO!!!!!!!!</h1>';
-  $scope.htmlcontent = $scope.orightml;
+  $scope.origIssueHtml = '<h1>Issues</h1>';
+  $scope.issuesContent = $scope.origIssueHtml;
   $scope.disabled = false;
 
 

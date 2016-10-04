@@ -1,8 +1,15 @@
 "use strict";
 
-eagleApp.factory('IssuesService' , ['$http' , function($http){
+eagleApp.factory('issues' , ['$http' , function($http){
 
-  function getIssues() {
+  function getAll() {
+    var promise = $http.get('/issuesRoute').then(function(response){
+      return response.data;
+    });
+    return promise;
+  }
+
+  function getById() {
     var promise = $http.get('/issuesRoute').then(function(response){
       return response.data;
     });
@@ -10,6 +17,7 @@ eagleApp.factory('IssuesService' , ['$http' , function($http){
   }
 
   return {
-    getIssues: getIssues,
+    getAll: getAll,
+    getById: getById
   };
 }]);

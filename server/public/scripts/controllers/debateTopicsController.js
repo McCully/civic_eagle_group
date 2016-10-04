@@ -1,7 +1,8 @@
 "use strict";
 
-eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'IssuesService', 'textAngularManager',
-function($scope, $location, $http, Admin, DebateTopicsService, IssuesService, textAngularManager) {
+eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager',
+function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager) {
+
   var header = 'Basic' + Admin.getCred();
 
   if(Admin.getCred() === undefined){
@@ -10,10 +11,10 @@ function($scope, $location, $http, Admin, DebateTopicsService, IssuesService, te
 
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
+    console.log($scope.topics);
   });
 
-  IssuesService.getIssues().then(function(response){
-    console.log(response);
+  issues.getAll().then(function(response){
     $scope.issues = response;
   });
 
@@ -65,5 +66,6 @@ $scope.showTopic = function(topic){
 $scope.clearForm = function(){
   $scope.topic = {};
 }
+
 
 }]);

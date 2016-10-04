@@ -23,8 +23,10 @@
           </div>
             <div ng-show="showThird">
                 <label for="#summary">Summary</label>
-                <div ng-include="'views/templates/editor.html'"></div>
-            </div>
+                <div class="editorContainer">
+                  <div text-angular="text-angular" name="issuesContent" ng-model="issuesContent" ta-disabled="disabled"></div>
+                </div>
+           </div>
         </form>
         <div class="modal-footer">
           <button ng-click="prevCandidateView()" type="button" ng-hide = "showPrevious" class="btn btn-warning">Previous</button>
