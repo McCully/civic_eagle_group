@@ -2,7 +2,7 @@
 
 eagleApp.factory('issues' , ['$http' , function($http){
 
-  function getAllIssues() {
+  function getAll() {
     var promise = $http.get('/issuesRoute').then(function(response){
       return response.data;
     });
@@ -17,7 +17,7 @@ eagleApp.factory('issues' , ['$http' , function($http){
   }
 
   return {
-    getAllIssues: getAllIssues,
+    getAll: getAll,
     getById: getById
   };
 }]);

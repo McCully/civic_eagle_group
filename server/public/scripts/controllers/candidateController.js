@@ -14,7 +14,7 @@ function($scope, $http, Admin, CandidateService, textAngularManager, issues) {
 
 $scope.issues = [];
 
-issues.getAllIssues().then(function(response){
+issues.getAll().then(function(response){
   console.log(response);
   for(var i = 0; i < response.length; i++) {
     issues.getById().then(function(response) {
