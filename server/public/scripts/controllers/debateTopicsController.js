@@ -11,7 +11,6 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
 
   DebateTopicsService.getDebateTopics().then(function(response){
     $scope.topics = response;
-    console.log($scope.topics);
   });
 
   issues.getAll().then(function(response){
@@ -63,7 +62,7 @@ $scope.showTopic = function(topic){
   $scope.htmlcontent = topic.summary;
 };
 
-$scope.clearForm = function(){
+$scope.clearTopicForm = function(){
   $scope.topic = {};
 }
 

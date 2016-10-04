@@ -36,8 +36,8 @@ $scope.showCandidate = function(index) {
   $scope.selectedCandidate = candidate;
 };
 
-$scope.clearForm = function(){
-  $scope.topic = {};
+$scope.clearCandidateForm = function(){
+  $scope.candidate = {};
 }
 
 //---------* NEW CANDIDATE EDITOR*----------//
