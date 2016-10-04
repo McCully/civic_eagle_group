@@ -19,6 +19,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
     $scope.showThird = false;
     $scope.showNext = false;
     $scope.showPrevious = true;
+    console.log('reset counter function');
   }
 
   /* Show the first form and hide the other two forms by default.
@@ -26,12 +27,16 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
   $scope.resetCounter();
 
   $scope.switchView = function() {
+    console.log("Switch: ", screenCounter);
+    $scope.pageNumber = screenCounter;
+    $scope.pageNumber += 1;
     if(screenCounter === 0) {
       $scope.showFirst = true;
       $scope.showSecond = false;
       $scope.showThird = false;
       $scope.showNext = false;
       $scope.showPrevious = true;
+      console.log('click');
     }
     if(screenCounter == 1) {
       $scope.showFirst = false;
@@ -39,17 +44,20 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       $scope.showThird = false;
       $scope.showNext = false;
       $scope.showPrevious = false;
+      console.log('counter 1');
     }
     if(screenCounter == 2) {
       $scope.showSecond = false;
       $scope.showThird = true;
       $scope.showNext = true;
       $scope.showPrevious = false;
+      console.log('counter 2');
     }
   };
 
   $scope.nextCandidateView = function() {
     screenCounter++;
+    console.log(screenCounter);
     if(screenCounter > 2) {
       screenCounter = 2;
     }
@@ -57,6 +65,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
   };
 
   $scope.prevCandidateView = function() {
+    console.log(screenCounter);
     if(screenCounter === 0) {
       return;
     }
@@ -67,6 +76,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
   $scope.nextTopicView = function() {
     screenCounter++;
     if(screenCounter > 1) {
+      console.log('nextTopicView');
       screenCounter = 1;
       return;
     }
@@ -75,6 +85,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
 
   $scope.prevTopicView = function() {
     if(screenCounter === 0) {
+      console.log('prevTopicView');
       return;
     }
     screenCounter--;
@@ -97,13 +108,15 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
 
 eagleApp.controller('PanelController', ['$scope', '$location', function($scope, $location){
   this.selectedTab = '';
+  $scope.isActive = false;
   this.setTab = function(setTab){
       console.log('tab is set to:', setTab);
       this.selectedTab = setTab;
       $location.path(setTab);
     };
     this.isTabSelected = function(tab){
-      // console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
+      console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
       return this.selectedTab === tab;
+
     };
 }]);

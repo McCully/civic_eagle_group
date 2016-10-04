@@ -20,8 +20,8 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
     $scope.selectedIssue = issue;
   }
 
-  $scope.clearForm = function(){
-    $scope.topic = {};
+  $scope.clearIssueForm = function(){
+    $scope.issue = {};
   }
 
   //---------* WYSIWYG EDITOR*----------//
