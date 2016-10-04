@@ -21,7 +21,9 @@ $scope.issues = [];
 issues.getAll().then(function(response){
   console.log(response);
   for(var i = 0; i < response.length; i++) {
-    issues.getById().then(function(response) {
+    var id = response[i]._id;
+    issues.getById(id).then(function(response) {
+      console.log("Issue: ", response);
       $scope.issues.push(response);
     });
   }

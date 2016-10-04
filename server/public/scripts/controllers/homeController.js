@@ -110,12 +110,12 @@ eagleApp.controller('PanelController', ['$scope', '$location', function($scope, 
   this.selectedTab = '';
   $scope.isActive = false;
   this.setTab = function(setTab){
-      console.log('tab is set to:', setTab);
+      //console.log('tab is set to:', setTab);
       this.selectedTab = setTab;
       $location.path(setTab);
     };
     this.isTabSelected = function(tab){
-      console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
+      //console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
       return this.selectedTab === tab;
 
     };

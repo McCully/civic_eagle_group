@@ -14,4 +14,14 @@ router.get('/' , function(req , res){
    });
 });
 
+router.get('/:id' , function(req , res) {
+   var id = req.params.id;
+   unirest.get("https://users-staging.api.civiceagle.com/issues/" + id)
+   .header("Authorization", "Basic " + credentials.getCred())
+   .header("Accept", "application/json")
+   .end(function(result){
+      res.send(result.body);
+   });
+});
+
 module.exports = router;
