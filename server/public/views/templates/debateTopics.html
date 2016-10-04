@@ -1,12 +1,13 @@
 <div ng-include="'views/templates/sideNav.html'"></div>
 <div ng-include="'views/templates/debateTopicsModal.html'"></div>
 <div ng-include="'views/templates/debateTopicsModalUpdate.html'"></div>
-<button type="button" class="btn button btn-lg add"  data-toggle="modal" data-target="#debateTopicsModal">Add Topic</button>
+
+<button type="button" class="btn button btn-lg add"  data-toggle="modal" ng-click="clearForm()" data-target="#debateTopicsModal">Add Topic</button>
 
 <div class = "container-fluid debateView">
   <div class="row">
     <div class = "col-md-9 col-center topics-container">
-      <div ng-repeat="topic in topics" class = "outline-container">
+      <div ng-repeat="topic in topics track by $index" class = "outline-container">
         <h2 class="topics" data-toggle="modal" data-target="#debateTopicsModalUpdate" ng-click="showTopic(topic)">{{topic.title}}</h2>
       </div>
     </div>

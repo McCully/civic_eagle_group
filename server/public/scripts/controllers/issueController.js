@@ -1,7 +1,12 @@
 "use strict";
 
-eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngularManager', 'issues', function ($scope, $http, Admin, textAngularManager, issues) {
+eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 'textAngularManager', 'issues', function ($scope, $location, $http, Admin, textAngularManager, issues) {
   var header = 'Basic ' + Admin.getCred();
+
+  if(Admin.getCred() === undefined){
+   $location.path('/logIn');
+ };
+
 
   issues.getAll().then(function(response) {
     $scope.issues = response;
@@ -13,6 +18,10 @@ eagleApp.controller('issueController', ['$scope', '$http', 'Admin', 'textAngular
     var issue = $scope.issues[index];
     console.log("issue: ", issue);
     $scope.selectedIssue = issue;
+  }
+
+  $scope.clearForm = function(){
+    $scope.topic = {};
   }
 
   //---------* WYSIWYG EDITOR*----------//

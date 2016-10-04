@@ -9,6 +9,14 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
     return promise;
   };
 
+  function addTopic(topic){
+    console.log("Data Factory Test 1", topic);
+      var promise = $http.post('/debateTopicRoute', topic).then(function(response){
+      console.log("Data Factory Test 2", response);
+    })
+    //return promise;
+  };
+
   function updateTopic(topic) {
     var id = topic._id;
     console.log(id);
@@ -40,6 +48,7 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
 
   return {
     getDebateTopics: getDebateTopics,
+    addTopic: addTopic,
     updateTopic: updateTopic
   };
 
