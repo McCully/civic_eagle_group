@@ -9,8 +9,8 @@ eagleApp.factory('issues' , ['$http' , function($http){
     return promise;
   }
 
-  function getById() {
-    var promise = $http.get('/issuesRoute').then(function(response){
+  function getById(id) {
+    var promise = $http.get('/issuesRoute/' + id).then(function(response){
       return response.data;
     });
     return promise;

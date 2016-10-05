@@ -113,15 +113,13 @@ eagleApp.controller('PanelController', ['$scope', '$location', function($scope, 
   this.selectedTab = '';
   $scope.isActive = false;
   this.setTab = function(setTab){
-      console.log('tab is set to:', setTab);
+      //console.log('tab is set to:', setTab);
       this.selectedTab = setTab;
       $location.path(setTab);
     };
     this.isTabSelected = function(tab){
-      if(this.selectedTab !== ''){
       return this.selectedTab === tab;
-    }
-  };
+    };
 }]);
 
 
