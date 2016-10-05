@@ -25,8 +25,6 @@
             <label for="#issues">Issues</label>
 
             <ui-select multiple sortable="true" theme="bootstrap" ng-model="this.issue.selected" class="form-control" title="Choose an issue">
-
-
              <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
              <ui-select-choices repeat="item in issues | filter: $select.title.search">
                <div ng-bind-html="item.title | highlight: $select.title.search"></div>
