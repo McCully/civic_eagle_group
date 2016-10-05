@@ -17,12 +17,15 @@
             </div>
          </div>
          <div class="collapse navbar-collapse" id="sidenav-collapse">
+           <section ng-controller="PanelController as panel">
+
             <ul class="nav navbar-nav">
-               <li><a class="highlighted" href = "#debateTopics">Debate Topics</a></li>
-               <li><a href = "#candidates">Candidates</a></li>
-               <li><a href = "#newsSources">News Sources</a></li>
-               <li><a href = "#issues">Issues</a></li>
+               <li ng-class="{active: panel.isTabSelected('debateTopics')}"><a href="" ng-click="panel.setTab('debateTopics')">Debate Topics</a></li>
+               <li ng-class="{active: panel.isTabSelected('candidates')}" ng-click="panel.setTab('candidates')"><a href="" >Candidates</a></li>
+               <li ng-class="{active: panel.isTabSelected('newsSources')}" ng-click="panel.setTab('newsSources')"><a href="">News Sources</a></li>
+               <li ng-class="{active: panel.isTabSelected('issues')}"><a href="" ng-click="panel.setTab('issues')">Issues</a></li>
             </ul>
+          </section>
          </div>
       </nav>
    </div>

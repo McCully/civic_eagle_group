@@ -4,11 +4,11 @@
    margin: 0 auto;
 }
 
-.form-signin
-{
-   max-width: 330px;
+.form-signin {
    padding: 15px;
    margin: 0 auto;
+   margin-left: 0;
+   margin-right 0;
 }
 
 .form-signin .form-signin-heading, .form-signin .checkbox

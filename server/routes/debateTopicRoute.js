@@ -15,6 +15,7 @@ router.get('/' , function(req , res){
 });
 
 router.post('/' , function(req , res){
+   console.log("Hey", req.body);
    unirest.get("https://debate-staging.api.civiceagle.com/topics")
    .header("Authorization", "Basic " + credentials.getCred())
    .header("Accept", "application/json")
