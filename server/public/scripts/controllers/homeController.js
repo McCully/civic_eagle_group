@@ -119,8 +119,35 @@ eagleApp.controller('PanelController', ['$scope', '$location', function($scope, 
     };
     this.isTabSelected = function(tab){
       if(this.selectedTab !== ''){
-      console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
       return this.selectedTab === tab;
     }
   };
 }]);
+
+
+
+
+
+
+
+// eagleApp.directive('navDirective', function () {
+//   return {
+//     restrict: 'E',
+//     templateUrl: '../../views/templates/sideNav.html',
+//     controller: function($scope, $location){
+//       this.selectedTab = '';
+//       $scope.isActive = false;
+//       this.setTab = function(setTab){
+//           console.log('tab is set to:', setTab);
+//           this.selectedTab = setTab;
+//           // $location.path(setTab);
+//         };
+//         this.isTabSelected = function(tab){
+//           if(this.selectedTab !== ''){
+//           console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
+//           return this.selectedTab === tab;
+//         }
+//       };
+//     }
+//   };
+// });
