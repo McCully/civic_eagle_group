@@ -1,5 +1,10 @@
 /*---------------GlobalStyles---------------*/
 
+.pagination {
+    display: inline;
+
+}
+
 .ui-select-match-item {
   background-color: #F0F8FF !important;
 }
@@ -41,20 +46,28 @@ label {
 .container-fluid{
   padding-right: 0;
   padding-left: 0;
-
 }
 
 
 .outline-container{
-  padding: 16px 10px;
-  width: 60%;
+  padding: 5px 3px;
+  width: 60% ;
   margin-top: 15px;
   margin-bottom: 25px !important;
-  text-align: center;
+  text-align: center !important;
   margin: 0 auto;
   display: block;
   overflow: hidden;
-  background-color: rgba(246, 140, 36, 0.9);
+
+  background-color: rgba(246, 140, 36, 0.8);
+  border-radius: 50px 50px 50px 50px;
+
+}
+
+.outline-container:hover{
+  background-color: rgba(246, 140, 36, 1);
+
+}
 
 
 /*---------------textAngular---------------*/

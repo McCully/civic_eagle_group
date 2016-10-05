@@ -7,6 +7,40 @@
   max-width: 75%;
 }
 
+.candidateView{
+  background: url(https://static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/551a0604e4b0a90fec4269a2/551b65b5e4b0c1e6d151633a/1427858870967/civic-eagle-store-2.jpg?format=1000w);
+  background-size: 99% 99%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.candidates-container h2:hover {
+ color: white;
+ opacity: 1;
+ text-shadow: 1px 1px lightgray;
+
+}
+.candidates-container h2{
+  color: white;
+  opacity: .9;
+  text-align: center;
+}
+
 .candidates:hover {
   color: orange;
+  cursor: pointer;
+}
+
+.candidates{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.candidates-container .outline-container{
+  width: 35%;
+  margin-top: 50px;
 }

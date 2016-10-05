@@ -80,4 +80,33 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
 // });
 //
 
+$scope.addTopic = function(topic) {
+  console.log("Test");
+  console.log(topic);
+  DebateTopicsService.addTopic(topic).then(function(response){
+  console.log("Test 10:38AM", response);
+  });
+}
+
+$scope.updateTopic = function(topic) {
+DebateTopicsService.updateTopic(topic).then(function(response){
+  console.log(response);
+});
+}
+
+// $scope.showTopic = function(topic){
+//   console.log(topic);
+//   $scope.topic = topic;
+//   $scope.htmlcontent = topic.summary;
+// };
+$scope.showTopic = function(index) {
+  $scope.resetCounter();
+  var topic = $scope.topics[index];
+  $scope.selectedTopic = topic;
+};
+
+$scope.clearTopicForm = function(){
+  $scope.topic = {};
+}
+
 }]);
