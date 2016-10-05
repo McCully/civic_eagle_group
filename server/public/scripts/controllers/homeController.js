@@ -17,6 +17,7 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
 
   $scope.resetCounter = function() {
     screenCounter = 0;
+    $scope.pageNumber = 1;
     $scope.showFirst = true;
     $scope.showSecond = false;
     $scope.showThird = false;
@@ -95,18 +96,6 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       $scope.switchView();
   };
 
-  //---------------**SET TAB**---------------//
-  // this.selectedTab = 'debateTopics';
-  // this.setTab = function(setActive){
-  //     console.log('tab is set to:', setActive);
-  //     this.selectedTab = setActive;
-  //   };
-  //
-  // this.isActive = function(tab){
-  //     console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
-  //     return this.selectedTab === tab;
-  //   };
-
 }]);
 
 eagleApp.controller('PanelController', ['$scope', '$location', function($scope, $location){
@@ -121,31 +110,3 @@ eagleApp.controller('PanelController', ['$scope', '$location', function($scope, 
       return this.selectedTab === tab;
     };
 }]);
-
-
-
-
-
-
-
-// eagleApp.directive('navDirective', function () {
-//   return {
-//     restrict: 'E',
-//     templateUrl: '../../views/templates/sideNav.html',
-//     controller: function($scope, $location){
-//       this.selectedTab = '';
-//       $scope.isActive = false;
-//       this.setTab = function(setTab){
-//           console.log('tab is set to:', setTab);
-//           this.selectedTab = setTab;
-//           // $location.path(setTab);
-//         };
-//         this.isTabSelected = function(tab){
-//           if(this.selectedTab !== ''){
-//           console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
-//           return this.selectedTab === tab;
-//         }
-//       };
-//     }
-//   };
-// });

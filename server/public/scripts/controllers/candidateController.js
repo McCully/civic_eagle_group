@@ -17,14 +17,40 @@ function($scope, $location, $http, Admin, CandidateService, textAngularManager, 
    loadResources();
  };
 
+ $scope.showSummary = function(index) {
+  console.log("index: ", index);
+   var summary = $scope.summaries[index];
+   $scope.summary = summary;
+   console.log("summary: ", summary);
+ }
 
 /* Grab the selected candidate's information and
  set it to a scope variable, so it can be displayed
  on the DOM.  */
 $scope.showCandidate = function(index) {
+  /* Reset the modal page views. */
   $scope.resetCounter();
+
+  /* Find and display the selected candidate. */
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
+
+  /* */
+  $scope.selectedTags = [];
+  $scope.summaries = [];
+
+  console.log("length: ", candidate.issueSummaries.length);
+
+  /* Grab the issues in the candidate object
+     so they too can be displayed to the user. */
+  for(var i = 0; i < candidate.issueSummaries.length; i++) {
+    var id = candidate.issueSummaries[i].issue;
+    var summary = candidate.issueSummaries[i].summary;
+    $scope.summaries.push(summary);
+    issues.getById(id).then(function(response) {
+      $scope.selectedTags.push(response);
+    });
+  }
 };
 
 $scope.clearCandidateForm = function(){
@@ -53,16 +79,8 @@ function loadResources() {
     console.log("Candidates: ", response);
   });
 
-  $scope.issues = [];
-
   issues.getAll().then(function(response) {
-    for(var i = 0; i < response.length; i++) {
-      var id = response[i]._id;
-      issues.getById(id).then(function(response) {
-        console.log("Issue: ", response);
-        $scope.issues.push(response);
-      });
-    }
+    $scope.issues = response;
   });
 }
 
