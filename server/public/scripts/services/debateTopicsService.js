@@ -18,8 +18,8 @@ eagleApp.factory('DebateTopicsService', ['$http', function($http){
   };
 
   function updateTopic(topic) {
+    console.log(topic);
     var id = topic._id;
-    console.log(id);
     var promise = $http.put('/debateTopicRoute/' + id, topic).then(function(response){
     console.log(response);
     })

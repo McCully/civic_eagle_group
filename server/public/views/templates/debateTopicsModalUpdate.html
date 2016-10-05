@@ -3,21 +3,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">{{topic.title}}</h4>
+        <h3 class="modal-title">{{selectedTopic.title}}</h3>
         <div class="pagination">Page {{pageNumber}}/{{topicsTotal}}</div>
       </div>
       <div class="modal-body">
+        <form editable-form name="editableForm" onaftersave="save()">
           <div ng-show="showFirst">
-          <h2 editable-text="topic.title">Title: {{topic.title}}</h2>
-          <p>Slug: {{topic.slug}}</p>
-          <p>Summary</p>
+             <label>Title</label>
+              <input editable-text="selectedTopic.title" ng-model="selectedTopic.title" class="form-control" value="{{selectedTopic.title}}">
+             </input>
+              <label for="#editSlug">Slug</label>
+              <input id="editSlug" class="form-control" ng-model="selectedTopic.slug" value="{{selectedTopic.slug}}">
+              <label for="#editSummary">Summary</label>
             <div class="editorContainer">
               <div text-angular="text-angular" name="newDebateContent" ng-model="newDebateContent" ta-disabled="disabled"></div>
             </div>
           </div>
           <div ng-show="showSecond">
-            <p>Image: {{topic.image}}</p>
-            <ui-select multiple sortable="true" theme="bootstrap" ng-model="topic.issues" class="form-control" title="Choose an issue">
+            <label for="#editImage">Image</label>
+            <input id="editImage" class="form-control" ng-model="selectedTopic.image" value="{{selectedTopic.image}}">
+            <ui-select multiple sortable="true" theme="bootstrap" ng-model="selectedTopic.issues" class="form-control" title="Choose an issue">
              <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
              <ui-select-choices repeat="item in issues | filter: $select.search">
                <div ng-bind-html="item.title | highlight: $select.search"></div>
@@ -27,9 +32,12 @@
             <label for="#active">Active</label>
             <input type="checkbox" id="active" ng-model="topic.active">
           </div>
+          <span ng-show="editableForm.$visible">
+        </span>
+        </form>
       <div class="modal-footer">
         <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left"></span></button>
-        <button type="button" ng-click="addTopic(topic)" class="btn btn-primary">Submit</button>
+        <button type="button" ng-click="updateTopic(selectedTopic)" class="btn btn-primary">Submit</button>
         <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-success"><span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>

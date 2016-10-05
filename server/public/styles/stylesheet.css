@@ -78,20 +78,7 @@ label {
 
 /*--------------xeditable-----------------*/
 
-.editable-wrap  {
-  width: 100%;
-  border: 5px solid purple;
-  display: inline-block;
-}
 
-.editable-has-buttons {
-  border: 5px solid blue;
-  width: 75%;
-}
-.editable-buttons {
-  border: 5px solid blue
-  width: 25%;
-}
 
 .btn btn-success {
   margin: 5px;
