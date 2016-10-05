@@ -6,6 +6,17 @@
   margin-bottom: 15px;
   max-width: 75%;
 }
+.issueView{
+  background: url(https://static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/551a0604e4b0a90fec4269a2/551b65c1e4b0c1e6d1516370/1427858882461/civic-eagle-store.jpg?format=1000w);
+  background-size: 100% 99%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+
+}
 
 .issues:hover {
   color: orange;

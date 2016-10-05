@@ -56,10 +56,15 @@ DebateTopicsService.updateTopic(topic).then(function(response){
 });
 }
 
-$scope.showTopic = function(topic){
-  console.log(topic);
-  $scope.topic = topic;
-  $scope.htmlcontent = topic.summary;
+// $scope.showTopic = function(topic){
+//   console.log(topic);
+//   $scope.topic = topic;
+//   $scope.htmlcontent = topic.summary;
+// };
+$scope.showTopic = function(index) {
+  $scope.resetCounter();
+  var topic = $scope.topics[index];
+  $scope.selectedTopic = topic;
 };
 
 $scope.clearTopicForm = function(){
