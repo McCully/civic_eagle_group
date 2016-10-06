@@ -64,14 +64,6 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
       console.log('counter 1');
       }
     }
-    // if(screenCounter == 1 && $location.path() === '/debateTopics', '/issues') {
-    //   $scope.showFirst = false;
-    //   $scope.showSecond = true;
-    //   $scope.showThird = false;
-    //   $scope.showNext = true;
-    //   $scope.showPrevious = false;
-    //   console.log('counter 1');
-    // }
 
     if(screenCounter == 2) {
       $scope.showSecond = false;
