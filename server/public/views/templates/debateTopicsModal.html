@@ -32,14 +32,12 @@
            </ui-select>
 
             <label for="#active">Active</label>
-            <input type="checkbox" id="active" ng-model="topic.active">
+            <ui-switch type="checkbox" id="active" ng-model="topic.active"></ui-switch>
           </div>
         </form>
       <div class="modal-footer">
-        <button ng-click="prevTopicView()" type="button" ng-hide="showPrevious" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button>
         <button type="button" ng-click="" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
     </div>
   </div>
