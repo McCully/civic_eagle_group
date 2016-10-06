@@ -1,7 +1,7 @@
 "use strict";
 
-eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'CandidateService', 'textAngularManager', 'issues',
-function($scope, $location, $http, Admin, CandidateService, textAngularManager, issues) {
+eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'Candidates', 'textAngularManager', 'issues',
+function($scope, $location, $http, Admin, Candidates, textAngularManager, issues) {
   /* Create basic authorization header. */
   var header = 'Basic ' + Admin.getCred();
 
@@ -58,24 +58,9 @@ $scope.clearCandidateForm = function(){
   $scope.resetCounter();
 };
 
-//---------* NEW CANDIDATE EDITOR*----------//
-$scope.version = textAngularManager.getVersion();
-$scope.versionNumber = $scope.version.substring(1);
-$scope.newCandidateOrigHtml = '<h1>New Candidates</h1>';
-$scope.newCandidateContent = $scope.newCandidateOrigHtml;
-$scope.disabled = false;
-
-
-//---------* UPDATE CANDIDATE EDITOR*----------//
-$scope.version = textAngularManager.getVersion();
-$scope.versionNumber = $scope.version.substring(1);
-$scope.candidateOrigHtml = '<h1>Candidates</h1>';
-$scope.candidateContent = $scope.candidateOrigHtml;
-$scope.disabled = false;
-
 function loadResources() {
   /* Load all the candidates information so we can display it. */
-  CandidateService.getCandidates().then(function(response) {
+  Candidates.getAll().then(function(response) {
     $scope.candidates = response;
     console.log("Candidates: ", response);
   });
@@ -84,5 +69,19 @@ function loadResources() {
     $scope.issues = response;
   });
 }
+
+//---------* NEW CANDIDATE EDITOR*----------//
+$scope.version = textAngularManager.getVersion();
+$scope.versionNumber = $scope.version.substring(1);
+$scope.newCandidateOrigHtml = '<h1>New Candidates</h1>';
+$scope.newCandidateContent = $scope.newCandidateOrigHtml;
+$scope.disabled = false;
+
+//---------* UPDATE CANDIDATE EDITOR*----------//
+$scope.version = textAngularManager.getVersion();
+$scope.versionNumber = $scope.version.substring(1);
+$scope.candidateOrigHtml = '<h1>Candidates</h1>';
+$scope.candidateContent = $scope.candidateOrigHtml;
+$scope.disabled = false;
 
 }]);

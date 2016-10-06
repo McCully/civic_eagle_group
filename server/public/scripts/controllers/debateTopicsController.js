@@ -28,21 +28,9 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
   }
 
   $scope.save = function(){
-
     console.log("test");
     console.log($scope.topic.title)
   }
-
-  $scope.showTopic = function(topic){
-    $scope.resetCounter();
-    $scope.selectedTopic = topic;
-    $scope.htmlcontent = topic.summary;
-  };
-
-  $scope.clearTopicForm = function(){
-    $scope.topic = {};
-  }
-
 
   //---------* UPDATE DEBATE TOPIC EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
@@ -69,17 +57,6 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
       });
   };
 
-//  $http({
-//   method: 'GET',
-//   url: "https://debate-staging.api.civiceagle.com/topics",
-//   headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI='
-// , 'accept' : 'application/json'}
-// }).then(function(response){
-//   $scope.topicsResults = response.data;
-//   console.log($scope.topicsResults);
-// });
-//
-
 $scope.addTopic = function(topic) {
   console.log("Test");
   console.log(topic);
@@ -89,16 +66,12 @@ $scope.addTopic = function(topic) {
 }
 
 $scope.updateTopic = function(topic) {
+  console.log("topic: ", topic);
 DebateTopicsService.updateTopic(topic).then(function(response){
   console.log(response);
 });
 }
 
-// $scope.showTopic = function(topic){
-//   console.log(topic);
-//   $scope.topic = topic;
-//   $scope.htmlcontent = topic.summary;
-// };
 $scope.showTopic = function(index) {
   $scope.resetCounter();
   var topic = $scope.topics[index];

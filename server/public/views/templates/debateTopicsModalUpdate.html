@@ -10,7 +10,7 @@
         <form editable-form name="editableForm" onaftersave="save()">
           <div ng-show="showFirst">
              <label>Title</label>
-              <input editable-text="selectedTopic.title" ng-model="selectedTopic.title" class="form-control" value="{{selectedTopic.title}}">
+              <input ng-model="selectedTopic.title" class="form-control" value="{{selectedTopic.title}}">
              </input>
               <label for="#editSlug">Slug</label>
               <input id="editSlug" class="form-control" ng-model="selectedTopic.slug" value="{{selectedTopic.slug}}">
@@ -28,12 +28,9 @@
                <div ng-bind-html="item.title | highlight: $select.search"></div>
              </ui-select-choices>
            </ui-select>
-
             <label for="#active">Active</label>
             <input type="checkbox" id="active" ng-model="topic.active">
           </div>
-          <span ng-show="editableForm.$visible">
-        </span>
         </form>
       <div class="modal-footer">
         <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button>
