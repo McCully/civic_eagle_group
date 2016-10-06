@@ -22,6 +22,7 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
 
   $scope.clearIssueForm = function(){
     $scope.issue = {};
+    $scope.resetCounter();
   }
 
   //---------* WYSIWYG EDITOR*----------//

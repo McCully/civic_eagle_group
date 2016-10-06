@@ -107,6 +107,7 @@ $scope.showTopic = function(index) {
 
 $scope.clearTopicForm = function(){
   $scope.topic = {};
-}
+  $scope.resetCounter();
+};
 
 }]);

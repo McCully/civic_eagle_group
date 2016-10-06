@@ -1,8 +1,9 @@
 /*---------------GlobalStyles---------------*/
 
-.pagination {
-    display: inline;
 
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: white; !important;
+    color: black;
 }
 
 .ui-select-match-item {

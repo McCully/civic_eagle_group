@@ -55,7 +55,8 @@ $scope.showCandidate = function(index) {
 
 $scope.clearCandidateForm = function(){
   $scope.candidate = {};
-}
+  $scope.resetCounter();
+};
 
 //---------* NEW CANDIDATE EDITOR*----------//
 $scope.version = textAngularManager.getVersion();
