@@ -7,34 +7,34 @@
         <div class="pagination">Page {{pageNumber}}/{{topicsTotal}}</div>
       </div>
       <div class="modal-body">
-        <form editable-form name="editableForm" onaftersave="save()">
+        <form editable-form name="editTopicForm" >
           <div ng-show="showFirst">
              <label>Title</label>
-              <input ng-model="selectedTopic.title" class="form-control" value="{{selectedTopic.title}}">
+              <input ng-model="updatedTopic.title" class="form-control" ng-value="selectedTopic.title">
              </input>
               <label for="#editSlug">Slug</label>
-              <input id="editSlug" class="form-control" ng-model="selectedTopic.slug" value="{{selectedTopic.slug}}">
+              <input id="editSlug" class="form-control" ng-model="updatedTopic.slug" ng-value="selectedTopic.slug">
               <label for="#editSummary">Summary</label>
             <div class="editorContainer">
-              <div text-angular="text-angular" name="newDebateContent" ng-model="newDebateContent" ta-disabled="disabled"></div>
+              <div text-angular="text-angular" name="newDebateContent" ng-model="updatedTopic.summary" ta-disabled="disabled"></div>
             </div>
           </div>
           <div ng-show="showSecond">
             <label for="#editImage">Image</label>
-            <input id="editImage" class="form-control" ng-model="selectedTopic.image" value="{{selectedTopic.image}}">
-            <ui-select multiple sortable="true" theme="bootstrap" ng-model="selectedTopic.issues" class="form-control" title="Choose an issue">
+            <input id="editImage" class="form-control" ng-model="updatedTopic.image" ng-value="selectedTopic.image">
+            <ui-select multiple sortable="true" theme="bootstrap" ng-model="updatedTopic.issues" class="form-control" title="Choose an issue">
              <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
              <ui-select-choices repeat="item in issues | filter: $select.search">
                <div ng-bind-html="item.title | highlight: $select.search"></div>
              </ui-select-choices>
            </ui-select>
             <label for="#active">Active</label>
-            <input type="checkbox" id="active" ng-model="topic.active">
+            <input type="checkbox" id="active" ng-model="updatedTopic.active" ng-value="selectedTopic.active">
           </div>
         </form>
       <div class="modal-footer">
-        <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button>
-        <button type="button" ng-click="updateTopic(selectedTopic)" class="btn btn-primary">Submit</button>
+        <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left"></span></button>
+        <button type="button" ng-click="updateTopic(updatedTopic)" class="btn btn-primary">Submit</button>
         <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
