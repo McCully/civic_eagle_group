@@ -10,21 +10,21 @@
         <form editable-form name="editCandidateForm" class="form-signin">
           <div ng-show="showFirst">
             <label for="#editFirstName">First Name</label>
-            <input id="editFirstName" class="form-control" value="{{selectedCandidate.firstName}}">
+            <input id="editFirstName" class="form-control" value="selectedCandidate.firstName">
             <label for="#editLastName">Last Name</label>
-            <input id="editFirstName" class="form-control" value="{{selectedCandidate.lastName}}">
+            <input id="editFirstName" class="form-control" value="selectedCandidate.lastName">
             <label for="#editParty">Political Party</label>
-            <input id="editFirstName" class="form-control" value="{{selectedCandidate.party}}">
+            <input id="editFirstName" class="form-control" value="selectedCandidate.party">
           </div>
           <div ng-show="showSecond">
             <label for="#editTwitter">Twitter ID</label>
-            <input id="editTwitter" value="{{selectedCandidate.twitterId}}" class="form-control" required autofocus>
+            <input id="editTwitter" ng-model="editCandidate.twitterId" value="selectedCandidate.twitterId" class="form-control" required autofocus>
             <label for="#editFacebook">Facebook</label>
-            <input type="text" id="editFacebook" value="{{selectedCandidate.facebookId}}" class="form-control" required autofocus>
+            <input type="text" id="editFacebook" ng-model="editCandidate.facebookId" value="selectedCandidate.facebookId" class="form-control" required autofocus>
             <label for="#editWebsite">Website</label>
-            <input type="text" id="editWebsite" value="{{selectedCandidate.website}}" class="form-control" required autofocus>
+            <input type="text" id="editWebsite" ng-model="editCandidate.website" value="selectedCandidate.website" class="form-control" required autofocus>
             <label for="#editImage">Image</label>
-            <input type="text" id="editImage" value="{{selectedCandidate.image}}" class="form-control" required autofocus>
+            <input type="text" id="editImage" ng-model="editCandidate.image" value="selectedCandidate.image" class="form-control" required autofocus>
           </div>
           <div ng-show="showThird">
             <label for="#issue">Issue</label>
@@ -42,7 +42,7 @@
         </form>
       <div class="modal-footer">
         <button ng-click="prevCandidateView()" type="button" ng-hide="showPrevious" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left"></span></button>
-        <button type="button" ng-click="updateCandidate(selectedCandidate)" class="btn btn-primary">Submit</button>
+        <button type="button" ng-click="updateCandidate(editCandidate)" class="btn btn-primary">Submit</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button ng-click="nextCandidateView()" type="button" ng-hide="showNext" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
