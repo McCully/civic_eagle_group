@@ -27,7 +27,6 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
     $scope.showThird = false;
     $scope.showNext = false;
     $scope.showPrevious = true;
-    console.log('reset counter function');
   }
 
   /* Show the first form and hide the other two forms by default.
@@ -38,13 +37,13 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
     console.log("Switch: ", screenCounter);
     $scope.pageNumber = screenCounter;
     $scope.pageNumber += 1;
+
     if(screenCounter === 0) {
       $scope.showFirst = true;
       $scope.showSecond = false;
       $scope.showThird = false;
       $scope.showNext = false;
       $scope.showPrevious = true;
-      console.log('click');
     }
     if(screenCounter == 1) {
       $scope.showFirst = false;
@@ -52,14 +51,13 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
       $scope.showThird = false;
       $scope.showNext = false;
       $scope.showPrevious = false;
-      console.log('counter 1');
     }
     if(screenCounter == 2 || $location.path() == '/debateTopics', '/issues') {
+      $scope.showFirst = false;
       $scope.showSecond = false;
       $scope.showThird = true;
       $scope.showNext = true;
       $scope.showPrevious = false;
-      console.log('counter 2');
     }
   };
 
