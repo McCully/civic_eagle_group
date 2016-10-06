@@ -68,6 +68,7 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
     //   $scope.showPrevious = false;
     //   console.log('counter 2');
     // }
+  }
 
   $scope.nextCandidateView = function() {
     screenCounter++;
