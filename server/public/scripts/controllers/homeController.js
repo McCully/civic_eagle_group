@@ -47,21 +47,31 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
       console.log('click');
     }
     if(screenCounter == 1) {
+      console.log($location.path());
+      if($location.path() === '/debateTopics', '/issues') {
+        $scope.showFirst = false;
+        $scope.showSecond = true;
+        $scope.showThird = false;
+        $scope.showNext = true;
+        $scope.showPrevious = false;
+        console.log('no arrow');
+      }else {
       $scope.showFirst = false;
       $scope.showSecond = true;
       $scope.showThird = false;
       $scope.showNext = false;
       $scope.showPrevious = false;
       console.log('counter 1');
+      }
     }
-    if(screenCounter == 1 && $location.path() == '/debateTopics', '/issues') {
-      $scope.showFirst = false;
-      $scope.showSecond = true;
-      $scope.showThird = false;
-      $scope.showNext = true;
-      $scope.showPrevious = false;
-      console.log('counter 1');
-    }
+    // if(screenCounter == 1 && $location.path() === '/debateTopics', '/issues') {
+    //   $scope.showFirst = false;
+    //   $scope.showSecond = true;
+    //   $scope.showThird = false;
+    //   $scope.showNext = true;
+    //   $scope.showPrevious = false;
+    //   console.log('counter 1');
+    // }
 
     if(screenCounter == 2) {
       $scope.showSecond = false;
