@@ -93,10 +93,11 @@
 
 .side-menu .brand-name-wrapper .eagleWeb{
   background: url("//static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/t/56bf8238b6aa60f2bc25dc76/1470439778298/?format=1500w");
-  background-size: 100% 100%;
+  background-size: 100% 70%;
   background-repeat: no-repeat;
-  min-width: 16vw;
-  min-height: 30vh;
+  background-position: center;
+  min-width: 15vw;
+  min-height: 25vh;
 
   /*width: 15%;*/
 
