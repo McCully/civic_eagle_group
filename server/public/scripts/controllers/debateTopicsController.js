@@ -7,16 +7,30 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
 
   if(Admin.getCred() === undefined){
    $location.path('/logIn');
+ } else {
+   loadResources();
  };
 
-  DebateTopicsService.getDebateTopics().then(function(response){
-    $scope.topics = response;
-  });
+  $scope.addTopic = function(topic) {
+    console.log("Test");
+    console.log(topic);
+    DebateTopicsService.addTopic(topic).then(function(response){
+    console.log("Test 10:38AM", response);
+    });
+  }
 
-  issues.getAll().then(function(response){
-    $scope.issues = response;
+  $scope.updateTopic = function(topic) {
+    console.log(topic);
+    console.log("Test");
+  DebateTopicsService.updateTopic(topic).then(function(response){
+    console.log(response);
   });
+  }
 
+  $scope.save = function(){
+    console.log("test");
+    console.log($scope.topic.title)
+  }
 
   //---------* UPDATE DEBATE TOPIC EDITOR*----------//
   $scope.version = textAngularManager.getVersion();
@@ -32,16 +46,17 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
   $scope.newDebateContent = $scope.newDebateOrigHtml;
   $scope.disabled = false;
 
-//  $http({
-//   method: 'GET',
-//   url: "https://debate-staging.api.civiceagle.com/topics",
-//   headers: {"Authorization": 'Basic dGVzdGFkbWluOkdjUWwzUUhyYnI='
-// , 'accept' : 'application/json'}
-// }).then(function(response){
-//   $scope.topicsResults = response.data;
-//   console.log($scope.topicsResults);
-// });
-//
+  function loadResources() {
+
+      DebateTopicsService.getDebateTopics().then(function(response){
+        $scope.topics = response;
+      });
+
+      issues.getAll().then(function(response){
+        $scope.issues = response;
+      });
+  };
+
 $scope.addTopic = function(topic) {
   console.log("Test");
   console.log(topic);
@@ -51,20 +66,20 @@ $scope.addTopic = function(topic) {
 }
 
 $scope.updateTopic = function(topic) {
+  console.log("topic: ", topic);
 DebateTopicsService.updateTopic(topic).then(function(response){
   console.log(response);
 });
 }
 
-$scope.showTopic = function(topic){
-  console.log(topic);
-  $scope.topic = topic;
-  $scope.htmlcontent = topic.summary;
+$scope.showTopic = function(index) {
+  $scope.resetCounter();
+  var topic = $scope.topics[index];
+  $scope.selectedTopic = topic;
 };
 
 $scope.clearTopicForm = function(){
   $scope.topic = {};
 }
-
 
 }]);

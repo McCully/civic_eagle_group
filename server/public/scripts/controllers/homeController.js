@@ -11,9 +11,13 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
    view we are on. Zero is the first view, one
    is the second view and 2 is the third, etc. */
   var screenCounter = 0;
+  $scope.topicsTotal = 2;
+  $scope.candidatesTotal = 3;
+  $scope.pageNumber = 1;
 
   $scope.resetCounter = function() {
     screenCounter = 0;
+    $scope.pageNumber = 1;
     $scope.showFirst = true;
     $scope.showSecond = false;
     $scope.showThird = false;
@@ -92,18 +96,6 @@ eagleApp.controller('homeController', ['$scope' , function($scope) {
       $scope.switchView();
   };
 
-  //---------------**SET TAB**---------------//
-  // this.selectedTab = 'debateTopics';
-  // this.setTab = function(setActive){
-  //     console.log('tab is set to:', setActive);
-  //     this.selectedTab = setActive;
-  //   };
-  //
-  // this.isActive = function(tab){
-  //     console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
-  //     return this.selectedTab === tab;
-  //   };
-
 }]);
 
 eagleApp.controller('PanelController', ['$scope', '$location', function($scope, $location){
@@ -115,8 +107,6 @@ eagleApp.controller('PanelController', ['$scope', '$location', function($scope, 
       $location.path(setTab);
     };
     this.isTabSelected = function(tab){
-      //console.log('Checking to see if ', this.selectedTab, ' === ', tab, 'it is: ', this.selectedTab === tab);
       return this.selectedTab === tab;
-
     };
 }]);
