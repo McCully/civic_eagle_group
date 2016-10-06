@@ -1,7 +1,7 @@
 "use strict";
 
 eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$http', function($scope, $location, Admin, $http) {
-  $scope.submitAdmin = function(){
+  $scope.submitAdmin = function() {
     /* Generate the credentials from the username and password
       so we can access the backend's REST api. */
     var cred = window.btoa($scope.admin.username + ':' + $scope.admin.password);
@@ -10,18 +10,18 @@ eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$ht
     $scope.admin.username = '';
     $scope.admin.password = '';
 
-    /* Store the credential for later use by other
-       controllers and services.  */
-    Admin.setCred(cred);
-
+     /* Validate the credentials provided. */
      $http({
-      method: 'POST',
-      url: "/cred",
-      data: {
-        cred: cred,
-      },
-    }).then(function(response){
+      method: 'GET',
+      url: "https://users-staging.api.civiceagle.com/user",
+      headers: {'Authorization': 'Basic ' + cred}
+    }).then(function(response) {
+      console.log("res: ", response);
+      /* Store the credential for later use by other
+         controllers and services.  */
+      Admin.setCred(cred);
+
+      $location.path('/home');
     });
-     $location.path('/home');
   };
 }]);

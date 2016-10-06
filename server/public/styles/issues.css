@@ -1,10 +1,6 @@
 .issues {
-  text-align: center;
-  margin: 0 auto;
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  max-width: 75%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .issueView{
   background: url(https://static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/551a0604e4b0a90fec4269a2/551b65c1e4b0c1e6d1516370/1427858882461/civic-eagle-store.jpg?format=1000w);
@@ -17,7 +13,25 @@
   min-width: 100vw;
 
 }
+.issues-container h2:hover {
+ color: white;
+ opacity: 1;
+ text-shadow: 1px 1px lightgray;
+
+}
+
+.issues-container{
+  color: white;
+  opacity: 1;
+  text-shadow: 1px 1px lightgray;
+
+}
+.issues-container h2{
+  color: white;
+  opacity: .9;
+}
 
 .issues:hover {
   color: orange;
+  cursor: pointer;
 }

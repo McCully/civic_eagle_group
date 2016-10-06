@@ -1,11 +1,15 @@
 "use strict";
 
-eagleApp.controller('homeController', ['$scope' , function($scope) {
-  $scope.highlighted = false;
-  $scope.changeColor = function() {
-    $scope.highlighted = true;
-    console.log('click works');
-  };
+eagleApp.controller('homeController', ['$scope', '$location', function($scope, $location) {
+
+/* This function governs show/hide for the nav bar on the login page */
+  $scope.checkNav = function(viewLocation) {
+       if(viewLocation === $location.path()){
+         return false;
+       }else {
+         return true;
+       }
+   };
 
   /* This counter tracks the modal form
    view we are on. Zero is the first view, one

@@ -1,7 +1,7 @@
 "use strict";
 
-eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'CandidateService', 'textAngularManager', 'issues',
-function($scope, $location, $http, Admin, CandidateService, textAngularManager, issues) {
+eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'Candidates', 'textAngularManager', 'issues',
+function($scope, $location, $http, Admin, Candidates, textAngularManager, issues) {
   /* Create basic authorization header. */
   var header = 'Basic ' + Admin.getCred();
 
@@ -16,6 +16,19 @@ function($scope, $location, $http, Admin, CandidateService, textAngularManager, 
     while the user is sent back to the login page. */
    loadResources();
  };
+
+ $scope.addCandidate = function(candidate) {
+   Candidates.add(candidate).then(function(response) {
+     console.log("Added candidate: ", response);
+   });
+ }
+
+ $scope.updateCandidate = function(candidate) {
+   console.log("candidate: ", candidate);
+   Candidates.update(candidate).then(function(response) {
+     console.log("Updated candidate: ", response);
+   });
+ }
 
  $scope.showSummary = function(index) {
   console.log("index: ", index);
@@ -55,6 +68,19 @@ $scope.showCandidate = function(index) {
 
 $scope.clearCandidateForm = function(){
   $scope.candidate = {};
+  $scope.resetCounter();
+};
+
+function loadResources() {
+  /* Load all the candidates information so we can display it. */
+  Candidates.getAll().then(function(response) {
+    $scope.candidates = response;
+    console.log("Candidates: ", response);
+  });
+
+  issues.getAll().then(function(response) {
+    $scope.issues = response;
+  });
 }
 
 //---------* NEW CANDIDATE EDITOR*----------//
@@ -64,24 +90,11 @@ $scope.newCandidateOrigHtml = '<h1>New Candidates</h1>';
 $scope.newCandidateContent = $scope.newCandidateOrigHtml;
 $scope.disabled = false;
 
-
 //---------* UPDATE CANDIDATE EDITOR*----------//
 $scope.version = textAngularManager.getVersion();
 $scope.versionNumber = $scope.version.substring(1);
 $scope.candidateOrigHtml = '<h1>Candidates</h1>';
 $scope.candidateContent = $scope.candidateOrigHtml;
 $scope.disabled = false;
-
-function loadResources() {
-  /* Load all the candidates information so we can display it. */
-  CandidateService.getCandidates().then(function(response) {
-    $scope.candidates = response;
-    console.log("Candidates: ", response);
-  });
-
-  issues.getAll().then(function(response) {
-    $scope.issues = response;
-  });
-}
 
 }]);

@@ -1,19 +1,28 @@
 "use strict";
 
-eagleApp.factory('issues' , ['$http' , function($http){
-
+eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
   function getAll() {
-    var promise = $http.get('/issuesRoute').then(function(response){
-      return response.data;
-    });
-    return promise;
+    var promise = $http({
+     method: 'GET',
+     url: "https://users-staging.api.civiceagle.com/issues",
+     headers: {'Authorization': 'Basic ' + Admin.getCred()}
+   }).then(function(response) {
+     console.log("res: ", response);
+     return response.data;
+   });
+   return promise;
   }
 
   function getById(id) {
-    var promise = $http.get('/issuesRoute/' + id).then(function(response){
-      return response.data;
-    });
-    return promise;
+    var promise = $http({
+     method: 'GET',
+     url: "https://users-staging.api.civiceagle.com/issues/" + id,
+     headers: {'Authorization': 'Basic ' + Admin.getCred()}
+   }).then(function(response) {
+     console.log("res: ", response);
+     return response.data;
+   });
+   return promise;
   }
 
   return {
