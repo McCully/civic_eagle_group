@@ -1,7 +1,7 @@
 "use strict";
 
-eagleApp.factory('CandidateService' , ['$http', 'Admin', function($http, Admin) {
-  function getCandidates() {
+eagleApp.factory('Candidates' , ['$http', 'Admin', function($http, Admin) {
+  function getAll() {
     var promise = $http({
      method: 'GET',
      url: "https://reps-staging.api.civiceagle.com/candidates",
@@ -14,7 +14,7 @@ eagleApp.factory('CandidateService' , ['$http', 'Admin', function($http, Admin) 
   }
 
   return {
-    getCandidates: getCandidates
+    getAll: getAll
   };
 
 }]);

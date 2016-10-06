@@ -1,7 +1,6 @@
 "use strict";
 
 eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
-
   function getAll() {
     var promise = $http({
      method: 'GET',
