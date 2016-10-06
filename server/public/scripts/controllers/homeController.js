@@ -54,13 +54,13 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
       $scope.showPrevious = false;
       console.log('counter 1');
     }
-    if(screenCounter == 2 || $location.path() == '/debateTopics', '/issues') {
-      $scope.showSecond = false;
-      $scope.showThird = true;
-      $scope.showNext = true;
-      $scope.showPrevious = false;
-      console.log('counter 2');
-    }
+    // if(screenCounter == 2 || $location.path() == '/debateTopics', '/issues') {
+      // $scope.showSecond = false;
+    //   $scope.showThird = true;
+    //   $scope.showNext = true;
+    //   $scope.showPrevious = false;
+    //   console.log('counter 2');
+    // }
   };
 
   $scope.nextCandidateView = function() {
