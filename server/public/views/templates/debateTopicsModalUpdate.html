@@ -31,6 +31,12 @@
             <label for="#active">Active</label>
             <input type="checkbox" name="statusBox" id="active" ng-model="updatedTopic.active" ng-value="selectedTopic.active" checked>
           </div>
+            <toggle-switch
+              ng-model="switchStatus"
+              class="switch-success"
+              on-label="sí"
+              off-label="no">
+            </toggle-switch>
         </form>
       <div class="modal-footer">
         <button type="button" ng-click="updateTopic(updatedTopic)" class="btn btn-primary">Update</button>
