@@ -36,6 +36,8 @@ eagleApp.factory('DebateTopicsService', ['$http', 'Admin', function($http, Admin
      }).then(function(response) {
        console.log("res: ", response);
        return response.data;
+     }, function(err) {
+       console.log("err: ", err);
      });
        return promise;
   }
