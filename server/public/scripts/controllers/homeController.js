@@ -54,15 +54,6 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
       $scope.showPrevious = false;
     }
 
-    if(screenCounter == 1 && $location.path() == '/debateTopics', '/issues') {
-      $scope.showFirst = false;
-      $scope.showSecond = true;
-      $scope.showThird = false;
-      $scope.showNext = true;
-      $scope.showPrevious = false;
-      console.log('counter 1');
-    }
-
     if(screenCounter == 2) {
       $scope.showFirst = false;
       $scope.showSecond = false;
@@ -70,7 +61,13 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
       $scope.showNext = true;
       $scope.showPrevious = false;
     }
-  };
+    // if(screenCounter == 2 || $location.path() == '/debateTopics', '/issues') {
+      // $scope.showSecond = false;
+    //   $scope.showThird = true;
+    //   $scope.showNext = true;
+    //   $scope.showPrevious = false;
+    //   console.log('counter 2');
+    // }
 
   $scope.nextCandidateView = function() {
     screenCounter++;
