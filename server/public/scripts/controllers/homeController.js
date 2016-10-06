@@ -1,6 +1,6 @@
 "use strict";
 
-eagleApp.controller('homeController', ['$scope', '$location', function($scope, $location) {
+eagleApp.controller('homeController', ['$scope', '$location', 'Admin', function($scope, $location, Admin) {
 
 /* This function governs show/hide for the nav bar on the login page */
   $scope.checkNav = function(viewLocation) {
@@ -10,6 +10,11 @@ eagleApp.controller('homeController', ['$scope', '$location', function($scope, $
          return true;
        }
    };
+
+ $scope.logOut = function() {
+   Admin.setCred("");
+   $location.path("/login");
+ }
 
   /* This counter tracks the modal form
    view we are on. Zero is the first view, one
