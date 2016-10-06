@@ -17,6 +17,19 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
    loadResources();
  };
 
+ $scope.addCandidate = function(candidate) {
+   Candidates.add(candidate).then(function(response) {
+     console.log("Added candidate: ", response);
+   });
+ }
+
+ $scope.updateCandidate = function(candidate) {
+   console.log("candidate: ", candidate);
+   Candidates.update(candidate).then(function(response) {
+     console.log("Updated candidate: ", response);
+   });
+ }
+
  $scope.showSummary = function(index) {
   console.log("index: ", index);
    var summary = $scope.summaries[index];
