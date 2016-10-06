@@ -1,4 +1,3 @@
-<!-- <div ng-include = "'views/templates/sideNav.html'"></div> -->
 <div ng-include = "'views/templates/sourcesModal.html'"></div>
 
 <button type="button" class="btn button btn-lg add" ng-click="logOut()"><span class="glyphicon glyphicon-log-out"></span></button>
@@ -6,6 +5,9 @@
   <div class = "container-fluid newsSouceView">
     <div class="row">
       <div class = "col-md-9 col-center sources-container">
+          <div class="outline-container">
+            <h2 class="sources" ng-click="clearForm()" data-toggle="modal" data-target="#sourcesModal">Add News Source</h2>
+          </div>
           <div class="outline-container" ng-repeat="source in sources track by $index">
             <h2 class="sources">{{source.title}}</h2>
           </div>
