@@ -26,18 +26,20 @@
 }
 .candidates-container h2{
   color: white;
-  opacity: .9;
+  text-shadow: 2px 2px blue;
   text-align: center;
+  background-color: orange;
 }
 
-.candidates:hover {
-  color: orange;
+.candidates h2:hover {
+  color: white;
   cursor: pointer;
 }
 
 .candidates{
   margin-top: 0;
   margin-bottom: 0;
+  background-color: orange;
 }
 
 .candidates-container .outline-container{
