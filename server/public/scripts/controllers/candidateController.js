@@ -25,6 +25,9 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
 
  $scope.updateCandidate = function(candidate) {
    console.log("candidate: ", candidate);
+
+   var id = $scope.selectedCandidate._id;
+   candidate._id = id;
    Candidates.update(candidate).then(function(response) {
      console.log("Updated candidate: ", response);
    });
@@ -48,18 +51,19 @@ $scope.showCandidate = function(index) {
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
 
-  /* */
+  /* Reset selectedTags and summaries. */
   $scope.selectedTags = [];
   $scope.summaries = [];
 
-  console.log("length: ", candidate.issueSummaries.length);
-
   /* Grab the issues in the candidate object
-     so they too can be displayed to the user. */
+     and look them up by id so they too can
+     be displayed to the user. */
   for(var i = 0; i < candidate.issueSummaries.length; i++) {
     var id = candidate.issueSummaries[i].issue;
     var summary = candidate.issueSummaries[i].summary;
+
     $scope.summaries.push(summary);
+
     issues.getById(id).then(function(response) {
       $scope.selectedTags.push(response);
     });

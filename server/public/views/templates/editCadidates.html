@@ -10,11 +10,11 @@
         <form editable-form name="editCandidateForm" class="form-signin">
           <div ng-show="showFirst">
             <label for="#editFirstName">First Name</label>
-            <input id="editFirstName" class="form-control" ng-value="selectedCandidate.firstName">
+            <input id="editFirstName" class="form-control" ng-model="editCandidate.firstName" ng-value="selectedCandidate.firstName">
             <label for="#editLastName">Last Name</label>
-            <input id="editFirstName" class="form-control" ng-value="selectedCandidate.lastName">
+            <input id="editLastName" class="form-control" ng-model="editCandidate.lastName" ng-value="selectedCandidate.lastName">
             <label for="#editParty">Political Party</label>
-            <input id="editFirstName" class="form-control" ng-value="selectedCandidate.party">
+            <input id="editFirstName" class="form-control" ng-model="editCandidate.party" ng-value="selectedCandidate.party">
           </div>
           <div ng-show="showSecond">
             <label for="#editTwitter">Twitter ID</label>
