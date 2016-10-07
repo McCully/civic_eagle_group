@@ -4,7 +4,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
   function getAll() {
     var promise = $http({
      method: 'GET',
-     url: "/issues",
+     url: "https://users-staging.api.civiceagle.com/issues",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
