@@ -2,6 +2,13 @@
 
 eagleApp.controller('homeController', ['$scope', '$location', 'Admin', function($scope, $location, Admin) {
 
+  /* Make sure the user is authenticated. */
+  if(Admin.getCred() === undefined) {
+    $location.path('/logIn');
+  } else {
+
+  };
+
 /* This function governs show/hide for the nav bar on the login page */
   $scope.checkNav = function(viewLocation) {
        if(viewLocation === $location.path()){
