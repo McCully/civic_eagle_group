@@ -4,6 +4,9 @@
     background-color: white; !important;
     color: black;
 }
+.glyphicon-chevron-right{
+  float: right;
+}
 
 .ui-select-match-item {
   background-color: #F0F8FF !important;
