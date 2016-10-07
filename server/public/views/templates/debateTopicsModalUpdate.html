@@ -10,22 +10,21 @@
              <label>Title</label>
               <input ng-model="updatedTopic.title" class="form-control" ng-value="selectedTopic.title">
              </input>
-              <label for="#editSlug">Keywords ()</label>
+              <label for="#editSlug">Keywords (SLUG)</label>
               <input id="editSlug" class="form-control" ng-model="updatedTopic.slug" ng-value="selectedTopic.slug">
+              <label for="#editImage">Image</label>
+              <input id="editImage" class="form-control" ng-model="updatedTopic.image" ng-value="selectedTopic.image">
               <label for="#editSummary">Summary</label>
             <div class="editorContainer">
               <div text-angular="text-angular" name="newDebateContent" ng-model="summary" ta-disabled="disabled"></div>
             </div>
-            <label for="#editImage">Image</label>
-            <input id="editImage" class="form-control" ng-model="updatedTopic.image" ng-value="selectedTopic.image">
-            <div>
+
             <ui-select multiple sortable="true" theme="bootstrap" ng-model="updatedTopic.issues" class="form-control" title="Choose an issue">
              <ui-select-match placeholder="Select or search an issue...">{{$item.title}}</ui-select-match>
              <ui-select-choices repeat="item in issues | filter: $select.search">
                <div ng-bind-html="item.title | highlight: $select.search"></div>
              </ui-select-choices>
             </ui-select>
-          </div>
             <label for="#active">Active</label>
             <input type="checkbox" name="statusBox" id="active" ng-model="updatedTopic.active" ng-value="selectedTopic.active" checked>
             <toggle-switch
@@ -35,6 +34,7 @@
               off-label="no">
             </toggle-switch>
         </form>
+      </div>
       <div class="modal-footer">
         <button type="button" ng-click="updateTopic(updatedTopic)" class="btn btn-primary">Update</button>
         <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
