@@ -24,7 +24,6 @@ router.post('/' , function(req , res){
 });
 
 router.put('/:id' , function(req, res){
-  console.log("Hey", req.body);
    unirest.put("https://debate-staging.api.civiceagle.com/topics/" + req.params.id)
    .header("Authorization", "Basic " + req.headers.authorization)
    .header("Accept", "application/json")

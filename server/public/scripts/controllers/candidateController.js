@@ -20,6 +20,7 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
  $scope.addCandidate = function(candidate) {
    Candidates.add(candidate).then(function(response) {
      console.log("Added candidate: ", response);
+     $scope.candidates.push(response);
    });
  }
 
