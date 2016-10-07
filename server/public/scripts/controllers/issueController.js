@@ -4,14 +4,33 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
   var header = 'Basic ' + Admin.getCred();
 
   if(Admin.getCred() === undefined){
-   $location.path('/logIn');
- };
+    $location.path('/logIn');
+  } else {
+    loadResources();
+  }
 
+  function loadResources() {
+    issues.getAll().then(function(response) {
+      $scope.issues = response;
+      console.log($scope.issues);
+    });
+  }
 
-  issues.getAll().then(function(response) {
-    $scope.issues = response;
-    console.log($scope.issues);
-  });
+  $scope.addIssue = function(issue) {
+    console.log("Issue: ", issue);
+    issues.create(issue).then(function(response) {
+      console.log("res: ", response);
+    });
+  }
+
+  $scope.updateIssue = function(issue) {
+    var id = $scope.selectedIssue._id;
+    issue._id = id;
+    console.log("Issue: ", issue);
+    issues.update(issue).then(function(response) {
+      console.log("res: ", response);
+    });
+  }
 
   $scope.showIssue = function(index) {
     var issue = $scope.issues[index];

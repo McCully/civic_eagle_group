@@ -39,7 +39,9 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
 
 //ADD NEW DEBATE TOPIC
 $scope.addTopic = function(topic) {
-  DebateTopicsService.addTopic(topic).then(function(response){
+  console.log("topic: ", topic);
+  DebateTopicsService.addTopic(topic).then(function(response) {
+    console.log("res: ", response);
   });
 }
 
