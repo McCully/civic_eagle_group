@@ -55,11 +55,12 @@ label {
   height: 250px;
   text-align: left;
   margin: 1px;
+  margin-top: 5px;
   text-shadow: 2px 2px blue; !important
   display: block;
   overflow: hidden;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.7;
   filter: alpha(opacity);
 }
 
