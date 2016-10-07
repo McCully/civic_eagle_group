@@ -2,7 +2,7 @@
 
 eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager',
 function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager) {
-  
+
   var header = 'Basic' + Admin.getCred();
 
   if(Admin.getCred() === undefined){
@@ -52,7 +52,6 @@ DebateTopicsService.updateTopic(topic).then(function(response){
 
 //DISPLAY DEBATE TOPIC
 $scope.showTopic = function(topic) {
-  $scope.resetCounter();
   $scope.selectedTopic = topic;
   $scope.debateOrigHtml = topic.summary;
 };
@@ -60,7 +59,6 @@ $scope.showTopic = function(topic) {
 //CLEAR FORM
 $scope.clearTopicForm = function(){
   $scope.topic = {};
-  $scope.resetCounter();
 };
 
 }]);

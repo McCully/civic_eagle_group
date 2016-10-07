@@ -1,7 +1,7 @@
 .topics-container{
 
 }
-.debateView{
+/*.debateView{
   background: url(https://static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/t/56bf834459827eb455984e46/1455391564121/civic-eagle-24.jpg?format=2500w) no-repeat center center fixed;
   background-size: 100%auto 100%auto;;
   background-position: top ;
@@ -9,7 +9,7 @@
   min-height: 100vh;
   min-width: 100vw;
   /*padding-top: 10px;*/
-}
+}*/
 
 .topics-container h2:hover {
  color: white;
@@ -30,6 +30,7 @@
 .topics{
   margin-top: 0;
   margin-bottom: 0;
+  height: 100px;
 }
 
 .modal-title {
