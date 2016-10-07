@@ -30,6 +30,7 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
    candidate._id = id;
    Candidates.update(candidate).then(function(response) {
      console.log("Updated candidate: ", response);
+     $scope.selectedCandidate = response;
    });
  }
 
