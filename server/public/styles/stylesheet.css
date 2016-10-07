@@ -68,8 +68,7 @@ label {
   text-shadow: 2px 2px blue; !important
   display: block;
   overflow: hidden;
-  background-color: black;
-  filter: alpha(opacity);
+  background-color: rgba(255, 255, 255, 0.1);;
 }
 
 .outline-container:hover{
