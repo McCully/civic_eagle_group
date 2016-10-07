@@ -11,19 +11,6 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
    loadResources();
  };
 
-  //---------* UPDATE DEBATE TOPIC EDITOR*----------//
-  $scope.version = textAngularManager.getVersion();
-  $scope.versionNumber = $scope.version.substring(1);
-  $scope.debateOrigHtml = '<h1>Debate Topics</h1>';
-  $scope.debateContent = $scope.debateOrigHtml;
-  $scope.disabled = false;
-
-  //---------* NEW DEBATE TOPIC EDITOR*----------//
-  $scope.version = textAngularManager.getVersion();
-  $scope.versionNumber = $scope.version.substring(1);
-  $scope.newDebateOrigHtml = '<h1>New Debate Topics</h1>';
-  $scope.newDebateContent = $scope.newDebateOrigHtml;
-  $scope.disabled = false;
 
 //LOAD DEBATE TOPICS
   function loadResources() {
@@ -51,19 +38,35 @@ $scope.updateTopic = function(topic) {
   topic._id = id;
   console.log("topic: ", topic);
 DebateTopicsService.updateTopic(topic).then(function(response){
-  console.log(response);
+console.log(response);
 });
 }
 
 //DISPLAY DEBATE TOPIC
-$scope.showTopic = function(topic) {
+$scope.showTopic = function(index) {
+  var topic = $scope.topics[index];
   $scope.selectedTopic = topic;
-  $scope.debateOrigHtml = topic.summary;
+  $scope.debateContent = topic.summary;
 };
 
 //CLEAR FORM
 $scope.clearTopicForm = function(){
   $scope.topic = {};
 };
+
+//---------* UPDATE DEBATE TOPIC EDITOR*----------//
+$scope.version = textAngularManager.getVersion();
+$scope.versionNumber = $scope.version.substring(1);
+$scope.debateOrigHtml = '<h1>Insert Summary Here!</h1>';
+$scope.debateContent = $scope.debateOrigHtml;
+$scope.disabled = false;
+
+//---------* NEW DEBATE TOPIC EDITOR*----------//
+$scope.version = textAngularManager.getVersion();
+$scope.versionNumber = $scope.version.substring(1);
+$scope.newDebateOrigHtml = '<h1>Insert Debate Topic Summary Here!</h1>';
+$scope.newDebateContent = $scope.newDebateOrigHtml;
+$scope.disabled = false;
+
 
 }]);

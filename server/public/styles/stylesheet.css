@@ -29,6 +29,7 @@ label {
 }
 .col-center{
 
+
      /* center the element */
      right: 0;
      left: 0;
@@ -68,24 +69,19 @@ label {
   text-shadow: 2px 2px blue; !important
   display: block;
   overflow: hidden;
+<<<<<<< HEAD
   background-color: rgba(255, 255, 255, 0.1);;
+=======
+  background-color: black;
+>>>>>>> 00d6cd3fc832c2df8c5ef6340f8b78416a83ad54
 }
 
 .outline-container:hover{
 
 }
 
-
 /*---------------textAngular---------------*/
 .editorContainer {
   margin-right: auto;
   margin-left: auto;
-}
-
-/*--------------xeditable-----------------*/
-
-
-
-.btn btn-success {
-  margin: 5px;
 }
