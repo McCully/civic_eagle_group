@@ -71,7 +71,6 @@ $scope.showCandidate = function(index) {
 
 $scope.clearCandidateForm = function(){
   $scope.candidate = {};
-  $scope.resetCounter();
 };
 
 function loadResources() {
