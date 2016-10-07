@@ -5,18 +5,9 @@
 
 <div class = "container-fluid candidateView">
   <div class="row">
-<<<<<<< HEAD
     <div class = "col-md-9 col-center candidates-container">
         <div  ng-repeat = "candidate in candidates track by $index" class = "outline-container">
           <h2 class="candidates" ng-click="showCandidate($index)" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
-=======
-    <div class = "col-md-9 col-center topics-container">
-        <div class= "outline-container">
-          <h2 class= "candidates" ng-click="clearCandidateForm()" data-toggle="modal" data-target="#candidateModal">Add Candidate</h2>
-        </div>
-        <div ng-repeat = "candidate in candidates track by $index" class = "outline-container" style="background-image: url({{candidate.image}})">
-          <h2 class="topics" ng-click="showCandidate($index)" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}</h2>
->>>>>>> 8ad2d9e8bbd24f976594ce9906905b6bdcad0502
         </div>
       </div>
   </div>
