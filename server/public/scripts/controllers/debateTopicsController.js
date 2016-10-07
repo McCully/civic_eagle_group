@@ -45,6 +45,9 @@ $scope.addTopic = function(topic) {
 
 //UPDATE DEBATE TOPIC
 $scope.updateTopic = function(topic) {
+  var id = $scope.selectedTopic._id;
+  topic._id = id;
+  console.log("topic: ", topic);
 DebateTopicsService.updateTopic(topic).then(function(response){
   console.log(response);
 });

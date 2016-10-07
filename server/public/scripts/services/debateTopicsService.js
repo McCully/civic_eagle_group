@@ -28,6 +28,7 @@ eagleApp.factory('DebateTopicsService', ['$http', 'Admin', function($http, Admin
 
   function updateTopic(topic) {
     var id = topic._id;
+    console.log("id: ", id);
     var promise = $http({
        method: 'PUT',
        data: topic,
