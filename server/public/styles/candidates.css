@@ -31,15 +31,23 @@
   background-color: orange;
 }
 
-.candidates h2:hover {
+.candidates :hover {
   color: white;
   cursor: pointer;
+}
+h2.candidates:hover{
+  cursor: pointer;
+  color: orange;
 }
 
 .candidates{
   margin-top: 0;
   margin-bottom: 0;
-  background-color: orange;
+  background-color: grey;
+  height: 250px;
+  text-shadow: 2px 2px blue; !important
+  opacity: 0.8
+  
 }
 
 .candidates-container .outline-container{
