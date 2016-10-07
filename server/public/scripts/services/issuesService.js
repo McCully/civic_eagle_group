@@ -16,7 +16,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
   function getById(id) {
     var promise = $http({
      method: 'GET',
-     url: "https://users-staging.api.civiceagle.com/issues/" + id,
+     url: "/issues/" + id,
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
@@ -30,7 +30,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
     var promise = $http({
      method: 'PUT',
      data: issue,
-     url: "https://users-staging.api.civiceagle.com/issues/" + id,
+     url: "/issues/" + id,
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
