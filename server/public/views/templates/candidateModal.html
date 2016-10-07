@@ -4,20 +4,15 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Add Candidate</h4>
-        <div class="pagination">Page {{pageNumber}}/{{candidatesTotal}}</div>
-
       </div>
       <div class="modal-body">
         <form class="form-signin" ng-submit="">
-          <div ng-show="showFirst">
             <label for="#firstName">First Name</label>
             <input type="text" id="firstName" ng-model="candidate.firstName" class="form-control" placeholder="First Name" required autofocus>
             <label for="#lastName">Last Name</label>
             <input type="text" id="lastName" ng-model="candidate.lastName" class="form-control" placeholder="Last Name" required autofocus>
             <label for="#party">Political Party</label>
             <input type="text" id="party" ng-model="candidate.party" class="form-control" placeholder="Political Party" required autofocus>
-          </div>
-          <div ng-show="showSecond">
             <label for="#twitter">Twitter ID</label>
             <input type="text" id="twitter" ng-model="candidate.twitterId" class="form-control" placeholder="Twitter ID" required autofocus>
             <label for="#facebook">Facebook</label>
@@ -26,15 +21,12 @@
             <input type="text" id="Website" ng-model="candidate.website" class="form-control" placeholder="Website" required autofocus>
             <label for="#image">Image</label>
             <input type="text" id="image" ng-model="candidate.image" class="form-control" placeholder="Website" required autofocus>
-          </div>
-          <div ng-show="showThird">
             <label for="#issue">Issue</label>
             <input type="text" id="issue" ng-model="candidate" class="form-control" placeholder="Issue" required autofocus>
             <label for="issueSummary">Issue Summary</label>
             <div class="editorContainer">
               <div text-angular="text-angular" name="newCandidateContent" ng-model="newCandidateContent" ta-disabled="disabled"></div>
             </div>
-          </div>
         </form>
       <div class="modal-footer">
         <button ng-click="prevCandidateView()" type="button" ng-hide="showPrevious" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button>
