@@ -26,9 +26,6 @@ label {
 }
 .col-center{
  float: none;
- margin-right: 130px;
- margin-left: 190px;
- margin-top: 50px;
 
 }
 
@@ -50,16 +47,17 @@ label {
 
 
 .outline-container {
-  padding: 5px 3px;
-  width: 100%;
-  height: 50%;
-  text-align: left;
+  color: white;
+
+  width: 70%;
+  height: 100px;
+  text-align: center;
   margin: 1px;
-  text-shadow: 2px 2px blue; !important
+  margin-left: auto;
   display: block;
   overflow: hidden;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.7; !important
   filter: alpha(opacity);
 }
 
@@ -67,17 +65,8 @@ label {
 
 }
 
-
 /*---------------textAngular---------------*/
 .editorContainer {
   margin-right: auto;
   margin-left: auto;
-}
-
-/*--------------xeditable-----------------*/
-
-
-
-.btn btn-success {
-  margin: 5px;
 }
