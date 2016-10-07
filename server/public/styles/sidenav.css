@@ -13,12 +13,17 @@
 }
 
 .side-menu .navbar-nav li:hover {
-  background-color: #f68c24;
+  background-color: #e7e7e7;
 }
 
-.side-menu .navbar-nav li:active {
+.side-menu .navbar-default .navbar-nav .active > a {
   background-color: #f68c24;
+  color:white;
 }
+.glyphicon{
+  float:right;
+}
+
 
 .navbar-collapse{
   padding-left: 5px;

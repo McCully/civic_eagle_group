@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <h1 class="text-center login-title">Sign In</h1>
+    <div class = "authError">
+      <h3>{{message}}</h3>
+    </div>
     <form class="login" ng-submit="submitAdmin(admin)">
       <input type="text" ng-model="admin.username" name="email" class="form-control" placeholder="Username" required autofocus>
       <input type="password" ng-model="admin.password" name="password" class="form-control" placeholder="Password" required>

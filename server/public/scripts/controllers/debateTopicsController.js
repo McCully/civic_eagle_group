@@ -26,16 +26,17 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
 
 //ADD NEW DEBATE TOPIC
 $scope.addTopic = function(topic) {
-  console.log(topic);
-  DebateTopicsService.addTopic(topic).then(function(response){
+  console.log("topic: ", topic);
+  DebateTopicsService.addTopic(topic).then(function(response) {
+    console.log("res: ", response);
   });
 }
 
 //UPDATE DEBATE TOPIC
 $scope.updateTopic = function(topic) {
-console.log(topic);
-var id = $scope.selectedTopic._id;
-topic._id = id;
+  var id = $scope.selectedTopic._id;
+  topic._id = id;
+  console.log("topic: ", topic);
 DebateTopicsService.updateTopic(topic).then(function(response){
 console.log(response);
 });
@@ -46,13 +47,11 @@ $scope.showTopic = function(index) {
   var topic = $scope.topics[index];
   $scope.selectedTopic = topic;
   $scope.debateContent = topic.summary;
-  $scope.selectedTopic = topic;
 };
 
 //CLEAR FORM
 $scope.clearTopicForm = function(){
   $scope.topic = {};
-  $scope.resetCounter();
 };
 
 //---------* UPDATE DEBATE TOPIC EDITOR*----------//

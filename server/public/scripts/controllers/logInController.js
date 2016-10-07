@@ -16,12 +16,13 @@ eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$ht
       url: "https://users-staging.api.civiceagle.com/user",
       headers: {'Authorization': 'Basic ' + cred}
     }).then(function(response) {
-      console.log("res: ", response);
-      /* Store the credential for later use by other
-         controllers and services.  */
-      Admin.setCred(cred);
-
-      $location.path('/home');
-    });
+        console.log("res: ", response);
+        /* Store the credential for later use by other
+        controllers and services.  */
+        Admin.setCred(cred);
+        $location.path('/home');
+      }, function(err) {
+          $scope.message = "Username and or Password is incorrect";
+      });
   };
 }]);

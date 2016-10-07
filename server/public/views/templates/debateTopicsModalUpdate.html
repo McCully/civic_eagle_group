@@ -3,10 +3,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h2 class="modal-title">Update</h2>
+        <h3 class="modal-title">Update</h3>
         <label for="#active">Active</label>
-        <toggle-switch id="active" ng-model="updatedTopic.active" ng-value="selectedTopic.active" class="switch-success" on-label="Yes" off-label="No">
-        </toggle-switch>
+        <toggle-switch ng-model="updatedTopic.active" class="switch-success" on-label="Yes" off-label="No"></toggle-switch>
       </div>
       <div class="modal-body">
         <form editable-form name="editTopicForm" class="form-signin">
@@ -26,6 +25,7 @@
                <div ng-bind-html="item.title | highlight: $select.search"></div>
              </ui-select-choices>
             </ui-select>
+
         </form>
       <div class="modal-footer">
         <button type="button" ng-click="updateTopic(updatedTopic)" class="btn btn-primary">Update</button>

@@ -4,6 +4,9 @@
     background-color: white; !important;
     color: black;
 }
+.glyphicon-chevron-right{
+  float: right;
+}
 
 .ui-select-match-item {
   background-color: #F0F8FF !important;
@@ -47,10 +50,10 @@ label {
 
 
 .outline-container {
-  color: white;
 
-  width: 70%;
-  height: 100px;
+  padding: 5px 3px;
+  width: 100%;
+  height: 250px;
   text-align: center;
   margin: 1px;
   margin-left: auto;
