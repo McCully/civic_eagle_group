@@ -2,6 +2,13 @@
 
 eagleApp.controller('homeController', ['$scope', '$location', 'Admin', function($scope, $location, Admin) {
 
+  /* Make sure the user is authenticated. */
+  if(Admin.getCred() === undefined) {
+    $location.path('/logIn');
+  } else {
+
+  };
+
 /* This function governs show/hide for the nav bar on the login page */
   $scope.checkNav = function(viewLocation) {
        if(viewLocation === $location.path()){
@@ -77,24 +84,6 @@ eagleApp.controller('homeController', ['$scope', '$location', 'Admin', function(
       $scope.showPrevious = false;
       console.log('counter 2');
     }
-  };
-
-  $scope.nextCandidateView = function() {
-    screenCounter++;
-    console.log(screenCounter);
-    if(screenCounter > 2) {
-      screenCounter = 2;
-    }
-    $scope.switchView();
-  };
-
-  $scope.prevCandidateView = function() {
-    console.log(screenCounter);
-    if(screenCounter === 0) {
-      return;
-    }
-    screenCounter--;
-    $scope.switchView();
   };
 
   $scope.nextTopicView = function() {
