@@ -3,6 +3,9 @@
    max-width: 330px;
    margin: 0 auto;
 }
+.authError{
+  text-align: center;
+}
 
 .form-signin {
    padding: 15px;
