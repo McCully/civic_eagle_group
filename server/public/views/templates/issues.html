@@ -9,7 +9,7 @@
             <h2 class="issues" ng-click="clearIssueForm()" data-toggle="modal" data-target="#issueModal">Add Issue</h2>
           </div>
           <div ng-repeat = "issue in issues track by $index" class = "outline-container">
-            <h2 class="issues" ng-click="showIssue($index)" data-toggle="modal" data-target="#issueEditModal">{{issue.title}}</h2>
+            <h2 class="issues" ng-click="showIssue($index)" data-toggle="modal" data-target="#issueEditModal">{{issue.title}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
           </div>
         </div>
     </div>
