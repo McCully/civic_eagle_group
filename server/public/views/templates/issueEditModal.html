@@ -8,17 +8,17 @@
       <div class="modal-body">
         <form editable-form name="editCandidateForm" class="form-signin">
             <label for="#title">Title</label>
-            <input type="text" id="title" class="form-control" value="{{selectedIssue.title}}" required autofocus>
+            <input type="text" id="title" ng-model="issue.title" class="form-control" ng-value="selectedIssue.title" required autofocus>
             <label for="#slug">Slug</label>
-            <input type="text" id="slug" class="form-control" value="{{selectedIssue.slug}}" required autofocus>
+            <input type="text" id="slug" ng-model="issue.slug" class="form-control" ng-value="selectedIssue.slug" required autofocus>
             <label for="#stateCriteria">State Criteria</label>
-            <input type="text" id="stateCriteria" class="form-control" value="{{selectedIssue.stateCriteria}}" required autofocus>
+            <input type="text" id="stateCriteria" ng-model="issue.stateCriteria" class="form-control" ng-value="selectedIssue.stateCriteria" required autofocus>
             <label for="#federalCriteria">Federal Criteria</label>
-            <input type="text" id="federalCriteria" class="form-control" value="{{selectedIssue.federalCriteria}}" required autofocus>
+            <input type="text" id="federalCriteria" ng-model="issue.federalCriteria" class="form-control" ng-value="selectedIssue.federalCriteria" required autofocus>
             <label for="#summary">Summary</label>
         </form>
       <div class="modal-footer">
-        <button type="button" ng-click="addTopic(topic)" class="btn btn-primary">Update</button>
+        <button type="button" ng-click="updateIssue(issue)" class="btn btn-primary">Update</button>
         <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
