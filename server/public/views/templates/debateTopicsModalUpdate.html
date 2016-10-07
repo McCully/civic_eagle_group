@@ -3,12 +3,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title">{{selectedTopic.title}}</h3>
-        <div class="pagination">Page {{pageNumber}}/{{topicsTotal}}</div>
+        <h3 class="modal-title">Edit: {{selectedTopic.title}}</h3>
       </div>
       <div class="modal-body">
         <form editable-form name="editTopicForm" >
-          <div ng-show="showFirst">
              <label>Title</label>
               <input ng-model="updatedTopic.title" class="form-control" ng-value="selectedTopic.title">
              </input>
@@ -30,7 +28,6 @@
           </div>
             <label for="#active">Active</label>
             <input type="checkbox" name="statusBox" id="active" ng-model="updatedTopic.active" ng-value="selectedTopic.active" checked>
-          </div>
             <toggle-switch
               ng-model="switchStatus"
               class="switch-success"

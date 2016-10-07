@@ -52,7 +52,6 @@ DebateTopicsService.updateTopic(topic).then(function(response){
 
 //DISPLAY DEBATE TOPIC
 $scope.showTopic = function(topic) {
-  $scope.resetCounter();
   $scope.selectedTopic = topic;
   $scope.debateOrigHtml = topic.summary;
 };
@@ -60,7 +59,6 @@ $scope.showTopic = function(topic) {
 //CLEAR FORM
 $scope.clearTopicForm = function(){
   $scope.topic = {};
-  $scope.resetCounter();
 };
 
 }]);

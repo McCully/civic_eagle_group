@@ -14,7 +14,6 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
   });
 
   $scope.showIssue = function(index) {
-    $scope.resetCounter();
     var issue = $scope.issues[index];
     console.log("issue: ", issue);
     $scope.selectedIssue = issue;
@@ -22,7 +21,6 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
 
   $scope.clearIssueForm = function(){
     $scope.issue = {};
-    $scope.resetCounter();
   }
 
   //---------* WYSIWYG EDITOR*----------//
