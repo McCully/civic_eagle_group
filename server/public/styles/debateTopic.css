@@ -31,7 +31,8 @@
 .topics{
   margin-top: 0;
   margin-bottom: 0;
-  height: 240px;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-title {
