@@ -45,8 +45,6 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
  set it to a scope variable, so it can be displayed
  on the DOM.  */
 $scope.showCandidate = function(index) {
-  /* Reset the modal page views. */
-  $scope.resetCounter();
 
   /* Find and display the selected candidate. */
   var candidate = $scope.candidates[index];

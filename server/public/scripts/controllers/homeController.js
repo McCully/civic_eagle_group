@@ -86,24 +86,6 @@ eagleApp.controller('homeController', ['$scope', '$location', 'Admin', function(
     }
   };
 
-  $scope.nextCandidateView = function() {
-    screenCounter++;
-    console.log(screenCounter);
-    if(screenCounter > 2) {
-      screenCounter = 2;
-    }
-    $scope.switchView();
-  };
-
-  $scope.prevCandidateView = function() {
-    console.log(screenCounter);
-    if(screenCounter === 0) {
-      return;
-    }
-    screenCounter--;
-    $scope.switchView();
-  };
-
   $scope.nextTopicView = function() {
     screenCounter++;
     if(screenCounter > 1) {
