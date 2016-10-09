@@ -7,7 +7,7 @@
 
     <div class = "col-md-9 col-center topics-container">
       <h2 class= "candidates" ng-click="clearCandidateForm()" data-toggle="modal" data-target="#candidateModal">Add Candidate</h2>
-        <div ng-repeat = "candidate in candidates track by $index" class = "outline-container" style="background-image: url({{candidate.image}}); background-repeat: no-repeat; background-position: center; background-size: 100% 100%;">
+        <div ng-repeat = "candidate in candidates track by $index" class = "outline-container">
           <h2 class="topics" ng-click="showCandidate($index)" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
         </div>
     </div>
