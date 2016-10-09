@@ -19,7 +19,7 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
   $scope.addIssue = function(issue) {
     console.log("Issue: ", issue);
     issues.create(issue).then(function(response) {
-      console.log("res: ", response);
+      $scope.issues.push(response);
     });
   }
 

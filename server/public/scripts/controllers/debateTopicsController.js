@@ -11,24 +11,23 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
    loadResources();
  };
 
+/* Load debate topics */
+function loadResources() {
+  DebateTopicsService.getDebateTopics().then(function(response){
+    $scope.topics = response;
+  });
 
-//LOAD DEBATE TOPICS
-  function loadResources() {
-      DebateTopicsService.getDebateTopics().then(function(response){
-        $scope.topics = response;
-      });
-
-//LOAD ISSUES
-      issues.getAll().then(function(response){
-        $scope.issues = response;
-      });
-  };
+/* Load issues. */
+  issues.getAll().then(function(response){
+    $scope.issues = response;
+  });
+};
 
 //ADD NEW DEBATE TOPIC
 $scope.addTopic = function(topic) {
   console.log("topic: ", topic);
   DebateTopicsService.addTopic(topic).then(function(response) {
-    console.log("res: ", response);
+    $scope.topics.push(response);
   });
 }
 

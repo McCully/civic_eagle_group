@@ -18,7 +18,7 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
   $scope.addSource = function(source) {
     console.log("source: ", source);
     newsSources.create(source).then(function(response) {
-      console.log("res: ", response);
+      $scope.sources.push(response);
     });
   }
 
