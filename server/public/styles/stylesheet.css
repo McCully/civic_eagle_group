@@ -62,11 +62,10 @@ label {
 .outline-container {
   padding: 5px 3px;
   width: 100%;
-  height: 300px;
+  height: 100px;
   text-align: left;
   margin: 1px;
   margin-top: 5px;
-  text-shadow: 2px 2px blue; !important
   display: block;
   overflow: hidden;
   background-color: black;

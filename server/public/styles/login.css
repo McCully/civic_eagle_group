@@ -1,7 +1,7 @@
 .login {
    padding: 15px;
    max-width: 330px;
-   margin: 0 auto;
+   margin: 10px auto 10px auto;
 }
 .authError{
   text-align: center;
@@ -47,4 +47,8 @@
 }
 :focus {
   outline: none;
+}
+
+.authError {
+  color: red;
 }
