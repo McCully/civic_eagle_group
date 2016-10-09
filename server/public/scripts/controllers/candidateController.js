@@ -2,8 +2,6 @@
 
 eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'Candidates', 'textAngularManager', 'issues',
 function($scope, $location, $http, Admin, Candidates, textAngularManager, issues) {
-  /* Create basic authorization header. */
-  var header = 'Basic ' + Admin.getCred();
 
  /* Make sure the user is authenticated. */
  if(Admin.getCred() === undefined) {
