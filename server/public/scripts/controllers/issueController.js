@@ -1,7 +1,6 @@
 "use strict";
 
 eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 'textAngularManager', 'issues', function ($scope, $location, $http, Admin, textAngularManager, issues) {
-  var header = 'Basic ' + Admin.getCred();
 
   if(Admin.getCred() === undefined){
     $location.path('/logIn');

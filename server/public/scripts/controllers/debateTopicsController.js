@@ -3,8 +3,6 @@
 eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager',
 function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager) {
 
-  var header = 'Basic' + Admin.getCred();
-
   if(Admin.getCred() === undefined){
    $location.path('/logIn');
  } else {
