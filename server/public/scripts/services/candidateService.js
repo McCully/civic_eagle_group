@@ -4,7 +4,7 @@ eagleApp.factory('Candidates' , ['$http', 'Admin', function($http, Admin) {
   function getAll() {
     var promise = $http({
      method: 'GET',
-     url: "https://reps-staging.api.civiceagle.com/candidates",
+     url: "/candidates",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
@@ -18,7 +18,7 @@ eagleApp.factory('Candidates' , ['$http', 'Admin', function($http, Admin) {
     var promise = $http({
      method: 'PUT',
      data: candidate,
-     url: "https://reps-staging.api.civiceagle.com/candidates/" + id,
+     url: "/candidates/" + id,
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
@@ -31,7 +31,7 @@ eagleApp.factory('Candidates' , ['$http', 'Admin', function($http, Admin) {
     var promise = $http({
      method: 'POST',
      data: candidate,
-     url: "https://reps-staging.api.civiceagle.com/candidates",
+     url: "/candidates",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);

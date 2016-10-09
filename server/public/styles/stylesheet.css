@@ -68,7 +68,8 @@ label {
   margin-top: 5px;
   display: block;
   overflow: hidden;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.1);;
+
 }
 
 .outline-container:hover{

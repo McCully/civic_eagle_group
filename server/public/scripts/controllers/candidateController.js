@@ -2,8 +2,6 @@
 
 eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'Candidates', 'textAngularManager', 'issues',
 function($scope, $location, $http, Admin, Candidates, textAngularManager, issues) {
-  /* Create basic authorization header. */
-  var header = 'Basic ' + Admin.getCred();
 
  /* Make sure the user is authenticated. */
  if(Admin.getCred() === undefined) {
@@ -19,26 +17,21 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
 
  $scope.addCandidate = function(candidate) {
    Candidates.add(candidate).then(function(response) {
-     console.log("Added candidate: ", response);
+     $scope.candidates.push(response);
    });
  }
 
  $scope.updateCandidate = function(candidate) {
-   console.log("candidate: ", candidate);
-
    var id = $scope.selectedCandidate._id;
    candidate._id = id;
    Candidates.update(candidate).then(function(response) {
-     console.log("Updated candidate: ", response);
      $scope.selectedCandidate = response;
    });
  }
 
  $scope.showSummary = function(index) {
-  console.log("index: ", index);
    var summary = $scope.summaries[index];
    $scope.summary = summary;
-   console.log("summary: ", summary);
  }
 
 /* Grab the selected candidate's information and
@@ -77,7 +70,6 @@ function loadResources() {
   /* Load all the candidates information so we can display it. */
   Candidates.getAll().then(function(response) {
     $scope.candidates = response;
-    console.log("Candidates: ", response);
   });
 
   issues.getAll().then(function(response) {

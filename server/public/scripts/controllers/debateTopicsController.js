@@ -3,32 +3,29 @@
 eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager',
 function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager) {
 
-  var header = 'Basic' + Admin.getCred();
-
   if(Admin.getCred() === undefined){
    $location.path('/logIn');
  } else {
    loadResources();
  };
 
+/* Load debate topics */
+function loadResources() {
+  DebateTopicsService.getDebateTopics().then(function(response){
+    $scope.topics = response;
+  });
 
-//LOAD DEBATE TOPICS
-  function loadResources() {
-      DebateTopicsService.getDebateTopics().then(function(response){
-        $scope.topics = response;
-      });
-
-//LOAD ISSUES
-      issues.getAll().then(function(response){
-        $scope.issues = response;
-      });
-  };
+/* Load issues. */
+  issues.getAll().then(function(response){
+    $scope.issues = response;
+  });
+};
 
 //ADD NEW DEBATE TOPIC
 $scope.addTopic = function(topic) {
   console.log("topic: ", topic);
   DebateTopicsService.addTopic(topic).then(function(response) {
-    console.log("res: ", response);
+    $scope.topics.push(response);
   });
 }
 
