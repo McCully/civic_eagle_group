@@ -4,7 +4,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
   function getAll() {
     var promise = $http({
      method: 'GET',
-     url: "https://users-staging.api.civiceagle.com/issues",
+     url: "/issues",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
@@ -42,7 +42,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
   function create(issue) {
     var promise = $http({
      method: 'POST',
-     url: "https://users-staging.api.civiceagle.com/issues",
+     url: "/issues",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);

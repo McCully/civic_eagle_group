@@ -5,16 +5,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/' , function(req , res) {
-   unirest.get("https://users-staging.api.civiceagle.com/issues")
-   .header("Authorization", req.headers.authorization)
-   .header("Accept", "application/json")
-   .end(function(result){
-      res.send(result.body);
-   });
-});
-
-router.get('/:id' , function(req , res) {
-   unirest.get("https://users-staging.api.civiceagle.com/issues/"  + req.params.id)
+  unirest.get("https://reps-staging.api.civiceagle.com/candidates")
    .header("Authorization", req.headers.authorization)
    .header("Accept", "application/json")
    .end(function(result){
@@ -23,7 +14,7 @@ router.get('/:id' , function(req , res) {
 });
 
 router.post('/' , function(req , res) {
-   unirest.post("https://users-staging.api.civiceagle.com/issues")
+   unirest.post("https://reps-staging.api.civiceagle.com/candidates")
    .header("Authorization", req.headers.authorization)
    .header("Accept", "application/json")
    .send(req.body)
@@ -33,7 +24,7 @@ router.post('/' , function(req , res) {
 });
 
 router.put('/:id' , function(req, res) {
-   unirest.put("https://users-staging.api.civiceagle.com/issues/" + req.params.id)
+   unirest.put("https://reps-staging.api.civiceagle.com/candidates/" + req.params.id)
    .header("Authorization", req.headers.authorization)
    .header("Accept", "application/json")
    .send(req.body)
