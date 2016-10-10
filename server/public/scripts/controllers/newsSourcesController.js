@@ -25,6 +25,19 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
     if(source === undefined) {
       return;
     }
+
+    var id = $scope.selectedSource._id;
+    source._id = id;
+
+    newsSources.update(source).then(function(response) {
+      console.log("response: ", response);
+    });
+  }
+
+  $scope.showSource = function(index) {
+    var source = $scope.sources[index];
+    console.log("Source: ", source);
+    $scope.selectedSource = source;
   }
 
   $scope.clearForm = function(){
