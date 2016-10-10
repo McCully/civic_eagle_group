@@ -27,8 +27,9 @@ $scope.addTopic = function(topic) {
   console.log("topic: ", topic);
   DebateTopicsService.addTopic(topic).then(function(response) {
     $scope.topics.push(response);
-    console.log($scope.topics);
+    loadResources();
   });
+  alert("You've Successfully Added A Topic!");
 }
 
 //UPDATE DEBATE TOPIC
@@ -37,13 +38,15 @@ $scope.updateTopic = function(topic) {
   var id = $scope.selectedTopic._id;
   topic._id = id;
   topic.summary = $scope.selectedTopic.summary;
-  console.log(topic.summary);
-  console.log(topic);
   topic.active = $scope.active;
   DebateTopicsService.updateTopic(topic).then(function(response) {
   $scope.topics.push(response);
   loadResources();
   });
+  topic = {};
+  $scope.selectedTopic = {};
+  $scope.updatedTopic = {};
+  alert("Update Complete!");
 }
 
 //DISPLAY DEBATE TOPIC
@@ -52,6 +55,7 @@ $scope.showTopic = function(topic) {
   $scope.selectedTopic = topic;
   $scope.active = topic.active;
   topic = {};
+
 };
 
 //CLEAR FORM

@@ -7,14 +7,14 @@
   <div class="row">
     <div class = "col-md-9 col-center topics-container">
       <div class="searchContainer">
-      <label>Search Topic: <input ng-model="searchText"></label>
+      <label>Search Debate Topics: <input ng-model="searchText"></label>
       </div>
       <div class="addTopicContainer">
         <h2 class="topics" data-toggle="modal" ng-click="clearTopicForm()" data-target="#debateTopicsModal">Add Debate Topic<span class="glyphicon glyphicon-plus"></span></h2>
       </div>
 
       <div ng-repeat="topic in topics | filter:searchText track by $index" class = "outline-container">
-        <h2 class="topics" data-toggle="modal" data-target="#debateTopicsModalUpdate" ng-click="showTopic(topic)">{{topic.title.substring(0, 30)}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
+        <h2 class="topics" data-toggle="modal" data-target="#debateTopicsModalUpdate" ng-click="showTopic(topic)">{{topic.title.substring(0, 50)}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
       </div>
     </div>
   </div>
