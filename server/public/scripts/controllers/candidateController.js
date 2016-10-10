@@ -1,7 +1,7 @@
 "use strict";
 
-eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'Candidates', 'textAngularManager', 'issues',
-function($scope, $location, $http, Admin, Candidates, textAngularManager, issues) {
+eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'Candidates', 'textAngularManager', 'issues', 'toastr',
+function($scope, $location, $http, Admin, Candidates, textAngularManager, issues, toastr) {
 
  /* Make sure the user is authenticated. */
  if(Admin.getCred() === undefined) {
@@ -18,7 +18,12 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
  $scope.addCandidate = function(candidate) {
 
    Candidates.add(candidate).then(function(response) {
-     $scope.candidates.push(response);
+     if(response.status == 200) {
+       toastr.success('Successfully Added Candidate');
+       $scope.candidates.push(response.data);
+     } else {
+        toastr.error('Failed to add candidate');
+     }
    });
  }
 
@@ -29,7 +34,12 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
    var id = $scope.selectedCandidate._id;
    candidate._id = id;
    Candidates.update(candidate).then(function(response) {
-     $scope.selectedCandidate = response;
+     if(response.status == 200) {
+       toastr.success('Successfully Updated Candidate');
+       $scope.selectedCandidate = response.data;
+     } else {
+       toastr.error('Failed to update candidate');
+     }
    });
  }
 
@@ -74,7 +84,7 @@ $scope.clearCandidateForm = function(){
 function loadResources() {
   /* Load all the candidates information so we can display it. */
   Candidates.getAll().then(function(response) {
-    $scope.candidates = response;
+    $scope.candidates = response.data;
   });
 
   issues.getAll().then(function(response) {

@@ -1,8 +1,8 @@
 "use strict";
 
-var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'angular-loading-bar', 'ui.select', 'ngSanitize', 'ngTagsInput', 'toggle-switch']);
+var eagleApp = angular.module('eagleApp', ['ngRoute', 'textAngular', 'angular-loading-bar', 'ui.select', 'ngSanitize', 'ngTagsInput', 'toggle-switch', 'ngAnimate', 'toastr']);
 
-  eagleApp.config(['$routeProvider', function($routeProvider){
+  eagleApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
     .when('/logIn' , {
       templateUrl: '/views/templates/login.html',

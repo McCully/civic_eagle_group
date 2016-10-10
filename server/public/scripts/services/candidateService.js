@@ -8,7 +8,7 @@ eagleApp.factory('Candidates' , ['$http', 'Admin', function($http, Admin) {
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -22,7 +22,7 @@ eagleApp.factory('Candidates' , ['$http', 'Admin', function($http, Admin) {
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -35,7 +35,7 @@ eagleApp.factory('Candidates' , ['$http', 'Admin', function($http, Admin) {
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
