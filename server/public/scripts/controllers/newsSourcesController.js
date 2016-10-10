@@ -15,7 +15,6 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
   }
 
   $scope.addSource = function(source) {
-    console.log("source: ", source);
     newsSources.create(source).then(function(response) {
       $scope.sources.push(response);
     });
@@ -25,8 +24,6 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
     if(source === undefined) {
       return;
     }
-
-    console.log("index: ", $scope.selectedSourceIndex);
 
     var id = $scope.selectedSource._id;
     source._id = id;
@@ -38,9 +35,7 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
 
   $scope.showSource = function(index) {
     var source = $scope.sources[index];
-    console.log("Source: ", source);
     $scope.selectedSource = source;
-    $scope.selectedSourceIndex = index;
     $scope.editSource = source;
   }
 
