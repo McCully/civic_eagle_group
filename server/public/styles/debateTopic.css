@@ -43,7 +43,9 @@
   text-align: center;
 }
 
-.searchContainer input {
-  width: 100%
-
+.searchContainer {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 50px;
 }

@@ -33,8 +33,7 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
     });
   }
 
-  $scope.showSource = function(index) {
-    var source = $scope.sources[index];
+  $scope.showSource = function(source) {
     $scope.selectedSource = source;
     $scope.editSource = source;
   }

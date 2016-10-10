@@ -6,12 +6,13 @@
   <div class="row">
 
     <div class = "col-md-9 col-center topics-container">
-      <!-- <div class="searchContainer">
-        <label>Search Topic: <input ng-model="searchText"></label>
-      </div> -->
+      <div class="searchContainer">
+        <label for="searchCandidates">Search Candidates</label>
+        <input id="searchCandidates" ng-model="search">
+      </div>
       <h2 class= "candidates" ng-click="clearCandidateForm()" data-toggle="modal" data-target="#candidateModal">Add Candidate</h2>
-        <div ng-repeat = "candidate in candidates track by $index" class = "outline-container">
-          <h2 class="topics" ng-click="showCandidate($index)" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
+        <div ng-repeat = "candidate in candidates | filter:search track by $index" class = "outline-container">
+          <h2 class="topics" ng-click="showCandidate(candidate)" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
         </div>
     </div>
   </div>
