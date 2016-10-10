@@ -1,7 +1,7 @@
 "use strict";
 
-eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager',
-function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager) {
+eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager', 'toastr',
+function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager, toastr) {
 
   if(Admin.getCred() === undefined){
    $location.path('/logIn');
@@ -12,12 +12,12 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
 /* Load debate topics */
 function loadResources() {
   DebateTopicsService.getDebateTopics().then(function(response){
-    $scope.topics = response;
+    $scope.topics = response.data;
   });
 
 /* Load issues. */
   issues.getAll().then(function(response){
-    $scope.issues = response;
+    $scope.issues = response.data;
   });
 };
 
@@ -26,8 +26,12 @@ $scope.addTopic = function(topic) {
   console.log($scope.active);
   console.log("topic: ", topic);
   DebateTopicsService.addTopic(topic).then(function(response) {
-    $scope.topics.push(response);
-    loadResources();
+    if(response.status == 200) {
+      $scope.topics.push(response.data);
+      toastr.success("Successfully Added topic");
+    } else {
+      toastr.error("Failed to add topic");
+    }
   });
   alert("You've Successfully Added A Topic!");
 }
@@ -40,13 +44,14 @@ $scope.updateTopic = function(topic) {
   topic.summary = $scope.selectedTopic.summary;
   topic.active = $scope.active;
   DebateTopicsService.updateTopic(topic).then(function(response) {
-  $scope.topics.push(response);
-  loadResources();
+    if(response.status == 200) {
+      $scope.topics.push(response.data);
+      toastr.success("Successfully updated topic");
+    } else {
+      toastr.error("Failed to update topic");
+    }
   });
-  topic = {};
-  $scope.selectedTopic = {};
-  $scope.updatedTopic = {};
-  new Toast('success', 'toast-top-full-width');
+  $scope.updatedTopic = topic;
 }
 
 //DISPLAY DEBATE TOPIC

@@ -88,7 +88,7 @@ function loadResources() {
   });
 
   issues.getAll().then(function(response) {
-    $scope.issues = response;
+    $scope.issues = response.data;
   });
 }
 

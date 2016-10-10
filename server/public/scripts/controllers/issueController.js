@@ -10,15 +10,18 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
 
   function loadResources() {
     issues.getAll().then(function(response) {
-      $scope.issues = response;
-      console.log($scope.issues);
+      $scope.issues = response.data;
     });
   }
 
   $scope.addIssue = function(issue) {
-    console.log("Issue: ", issue);
     issues.create(issue).then(function(response) {
-      $scope.issues.push(response);
+      if(response.status == 200) {
+        toastr.success("Successfully added issue");
+        $scope.issues.push(response.data);
+      } else {
+        toastr.error("Failed adding issue");
+      }
     });
   }
 
@@ -30,7 +33,12 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
     issue._id = id;
     console.log("Issue: ", issue);
     issues.update(issue).then(function(response) {
-      console.log("res: ", response);
+      if(response.status == 200) {
+        toastr.success("Successfully updated issue");
+        $scope.issues.push(response.data);
+      } else {
+        toastr.error("Failed updating issue");
+      }
     });
   }
 

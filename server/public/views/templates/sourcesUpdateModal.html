@@ -15,8 +15,8 @@
             <input type="text" id="type" ng-model="editSource.type" ng-value="selectedSource.type" class="form-control" placeholder="Type" required autofocus>
         </form>
         <div class="modal-footer">
+          <button type="button" ng-click="updateSource(editSource)" data-dismiss="modal" class="btn btn-primary">Save</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" ng-click="updateSource(editSource)" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>

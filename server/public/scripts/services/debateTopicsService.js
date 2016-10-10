@@ -7,8 +7,7 @@ eagleApp.factory('DebateTopicsService', ['$http', 'Admin', function($http, Admin
      url: "/topics",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -20,25 +19,22 @@ eagleApp.factory('DebateTopicsService', ['$http', 'Admin', function($http, Admin
        url: "/topics",
        headers: {'Authorization': 'Basic ' + Admin.getCred()}
      }).then(function(response) {
-       console.log("res: ", response);
-       return response.data;
+       return response;
      });
        return promise;
    }
 
   function updateTopic(topic) {
     var id = topic._id;
-    console.log("id: ", id);
     var promise = $http({
        method: 'PUT',
        data: topic,
        url: "/topics/" + id,
        headers: {'Authorization': 'Basic ' + Admin.getCred()}
      }).then(function(response) {
-       console.log("res: ", response);
-       return response.data;
+       return response;
      }, function(err) {
-       console.log("err: ", err);
+       return err;
      });
        return promise;
   }

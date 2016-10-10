@@ -7,8 +7,7 @@ eagleApp.factory('newsSources' , ['$http', 'Admin', function($http, Admin){
      url: "/sources",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -20,8 +19,7 @@ eagleApp.factory('newsSources' , ['$http', 'Admin', function($http, Admin){
      url: "/sources",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -34,8 +32,7 @@ eagleApp.factory('newsSources' , ['$http', 'Admin', function($http, Admin){
      url: "/sources/" + id,
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
