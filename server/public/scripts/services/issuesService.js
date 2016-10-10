@@ -19,6 +19,8 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      return response;
+   }, function(err) {
+     return err;
    });
    return promise;
   }
@@ -32,6 +34,8 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      return response;
+   }, function(err) {
+     return err;
    });
    return promise;
   }
@@ -43,6 +47,8 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      return response;
+   }, function(err) {
+     return err;
    });
    return promise;
   }

@@ -33,7 +33,6 @@ $scope.addTopic = function(topic) {
       toastr.error("Failed to add topic");
     }
   });
-  alert("You've Successfully Added A Topic!");
 }
 
 //UPDATE DEBATE TOPIC
