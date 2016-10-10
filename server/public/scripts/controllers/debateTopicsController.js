@@ -1,7 +1,7 @@
 "use strict";
 
-eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager',
-function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager) {
+eagleApp.controller('debateTopicsController', ['$scope', '$location', '$http' ,'Admin', 'DebateTopicsService', 'issues', 'textAngularManager', 'toastr',
+function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngularManager, toastr) {
 
   if(Admin.getCred() === undefined){
    $location.path('/logIn');
@@ -29,7 +29,7 @@ $scope.addTopic = function(topic) {
     $scope.topics.push(response);
     loadResources();
   });
-  alert("You've Successfully Added A Topic!");
+  toastr.success('Youve Successfully Added A Topic!');
 }
 
 //UPDATE DEBATE TOPIC
@@ -46,7 +46,7 @@ $scope.updateTopic = function(topic) {
   topic = {};
   $scope.selectedTopic = {};
   $scope.updatedTopic = {};
-  new Toast('success', 'toast-top-full-width');
+  toastr.success("You've Successfully Added A Topic!");
 }
 
 //DISPLAY DEBATE TOPIC
