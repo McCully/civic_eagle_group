@@ -16,6 +16,7 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
  };
 
  $scope.addCandidate = function(candidate) {
+
    Candidates.add(candidate).then(function(response) {
      $scope.candidates.push(response);
    });
@@ -40,12 +41,12 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
 /* Grab the selected candidate's information and
  set it to a scope variable, so it can be displayed
  on the DOM.  */
-$scope.showCandidate = function(index) {
+$scope.showCandidate = function(candidate) {
 
   /* Find and display the selected candidate. */
-  var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
   $scope.editCandidate = candidate;
+  console.log("candiate: ", candidate);
 
   /* Reset selectedTags and summaries. */
   $scope.selectedTags = [];

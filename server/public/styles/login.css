@@ -1,14 +1,14 @@
 .loginView{
-  background: url(https://static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/t/56bf8238b6aa60f2bc25dc76/1470439778298/?format=1500w) no-repeat center;
-  background-size: 80% 80%;
-  background-position: bottom;
+  background: url(https://static1.squarespace.com/static/538cb6abe4b0c3b633f80c8d/t/56bf834459827eb455984e46/1455391564121/civic-eagle-24.jpg?format=2500w) no-repeat center center fixed;
+  background-size: 100% 100%;
+  background-position: top ;
   height: 100%;
   min-height: 100vh;
-  min-width: 70vw;
+  min-width: 100vw;
   /*padding-top: 10px;*/
 }
 .login-title{
-  color: orange;
+  color: white;
 }
 .login {
    padding: 15px;
@@ -16,7 +16,6 @@
    margin: 0 auto;
    margin-top: 20%
 }
-
 .authError{
   text-align: center;
 }
@@ -59,7 +58,6 @@
    border-top-left-radius: 0;
    border-top-right-radius: 0;
 }
-
 :focus {
   outline: none;
 }
