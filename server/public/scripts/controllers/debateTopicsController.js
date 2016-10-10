@@ -46,7 +46,7 @@ $scope.updateTopic = function(topic) {
   topic = {};
   $scope.selectedTopic = {};
   $scope.updatedTopic = {};
-  alert("Update Complete!");
+  new Toast('success', 'toast-top-full-width');
 }
 
 //DISPLAY DEBATE TOPIC
