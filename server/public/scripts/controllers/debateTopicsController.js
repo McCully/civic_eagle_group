@@ -41,10 +41,12 @@ console.log(response);
 }
 
 //DISPLAY DEBATE TOPIC
-$scope.showTopic = function(index) {
-  var topic = $scope.topics[index];
+$scope.showTopic = function(topic) {
   $scope.selectedTopic = topic;
   $scope.debateContent = topic.summary;
+  console.log(topic);
+  topic = {};
+  console.log(topic);
 };
 
 //CLEAR FORM
