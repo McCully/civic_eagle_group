@@ -1,13 +1,15 @@
-<!-- <div ng-include = "'views/templates/sideNav.html'"></div> -->
 <div ng-include = "'views/templates/issueModal.html'"></div>
 <div ng-include = "'views/templates/issueEditModal.html'"></div>
 
-<button type="button" class="btn button btn-lg add" ng-click="clearIssueForm()" data-toggle="modal" data-target="#issueModal">Add Issue</button>
+<button type="button" class="btn button btn-lg add" ng-click="logOut()"><span class="glyphicon glyphicon-log-out"></span></button>
   <div class = "container-fluid issueView">
     <div class="row">
       <div class = "col-md-9 col-center issues-container">
+          <div class = "outline-container">
+            <h2 class="issues" ng-click="clearIssueForm()" data-toggle="modal" data-target="#issueModal">Add Issue</h2>
+          </div>
           <div ng-repeat = "issue in issues track by $index" class = "outline-container">
-            <h2 class="issues" ng-click="showIssue($index)" data-toggle="modal" data-target="#issueEditModal">{{issue.title}}</h2>
+            <h2 class="issues" ng-click="showIssue($index)" data-toggle="modal" data-target="#issueEditModal">{{issue.title}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
           </div>
         </div>
     </div>

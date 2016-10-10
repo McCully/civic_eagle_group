@@ -4,7 +4,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
   function getAll() {
     var promise = $http({
      method: 'GET',
-     url: "https://users-staging.api.civiceagle.com/issues",
+     url: "/issues",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
@@ -16,7 +16,33 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
   function getById(id) {
     var promise = $http({
      method: 'GET',
-     url: "https://users-staging.api.civiceagle.com/issues/" + id,
+     url: "/issues/" + id,
+     headers: {'Authorization': 'Basic ' + Admin.getCred()}
+   }).then(function(response) {
+     console.log("res: ", response);
+     return response.data;
+   });
+   return promise;
+  }
+
+  function update(issue) {
+    var id = issue._id;
+    var promise = $http({
+     method: 'PUT',
+     data: issue,
+     url: "/issues/" + id,
+     headers: {'Authorization': 'Basic ' + Admin.getCred()}
+   }).then(function(response) {
+     console.log("res: ", response);
+     return response.data;
+   });
+   return promise;
+  }
+
+  function create(issue) {
+    var promise = $http({
+     method: 'POST',
+     url: "/issues",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
@@ -27,6 +53,8 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
 
   return {
     getAll: getAll,
-    getById: getById
+    getById: getById,
+    create: create,
+    update: update
   };
 }]);

@@ -4,7 +4,7 @@ eagleApp.factory('DebateTopicsService', ['$http', 'Admin', function($http, Admin
   function getDebateTopics() {
     var promise = $http({
      method: 'GET',
-     url: "https://debate-staging.api.civiceagle.com/topics",
+     url: "/topics",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
      console.log("res: ", response);
@@ -17,7 +17,7 @@ eagleApp.factory('DebateTopicsService', ['$http', 'Admin', function($http, Admin
     var promise = $http({
        method: 'POST',
        data: topic,
-       url: "https://debate-staging.api.civiceagle.com/topics",
+       url: "/topics",
        headers: {'Authorization': 'Basic ' + Admin.getCred()}
      }).then(function(response) {
        console.log("res: ", response);
@@ -28,10 +28,11 @@ eagleApp.factory('DebateTopicsService', ['$http', 'Admin', function($http, Admin
 
   function updateTopic(topic) {
     var id = topic._id;
+    console.log("id: ", id);
     var promise = $http({
        method: 'PUT',
        data: topic,
-       url: "https://debate-staging.api.civiceagle.com/topics/" + id,
+       url: "/topics/" + id,
        headers: {'Authorization': 'Basic ' + Admin.getCred()}
      }).then(function(response) {
        console.log("res: ", response);

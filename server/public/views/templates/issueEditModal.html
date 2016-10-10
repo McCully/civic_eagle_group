@@ -4,31 +4,22 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit {{selectedCandidate.firstName}} {{selectedCandidate.lastName}}</h4>
-        <div class="pagination">Page {{pageNumber}}/{{topicsTotal}}</div>
       </div>
       <div class="modal-body">
         <form editable-form name="editCandidateForm" class="form-signin">
-          <div ng-show="showFirst">
             <label for="#title">Title</label>
-            <input type="text" id="title" class="form-control" value="{{selectedIssue.title}}" required autofocus>
+            <input type="text" id="title" ng-model="issue.title" class="form-control" ng-value="selectedIssue.title" required autofocus>
             <label for="#slug">Slug</label>
-            <input type="text" id="slug" class="form-control" value="{{selectedIssue.slug}}" required autofocus>
-          </div>
-          <div ng-show="showSecond">
+            <input type="text" id="slug" ng-model="issue.slug" class="form-control" ng-value="selectedIssue.slug" required autofocus>
             <label for="#stateCriteria">State Criteria</label>
-            <input type="text" id="stateCriteria" class="form-control" value="{{selectedIssue.stateCriteria}}" required autofocus>
+            <input type="text" id="stateCriteria" ng-model="issue.stateCriteria" class="form-control" ng-value="selectedIssue.stateCriteria" required autofocus>
             <label for="#federalCriteria">Federal Criteria</label>
-            <input type="text" id="federalCriteria" class="form-control" value="{{selectedIssue.federalCriteria}}" required autofocus>
-          </div>
-          <div ng-show="showThird">
+            <input type="text" id="federalCriteria" ng-model="issue.federalCriteria" class="form-control" ng-value="selectedIssue.federalCriteria" required autofocus>
             <label for="#summary">Summary</label>
-          </div>
         </form>
       <div class="modal-footer">
-        <button ng-click="prevTopicView()" type="button" ng-hide="showPrev" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button>
-        <button type="button" ng-click="addTopic(topic)" class="btn btn-primary">Submit</button>
+        <button type="button" ng-click="updateIssue(issue)" class="btn btn-primary">Update</button>
         <button type="button" ng-click="resetTopicModal()" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button ng-click="nextTopicView()" type="button" ng-hide="showNext" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
     </div>
   </div>

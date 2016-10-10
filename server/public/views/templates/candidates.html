@@ -1,14 +1,15 @@
-<!-- <div ng-include = "'views/templates/sideNav.html'"></div> -->
 <div ng-include = "'views/templates/candidateModal.html'"></div>
 <div ng-include = "'views/templates/editCadidates.html'"></div>
 
-<button type="button" class="btn button btn-lg add" ng-click="clearCandidateForm()" data-toggle="modal" data-target="#candidateModal">Add Candidate</button>
+<button type="button" class="btn button btn-lg add" ng-click="logOut()"><span class="glyphicon glyphicon-log-out"></span></button>
 <div class = "container-fluid candidateView">
   <div class="row">
-    <div class = "col-md-9 col-center candidates-container">
-        <div  ng-repeat = "candidate in candidates track by $index" class = "outline-container">
-          <h2 class="candidates" ng-click="showCandidate($index)" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}</h2>
+
+    <div class = "col-md-9 col-center topics-container">
+      <h2 class= "candidates" ng-click="clearCandidateForm()" data-toggle="modal" data-target="#candidateModal">Add Candidate</h2>
+        <div ng-repeat = "candidate in candidates track by $index" class = "outline-container">
+          <h2 class="topics" ng-click="showCandidate($index)" data-toggle="modal" data-target="#editCandidateModal">{{candidate.firstName}} {{candidate.lastName}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
         </div>
-      </div>
+    </div>
   </div>
 </div>

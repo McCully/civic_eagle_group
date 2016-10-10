@@ -2,8 +2,6 @@
 
 eagleApp.controller('candidateController', ['$scope', '$location', '$http' ,'Admin', 'Candidates', 'textAngularManager', 'issues',
 function($scope, $location, $http, Admin, Candidates, textAngularManager, issues) {
-  /* Create basic authorization header. */
-  var header = 'Basic ' + Admin.getCred();
 
  /* Make sure the user is authenticated. */
  if(Admin.getCred() === undefined) {
@@ -19,47 +17,45 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
 
  $scope.addCandidate = function(candidate) {
    Candidates.add(candidate).then(function(response) {
-     console.log("Added candidate: ", response);
+     $scope.candidates.push(response);
    });
  }
 
  $scope.updateCandidate = function(candidate) {
-   console.log("candidate: ", candidate);
+   var id = $scope.selectedCandidate._id;
+   candidate._id = id;
    Candidates.update(candidate).then(function(response) {
-     console.log("Updated candidate: ", response);
+     $scope.selectedCandidate = response;
    });
  }
 
  $scope.showSummary = function(index) {
-  console.log("index: ", index);
    var summary = $scope.summaries[index];
    $scope.summary = summary;
-   console.log("summary: ", summary);
  }
 
 /* Grab the selected candidate's information and
  set it to a scope variable, so it can be displayed
  on the DOM.  */
 $scope.showCandidate = function(index) {
-  /* Reset the modal page views. */
-  $scope.resetCounter();
 
   /* Find and display the selected candidate. */
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
 
-  /* */
+  /* Reset selectedTags and summaries. */
   $scope.selectedTags = [];
   $scope.summaries = [];
 
-  console.log("length: ", candidate.issueSummaries.length);
-
   /* Grab the issues in the candidate object
-     so they too can be displayed to the user. */
+     and look them up by id so they too can
+     be displayed to the user. */
   for(var i = 0; i < candidate.issueSummaries.length; i++) {
     var id = candidate.issueSummaries[i].issue;
     var summary = candidate.issueSummaries[i].summary;
+
     $scope.summaries.push(summary);
+
     issues.getById(id).then(function(response) {
       $scope.selectedTags.push(response);
     });
@@ -68,14 +64,12 @@ $scope.showCandidate = function(index) {
 
 $scope.clearCandidateForm = function(){
   $scope.candidate = {};
-  $scope.resetCounter();
 };
 
 function loadResources() {
   /* Load all the candidates information so we can display it. */
   Candidates.getAll().then(function(response) {
     $scope.candidates = response;
-    console.log("Candidates: ", response);
   });
 
   issues.getAll().then(function(response) {

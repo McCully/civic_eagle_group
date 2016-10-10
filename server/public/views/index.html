@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/vendors/bootstrap.min.css">
     <link rel="stylesheet" href="/vendors/font-awesome.min.css"/>
     <link rel="stylesheet" href="/vendors/textAngular.css"/>
+    <link rel="stylesheet" href="/vendors/bootstrap-switch.min.css"/>
     <link rel="stylesheet" href="/styles/stylesheet.css"/>
     <link rel="stylesheet" href="/styles/home.css"/>
     <link rel="stylesheet" href="/vendors/loading-bar.min.css"/>
@@ -21,11 +22,12 @@
     <link rel="stylesheet" href="/vendors/select2.min.css"/>
     <script type="text/javascript" src="/vendors/angular.min.js"></script>
     <script type="text/javascript" src="/vendors/loading-bar.min.js"></script>
+    <script type="text/javascript" src="/vendors/select.min.js"></script>
     <script type="text/javascript" src="/vendors/textAngular-rangy.min.js"></script>
     <script type="text/javascript" src="/vendors/textAngular-sanitize.min.js"></script>
     <script type="text/javascript" src="/vendors/textAngular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-toggle-switch.min.js"></script>
     <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
-    <script type="text/javascript" src="/vendors/select.js"></script>
     <script type="text/javascript" src="/vendors/ng-tags-input.min.js"></script>
     <script type="text/javascript" src="/scripts/client-app.js"></script>
     <script type="text/javascript" src="/scripts/controllers/logInController.js"></script>
@@ -42,7 +44,6 @@
   </head>
   <body ng-controller="homeController">
     <div ng-include = "'views/templates/sideNav.html'" ng-show="checkNav('/logIn')"></div>
-
     <main ng-view></main>
   </body>
 </html>

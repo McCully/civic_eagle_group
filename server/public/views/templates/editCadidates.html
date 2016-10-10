@@ -4,29 +4,23 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit {{selectedCandidate.firstName}} {{selectedCandidate.lastName}}</h4>
-        <div class="pagination">Page {{pageNumber}}/{{candidatesTotal}}</div>
       </div>
       <div class="modal-body">
         <form editable-form name="editCandidateForm" class="form-signin">
-          <div ng-show="showFirst">
             <label for="#editFirstName">First Name</label>
-            <input id="editFirstName" class="form-control" ng-value="selectedCandidate.firstName">
+            <input id="editFirstName" class="form-control" ng-model="editCandidate.firstName" ng-value="selectedCandidate.firstName">
             <label for="#editLastName">Last Name</label>
-            <input id="editFirstName" class="form-control" ng-value="selectedCandidate.lastName">
+            <input id="editLastName" class="form-control" ng-model="editCandidate.lastName" ng-value="selectedCandidate.lastName">
             <label for="#editParty">Political Party</label>
-            <input id="editFirstName" class="form-control" ng-value="selectedCandidate.party">
-          </div>
-          <div ng-show="showSecond">
+            <input id="editFirstName" class="form-control" ng-model="editCandidate.party" ng-value="selectedCandidate.party">
             <label for="#editTwitter">Twitter ID</label>
-            <input id="editTwitter" ng-model="editCandidate.twitterid" ng-value="selectedCandidate.twitterid" class="form-control" required autofocus>
+            <input id="editTwitter" ng-model="editCandidate.twitterId" ng-value="selectedCandidate.twitterId" class="form-control" required autofocus>
             <label for="#editFacebook">Facebook</label>
-            <input type="text" id="editFacebook" ng-model="editCandidate.facebookid" ng-value="selectedCandidate.facebookid" class="form-control" required autofocus>
+            <input type="text" id="editFacebook" ng-model="editCandidate.facebookId" ng-value="selectedCandidate.facebookId" class="form-control" required autofocus>
             <label for="#editWebsite">Website</label>
             <input type="text" id="editWebsite" ng-model="editCandidate.website" ng-value="selectedCandidate.website" class="form-control" required autofocus>
             <label for="#editImage">Image</label>
             <input type="text" id="editImage" ng-model="editCandidate.image" ng-value="selectedCandidate.image" class="form-control" required autofocus>
-          </div>
-          <div ng-show="showThird">
             <label for="#issue">Issue</label>
             <ui-select multiple sortable="true" theme="bootstrap" ng-model="selectedTags" class="form-control" title="Choose an issue">
              <ui-select-match placeholder="Select or search an issue..."><span ng-click="showSummary($index)">{{$item.title}}</span></ui-select-match>
@@ -38,13 +32,10 @@
             <div class="editorContainer">
               <div text-angular="text-angular" name="candidateContent" ng-model="summary" ta-disabled="disabled"></div>
             </div>
-          </div>
         </form>
       <div class="modal-footer">
-        <button ng-click="prevCandidateView()" type="button" ng-hide="showPrevious" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button>
-        <button type="button" ng-click="updateCandidate(editCandidate)" class="btn btn-primary">Submit</button>
+        <button type="button" ng-click="updateCandidate(editCandidate)" class="btn btn-primary">Update</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button ng-click="nextCandidateView()" type="button" ng-hide="showNext" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
     </div>
   </div>

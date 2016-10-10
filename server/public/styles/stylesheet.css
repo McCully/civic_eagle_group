@@ -1,9 +1,11 @@
 /*---------------GlobalStyles---------------*/
 
-
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: white; !important;
     color: black;
+}
+.glyphicon-chevron-right{
+  float: right;
 }
 
 .ui-select-match-item {
@@ -26,10 +28,17 @@ label {
   margin-top: 10px;
 }
 .col-center{
- float: none;
- margin-right: 130px;
- margin-left: 190px;
- margin-top: 50px;
+
+
+     /* center the element */
+     right: 0;
+     left: 0;
+     margin-right: auto;
+     margin-left: 25%;
+     /* give it dimensions */
+     /*min-height: 10em;*/
+     width: 60%;
+
 
 }
 
@@ -50,37 +59,29 @@ label {
 }
 
 
-.outline-container{
+.outline-container {
   padding: 5px 3px;
-  width: 60% ;
-  margin-top: 15px;
-  margin-bottom: 25px !important;
-  text-align: center !important;
-  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  text-align: left;
+  margin: 1px;
+  margin-top: 5px;
+  text-shadow: 2px 2px blue; !important
   display: block;
   overflow: hidden;
-
-  background-color: rgba(246, 140, 36, 0.8);
-  border-radius: 50px 50px 50px 50px;
-
+<<<<<<< HEAD
+  background-color: rgba(255, 255, 255, 0.1);;
+=======
+  background-color: black;
+>>>>>>> 00d6cd3fc832c2df8c5ef6340f8b78416a83ad54
 }
 
 .outline-container:hover{
-  background-color: rgba(246, 140, 36, 1);
 
 }
-
 
 /*---------------textAngular---------------*/
 .editorContainer {
   margin-right: auto;
   margin-left: auto;
-}
-
-/*--------------xeditable-----------------*/
-
-
-
-.btn btn-success {
-  margin: 5px;
 }
