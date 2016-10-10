@@ -19,6 +19,7 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
    Candidates.add(candidate).then(function(response) {
      $scope.candidates.push(response);
    });
+   alert('Candidate Added!');
  }
 
  $scope.updateCandidate = function(candidate) {
@@ -30,6 +31,7 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
    Candidates.update(candidate).then(function(response) {
      $scope.selectedCandidate = response;
    });
+   alert("Candidate Updated!");
  }
 
  $scope.showSummary = function(index) {
