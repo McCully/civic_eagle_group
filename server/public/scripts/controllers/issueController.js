@@ -23,6 +23,9 @@ eagleApp.controller('issueController', ['$scope','$location', '$http', 'Admin', 
   }
 
   $scope.updateIssue = function(issue) {
+    if(issue === undefined) {
+      return;
+    }
     var id = $scope.selectedIssue._id;
     issue._id = id;
     console.log("Issue: ", issue);

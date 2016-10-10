@@ -23,33 +23,42 @@ function loadResources() {
 
 //ADD NEW DEBATE TOPIC
 $scope.addTopic = function(topic) {
+  console.log($scope.active);
   console.log("topic: ", topic);
   DebateTopicsService.addTopic(topic).then(function(response) {
     $scope.topics.push(response);
+    console.log($scope.topics);
   });
 }
 
 //UPDATE DEBATE TOPIC
 $scope.updateTopic = function(topic) {
+  console.log(topic);
   var id = $scope.selectedTopic._id;
   topic._id = id;
-  console.log("topic: ", topic);
-DebateTopicsService.updateTopic(topic).then(function(response){
-console.log(response);
-});
+  topic.summary = $scope.selectedTopic.summary;
+  console.log(topic.summary);
+  console.log(topic);
+  topic.active = $scope.active;
+  DebateTopicsService.updateTopic(topic).then(function(response) {
+  $scope.topics.push(response);
+  loadResources();
+  });
 }
 
 //DISPLAY DEBATE TOPIC
-$scope.showTopic = function(index) {
-  var topic = $scope.topics[index];
+$scope.showTopic = function(topic) {
+  console.log(topic);
   $scope.selectedTopic = topic;
-  $scope.debateContent = topic.summary;
+  $scope.active = topic.active;
+  topic = {};
 };
 
 //CLEAR FORM
 $scope.clearTopicForm = function(){
   $scope.topic = {};
 };
+
 
 //---------* UPDATE DEBATE TOPIC EDITOR*----------//
 $scope.version = textAngularManager.getVersion();

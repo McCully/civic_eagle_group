@@ -15,13 +15,31 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
   }
 
   $scope.addSource = function(source) {
-    console.log("source: ", source);
     newsSources.create(source).then(function(response) {
       $scope.sources.push(response);
     });
   }
 
+  $scope.updateSource = function(source) {
+    if(source === undefined) {
+      return;
+    }
+
+    var id = $scope.selectedSource._id;
+    source._id = id;
+
+    newsSources.update(source).then(function(response) {
+      console.log("response: ", response);
+    });
+  }
+
+  $scope.showSource = function(index) {
+    var source = $scope.sources[index];
+    $scope.selectedSource = source;
+    $scope.editSource = source;
+  }
+
   $scope.clearForm = function(){
-    $scope.topic = {};
+    $scope.source = {};
   }
 }]);

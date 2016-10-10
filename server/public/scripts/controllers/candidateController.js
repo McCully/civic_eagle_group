@@ -22,6 +22,9 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
  }
 
  $scope.updateCandidate = function(candidate) {
+   if(candidate === undefined) {
+     return;
+   }
    var id = $scope.selectedCandidate._id;
    candidate._id = id;
    Candidates.update(candidate).then(function(response) {
@@ -42,6 +45,7 @@ $scope.showCandidate = function(index) {
   /* Find and display the selected candidate. */
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
+  $scope.editCandidate = candidate;
 
   /* Reset selectedTags and summaries. */
   $scope.selectedTags = [];

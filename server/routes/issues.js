@@ -18,6 +18,7 @@ router.get('/:id' , function(req , res) {
    .header("Authorization", req.headers.authorization)
    .header("Accept", "application/json")
    .end(function(result){
+      console.log("result: ", result);
       res.send(result.body);
    });
 });

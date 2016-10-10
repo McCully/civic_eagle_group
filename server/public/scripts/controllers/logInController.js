@@ -22,7 +22,7 @@ eagleApp.controller('logInController' , ['$scope' , '$location' , 'Admin' , '$ht
         Admin.setCred(cred);
         $location.path('/home');
       }, function(err) {
-          $scope.message = "Username and or Password is incorrect";
+          $scope.message = "Username/Password is Incorrect!";
       });
   };
 }]);
