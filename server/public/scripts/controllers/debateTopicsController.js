@@ -34,6 +34,7 @@ $scope.updateTopic = function(topic) {
   if(topic === undefined) {
     return;
   }
+
   var id = $scope.selectedTopic._id;
   topic._id = id;
   console.log("topic: ", topic);
@@ -43,8 +44,7 @@ console.log(response);
 }
 
 //DISPLAY DEBATE TOPIC
-$scope.showTopic = function(index) {
-  var topic = $scope.topics[index];
+$scope.showTopic = function(topic) {
   $scope.selectedTopic = topic;
   $scope.debateContent = topic.summary;
   $scope.editTopic = topic;
