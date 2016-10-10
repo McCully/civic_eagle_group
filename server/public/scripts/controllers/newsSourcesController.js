@@ -21,6 +21,12 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
     });
   }
 
+  $scope.updateSource = function(source) {
+    if(source === undefined) {
+      return;
+    }
+  }
+
   $scope.clearForm = function(){
     $scope.topic = {};
   }

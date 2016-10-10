@@ -22,6 +22,9 @@ function($scope, $location, $http, Admin, Candidates, textAngularManager, issues
  }
 
  $scope.updateCandidate = function(candidate) {
+   if(candidate === undefined) {
+     return;
+   }
    var id = $scope.selectedCandidate._id;
    candidate._id = id;
    Candidates.update(candidate).then(function(response) {
