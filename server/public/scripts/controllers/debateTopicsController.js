@@ -29,7 +29,7 @@ $scope.addTopic = function(topic) {
     $scope.topics.push(response);
     loadResources();
   });
-  toastr.success('Youve Successfully Added A Topic!');
+  toastr.success(topic.title + ' has been added!');
 }
 
 //UPDATE DEBATE TOPIC
@@ -46,7 +46,7 @@ $scope.updateTopic = function(topic) {
   topic = {};
   $scope.selectedTopic = {};
   $scope.updatedTopic = {};
-  toastr.success("You've Successfully Added A Topic!");
+  toastr.success("Update Successful!");
 }
 
 //DISPLAY DEBATE TOPIC
