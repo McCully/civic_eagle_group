@@ -9,10 +9,10 @@
       <div class="searchContainer">
       <label>Search Topic: <input ng-model="searchText"></label>
       </div>
-      <div class = "outline-container">
-        <h2 class="topics" data-toggle="modal" ng-click="clearTopicForm()" data-target="#debateTopicsModal">Add Debate Topic</h2>
+      <div class="addTopicContainer">
+        <h2 class="topics" data-toggle="modal" ng-click="clearTopicForm()" data-target="#debateTopicsModal">Add Debate Topic<span class="glyphicon glyphicon-plus"></span></h2>
       </div>
-       <div ng-repeat="topic in topics | filter: searchText" class = "outline-container" style="background-image: url({{topic.image}})">
+       <div ng-repeat="topic in topics | filter: searchText" class="outline-container" style="background-image: url({{topic.image}})">
         <h2 class="topics" data-toggle="modal" data-target="#debateTopicsModalUpdate" ng-click="showTopic(topic)">{{topic.title}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
       </div>
     </div>
