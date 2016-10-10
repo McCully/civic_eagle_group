@@ -37,17 +37,16 @@ $scope.updateTopic = function(topic) {
 
   var id = $scope.selectedTopic._id;
   topic._id = id;
-  console.log("topic: ", topic);
-DebateTopicsService.updateTopic(topic).then(function(response){
-console.log(response);
-});
+  DebateTopicsService.updateTopic(topic).then(function(response) {
+    $scope.topics.push(response);
+  });
 }
 
 //DISPLAY DEBATE TOPIC
 $scope.showTopic = function(topic) {
   $scope.selectedTopic = topic;
   $scope.debateContent = topic.summary;
-  $scope.editTopic = topic;
+  $scope.updatedTopic = topic;
 };
 
 //CLEAR FORM
