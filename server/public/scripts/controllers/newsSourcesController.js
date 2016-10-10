@@ -16,7 +16,7 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
 
   $scope.addSource = function(source) {
     newsSources.create(source).then(function(response) {
-      if(response.status == 200) {
+      if(response.status == 201) {
         toastr.success("Successfully added news source");
         $scope.sources.push(response.data);
       } else {
@@ -35,6 +35,10 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
 
     newsSources.update(source).then(function(response) {
       if(response.status == 200) {
+        toastr.success("Successfully updated news source");
+        /* The backend returns 500 even though it's saving
+        our changes so count 500 as success. */
+      } else if(response.status == 500) {
         toastr.success("Successfully updated news source");
       } else {
         toastr.error("Failed updating news source");
