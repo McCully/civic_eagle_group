@@ -19,7 +19,7 @@
 
 }
 .topics-container h2{
-  color: orange;
+  color: white;;
   opacity: .9;
 }
 
@@ -35,6 +35,15 @@
   width: 100%;
 }
 
+.addTopicContainer h2 {
+  color: orange;
+}
+
 .modal-title {
   text-align: center;
+}
+
+.searchContainer input {
+  width: 100%
+
 }
