@@ -19,20 +19,19 @@
 }*/
 
 .candidates-container h2:hover {
- color: white;
+ color: orange;
  opacity: 1;
  text-shadow: 1px 1px lightgray;
 
 }
 .candidates-container h2{
-  color: white;
-  text-shadow: 2px 2px blue;
+  color: orange;
   text-align: center;
   background-color: orange;
 }
 
 .candidates :hover {
-  color: white;
+  color: orange;
   cursor: pointer;
 }
 h2.candidates:hover{
@@ -40,16 +39,18 @@ h2.candidates:hover{
   color: orange;
 }
 
-.candidates{
+.candidates {
   margin-top: 0;
   margin-bottom: 0;
-  background-color: grey;
-  height: 250px;
-  text-shadow: 2px 2px blue; !important
+  height: 50px;
+  color: orange; !important
   opacity: 0.8
-  
+
 }
 
+.candidates h2 {
+  color: orange; !important
+}
 .candidates-container .outline-container{
   width: 35%;
   margin-top: 50px;

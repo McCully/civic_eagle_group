@@ -54,8 +54,6 @@ $scope.showTopic = function(topic) {
   console.log(topic);
   $scope.selectedTopic = topic;
   $scope.active = topic.active;
-  topic = {};
-
 };
 
 //CLEAR FORM
