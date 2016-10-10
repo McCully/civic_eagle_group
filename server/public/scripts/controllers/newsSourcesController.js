@@ -26,6 +26,8 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
       return;
     }
 
+    console.log("index: ", $scope.selectedSourceIndex);
+
     var id = $scope.selectedSource._id;
     source._id = id;
 
@@ -38,9 +40,11 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
     var source = $scope.sources[index];
     console.log("Source: ", source);
     $scope.selectedSource = source;
+    $scope.selectedSourceIndex = index;
+    $scope.editSource = source;
   }
 
   $scope.clearForm = function(){
-    $scope.topic = {};
+    $scope.source = {};
   }
 }]);

@@ -45,6 +45,7 @@ $scope.showCandidate = function(index) {
   /* Find and display the selected candidate. */
   var candidate = $scope.candidates[index];
   $scope.selectedCandidate = candidate;
+  $scope.editCandidate = candidate;
 
   /* Reset selectedTags and summaries. */
   $scope.selectedTags = [];

@@ -47,6 +47,7 @@ $scope.showTopic = function(index) {
   var topic = $scope.topics[index];
   $scope.selectedTopic = topic;
   $scope.debateContent = topic.summary;
+  $scope.editTopic = topic;
 };
 
 //CLEAR FORM
