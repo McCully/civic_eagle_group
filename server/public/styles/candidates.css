@@ -35,6 +35,7 @@
   color: orange;
   cursor: pointer;
 }
+
 h2.candidates:hover{
   cursor: pointer;
   color: orange;
@@ -50,8 +51,9 @@ h2.candidates:hover{
 }
 
 .candidates h2 {
-  color: orange; !important
+  color: orange;
 }
+
 .candidates-container .outline-container{
   width: 35%;
   margin-top: 50px;
