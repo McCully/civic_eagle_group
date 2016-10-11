@@ -26,7 +26,7 @@ $scope.addTopic = function(topic) {
   console.log($scope.active);
   console.log("topic: ", topic);
   DebateTopicsService.addTopic(topic).then(function(response) {
-    if(response.status == 200) {
+    if(response.status == 201) {
       $scope.topics.push(response.data);
       toastr.success("Successfully Added topic");
     } else {
@@ -46,17 +46,20 @@ $scope.updateTopic = function(topic) {
     if(response.status == 200) {
       $scope.topics.push(response.data);
       toastr.success("Successfully updated topic");
+    } else if (response.status == 500) {
+      loadResources();
+      toastr.success("Successfully updated topic");
     } else {
       toastr.error("Failed to update topic");
     }
   });
-  $scope.updatedTopic = topic;
 }
 
 //DISPLAY DEBATE TOPIC
 $scope.showTopic = function(topic) {
   console.log(topic);
   $scope.selectedTopic = topic;
+  $scope.updatedTopic = topic;
   $scope.active = topic.active;
 };
 
