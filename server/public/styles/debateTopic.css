@@ -11,6 +11,8 @@
   /*padding-top: 10px;*/
 }*/
 
+
+
 .topics-container h2:hover {
  color: orange;
  opacity: 1;
@@ -35,10 +37,6 @@
   width: 100%;
 }
 
-.addTopicContainer h2 {
-  color: orange;
-}
-
 .modal-title {
   text-align: center;
 }
@@ -48,4 +46,10 @@
   margin: 0 auto;
   display: block;
   margin-bottom: 50px;
+}
+
+.addNewContainer > h2 {
+  background-color: #f68c24;
+  color: white;
+  padding-top: 20px;;
 }

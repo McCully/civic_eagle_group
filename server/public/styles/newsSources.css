@@ -1,9 +1,7 @@
 .sources {
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 /*.newsSourceView{
