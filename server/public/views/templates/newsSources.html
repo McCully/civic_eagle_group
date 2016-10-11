@@ -9,11 +9,11 @@
           <label for="sourceSearchBar">Search Debate Topics: </label>
           <input id="sourceSearchBar" ng-model="searchSource">
         </div>
-          <div class="outline-container">
-            <h2 class="sources" ng-click="clearForm()" data-toggle="modal" data-target="#sourcesModal">Add News Source</h2>
+          <div class="addNewContainer">
+            <h2 class="sources" ng-click="clearForm()" data-toggle="modal" data-target="#sourcesModal">Add News Source<span class="glyphicon glyphicon-plus"></span></h2>
           </div>
           <div class="outline-container" ng-repeat="source in sources | filter:searchSource track by $index">
-            <h2 class="sources" ng-click="showSource(source)" data-toggle="modal" data-target="#sourcesUpdateModal">{{source.title}}</h2>
+            <h2 class="sources" ng-click="showSource(source)" data-toggle="modal" data-target="#sourcesUpdateModal">{{source.title}}<span class="glyphicon glyphicon-chevron-right"></span></h2>
           </div>
         </div>
       </div>

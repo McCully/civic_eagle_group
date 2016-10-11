@@ -10,7 +10,7 @@
         <label for="searchBar">Search Debate Topics: </label>
         <input id="searchBar" ng-model="searchText">
       </div>
-      <div class="addTopicContainer">
+      <div class="addNewContainer">
         <h2 class="topics" data-toggle="modal" ng-click="clearTopicForm()" data-target="#debateTopicsModal">Add Debate Topic<span class="glyphicon glyphicon-plus"></span></h2>
       </div>
       <div ng-repeat="topic in topics | filter:searchText track by $index" class = "outline-container">

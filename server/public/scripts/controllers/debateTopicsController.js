@@ -30,7 +30,7 @@ $scope.addTopic = function(topic) {
       loadResources();
       toastr.success(topic.title + " has been added!");
     } else {
-      toastr.error("Failed to add topic");
+      toastr.error("Failed to add topic!");
     }
   });
 }

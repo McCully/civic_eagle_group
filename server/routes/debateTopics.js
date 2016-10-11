@@ -9,7 +9,7 @@ router.get('/' , function(req , res){
    .header("Authorization", req.headers.authorization)
    .header("Accept", "application/json")
    .end(function(result){
-      res.send(result.body);
+      res.status(result.statusCode).send(result.body);
    });
 });
 
@@ -19,7 +19,7 @@ router.post('/' , function(req , res){
    .header("Accept", "application/json")
    .send(req.body)
    .end(function(result){
-      res.send(result.body);
+      res.status(result.statusCode).send(result.body);
    });
 });
 
@@ -29,7 +29,7 @@ router.put('/:id' , function(req, res){
    .header("Accept", "application/json")
    .send(req.body)
    .end(function(result){
-      res.send(result.body);
+      res.status(result.statusCode).send(result.body);
    });
 });
 
