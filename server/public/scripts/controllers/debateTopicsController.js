@@ -12,12 +12,12 @@ function($scope, $location, $http, Admin, DebateTopicsService, issues, textAngul
 /* Load debate topics */
 function loadResources() {
   DebateTopicsService.getDebateTopics().then(function(response){
-    $scope.topics = response;
+    $scope.topics = response.data;
   });
 
 /* Load issues. */
   issues.getAll().then(function(response){
-    $scope.issues = response;
+    $scope.issues = response.data;
   });
 };
 
@@ -26,10 +26,13 @@ $scope.addTopic = function(topic) {
   console.log($scope.active);
   console.log("topic: ", topic);
   DebateTopicsService.addTopic(topic).then(function(response) {
-    $scope.topics.push(response);
-    loadResources();
+    if(response.status == 200) {
+      loadResources();
+      toastr.success(topic.title + " has been added!");
+    } else {
+      toastr.error("Failed to add topic");
+    }
   });
-  toastr.success(topic.title + ' has been added!');
 }
 
 //UPDATE DEBATE TOPIC
@@ -40,13 +43,18 @@ $scope.updateTopic = function(topic) {
   topic.summary = $scope.selectedTopic.summary;
   topic.active = $scope.active;
   DebateTopicsService.updateTopic(topic).then(function(response) {
-  $scope.topics.push(response);
-  loadResources();
+    if(response.status == 200) {
+      loadResources();
+      toastr.success("Update Successful!");
+    } else {
+      toastr.error("Update Failed!");
+    }
   });
   topic = {};
   $scope.selectedTopic = {};
   $scope.updatedTopic = {};
-  toastr.success("Update Successful!");
+  $scope.updatedTopic = topic;
+
 }
 
 //DISPLAY DEBATE TOPIC

@@ -7,8 +7,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
      url: "/issues",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -19,8 +18,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
      url: "/issues/" + id,
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -33,8 +31,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
      url: "/issues/" + id,
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }
@@ -45,8 +42,7 @@ eagleApp.factory('issues' , ['$http' , 'Admin', function($http, Admin){
      url: "/issues",
      headers: {'Authorization': 'Basic ' + Admin.getCred()}
    }).then(function(response) {
-     console.log("res: ", response);
-     return response.data;
+     return response;
    });
    return promise;
   }

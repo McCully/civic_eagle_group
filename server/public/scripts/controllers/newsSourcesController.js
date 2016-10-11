@@ -1,6 +1,6 @@
 "use strict";
 
-eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'Admin', 'textAngularManager', 'newsSources', function ($scope, $location, $http, Admin, textAngularManager, newsSources) {
+eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'Admin', 'textAngularManager', 'newsSources', 'toastr', function ($scope, $location, $http, Admin, textAngularManager, newsSources, toastr) {
 
   if(Admin.getCred() === undefined){
     $location.path('/logIn');
@@ -10,13 +10,18 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
 
   function loadResources() {
     newsSources.getAll().then(function(response){
-      $scope.sources = response;
+      $scope.sources = response.data;
     });
   }
 
   $scope.addSource = function(source) {
     newsSources.create(source).then(function(response) {
-      $scope.sources.push(response);
+      if(response.status == 200) {
+        toastr.success("Successfully added news source");
+        $scope.sources.push(response.data);
+      } else {
+        toastr.error("Failed adding news source");
+      }
     });
   }
 
@@ -29,7 +34,11 @@ eagleApp.controller('newsSourcesController', ['$scope', '$location', '$http', 'A
     source._id = id;
 
     newsSources.update(source).then(function(response) {
-      console.log("response: ", response);
+      if(response.status == 200) {
+        toastr.success("Successfully updated news source");
+      } else {
+        toastr.error("Failed updating news source");
+      }
     });
   }
 
