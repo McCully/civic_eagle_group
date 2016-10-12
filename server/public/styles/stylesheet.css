@@ -88,3 +88,14 @@ label {
   margin-right: auto;
   margin-left: auto;
 }
+
+.searchContainer {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  display: block;
+  font-size: 30px;
+}
+
+.searchContainer input {
+  border: 2px solid orange;
+}
