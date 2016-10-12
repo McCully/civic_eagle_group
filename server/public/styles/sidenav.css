@@ -21,8 +21,8 @@
   color:white;
 }
 
-h{
-  width: 100%;
+hr{
+  width: 113%;
 }
 
 
@@ -42,6 +42,7 @@ h{
 }
 hr{
   margin-bottom: 0;
+  margin-top: 10px;
 }
 
 @media (min-width: 771px){

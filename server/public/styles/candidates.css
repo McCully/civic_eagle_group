@@ -19,10 +19,10 @@
   min-width: 100vw;
 }*/
 
-.candidates-container h2:hover {
+/*.candidates-container h2:hover {
  color: orange;
  opacity: 1;
- text-shadow: 1px 1px lightgray;
+ text-shadow: 1px 1px lightgray;*/
 
 }
 .candidates-container h2{
@@ -31,7 +31,7 @@
   background-color: orange;
 }
 
-.candidates :hover {
+/*.candidates :hover {
   color: orange;
   cursor: pointer;
 }
@@ -39,7 +39,7 @@
 h2.candidates:hover{
   cursor: pointer;
   color: orange;
-}
+}*/
 
 .candidates {
   margin-top: 0;
